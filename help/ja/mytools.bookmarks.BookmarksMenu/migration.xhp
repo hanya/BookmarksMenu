@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpdocument version="1.0">
+  <meta>
+    <topic id="mytools_bookmarks_BookmarksMenu_" indexer="include">
+      <title xml-lang="ja" id="tit"></title>
+      <filename>/mytools.bookmarks.BookmarksMenu/migration.xhp</filename>
+    </topic>
+    <history>
+      <created date="2012-03-31T01:42:01"></created>
+      <lastedited date="2012-03-31T01:42:01"></lastedited>
+    </history>
+  </meta><body><paragraph id="hd_id52391791" level="1" role="heading" xml-lang="ja">移行</paragraph><bookmark branch="index" id="id_id92993751" xml-lang="ja"><bookmark_value>移行</bookmark_value></bookmark><paragraph id="par_id30705416" role="paragraph" xml-lang="ja"> 旧ブックマークメニューから項目を変換できます。 </paragraph><paragraph id="par_id39513443" role="paragraph" xml-lang="ja">ブックマークの編集ウィンドウのメインメニューでツール - 移行を選択してください。 変換された項目はブックマークフォルダに追加されます。 </paragraph><paragraph id="par_id99538104" role="paragraph" xml-lang="ja">「このドキュメントをブックマーク」と「ブックマークの編集」項目は変換されません。 また、他にも変換時に問題があるかもしれません。 </paragraph></body>
+</helpdocument>

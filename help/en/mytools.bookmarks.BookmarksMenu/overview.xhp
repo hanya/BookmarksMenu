@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpdocument version="1.0">
+  <meta>
+    <topic id="mytools_bookmarks_BookmarksMenu_" indexer="include">
+      <title xml-lang="en" id="tit"></title>
+      <filename>/mytools.bookmarks.BookmarksMenu/overview.xhp</filename>
+    </topic>
+    <history>
+      <created date="2012-03-31T01:42:01"></created>
+      <lastedited date="2012-03-31T01:42:01"></lastedited>
+    </history>
+  </meta><body><paragraph id="hd_id35107996" level="1" role="heading" xml-lang="en">Overview</paragraph><bookmark branch="index" id="id_id85691556" xml-lang="en"><bookmark_value>Overview</bookmark_value></bookmark><paragraph id="par_id33392445" role="paragraph" xml-lang="en"> Bookmarks Menu extension provides favorite menu which you can add  documents to open directly from the menu. </paragraph><paragraph id="par_id48685368" role="paragraph" xml-lang="en">This extension also provides the following functions:  </paragraph><list format="1" type="unordered"><listitem> Execute general commands are the same with normal entries of the menu. </listitem><listitem> Open a file with your favorite program, depends on your environment. </listitem><listitem> Open... or Save As... with specific starting folder. </listitem><listitem> Execute macros. </listitem><listitem> Hierarchical menu which shows file system and allows to open one of it. </listitem></list><paragraph id="par_id31808581" role="paragraph" xml-lang="en" /></body>
+</helpdocument>

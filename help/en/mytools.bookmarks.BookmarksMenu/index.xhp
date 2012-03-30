@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpdocument version="1.0">
+  <meta>
+    <topic id="mytools_bookmarks_BookmarksMenu_" indexer="include">
+      <title xml-lang="en" id="tit"></title>
+      <filename>/mytools.bookmarks.BookmarksMenu/index.xhp</filename>
+    </topic>
+    <history>
+      <created date="2012-03-31T01:42:01"></created>
+      <lastedited date="2012-03-31T01:42:01"></lastedited>
+    </history>
+  </meta><body><paragraph id="hd_id22334401" level="1" role="heading" xml-lang="en">Index</paragraph><bookmark branch="index" id="id_id96566791" xml-lang="en"><bookmark_value>Index</bookmark_value></bookmark><list format="1" type="unordered"><listitem><link href="mytools.bookmarks.BookmarksMenu/overview.xhp" name="link to...">Overview</link></listitem><listitem><link href="mytools.bookmarks.BookmarksMenu/window.xhp" name="link to...">Edit Window</link></listitem><listitem><link href="mytools.bookmarks.BookmarksMenu/bookmark.xhp" name="link to...">New Bookmark</link></listitem><listitem><link href="mytools.bookmarks.BookmarksMenu/settings.xhp" name="link to...">Settings</link></listitem><listitem><link href="mytools.bookmarks.BookmarksMenu/migration.xhp" name="link to...">Migration</link></listitem><listitem><link href="mytools.bookmarks.BookmarksMenu/directory_pmc.xhp" name="link to...">Place Menu</link></listitem><listitem><link href="mytools.bookmarks.BookmarksMenu/further.xhp" name="link to...">Further Information</link></listitem></list></body>
+</helpdocument>

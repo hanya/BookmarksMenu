@@ -1,0 +1,150 @@
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new|bookmarks|New Bookmark}}
+
+There are several kind of bookmarks you can make. All of them can 
+be created in New Bookmark dialog which can be opened through 
+Insert - Bookmark entry in the main menu or Bookmark entry 
+in the context menu. 
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.this|bookmarks|Bookmark current document}}
+
+== Bookmark This Document ==
+You can make bookmark entry for current document which is already 
+stored in the file system.
+
+# Choose Bookmark This Document entry in the bookmarks menu.
+# Input required informations in the opened dialog.
+# Click OK button to create new entry.
+
+== General way to create new bookmarks ==
+Here is general way to insert new bookmark using New Bookmark dialog.
+
+# Open Bookmarks window, if not opened yet.
+# Select a folder which you want to insert new bookmark in the tree.
+#* When the tree structure is focused, new bookmark is appended at the end of the folder
+#* When the list of entries is focused, new bookmark is inserted at the selected position.
+# Choose Insert - Bookmark entry in the main menu of the Bookmark window. Or choose Bookmark entry in the context menu.
+# Then New Bookmark dialog is opened.
+# Choose a type from the top part ot the dialog.
+# Input name, description and other required values according to the kind of entry.
+# Click OK button to make it.
+
+Click Reset button to clear all fields.
+
+The way to make each kind of items are described in the followoing section.
+And descriptions in the following sections are summarized only on the New Bookmark dialog.
+
+== Document ==
+If you want to open a file in the office, choose this entry. 
+
+# Click Select button in the Document section, then the file picker dialog is opened.
+# Choose a file to open in the file picker dialog and click Open. 
+#* If you choose a file filter in the file picker dialog, it is used to open your file.
+#* If you choose All files as a filter, the filter is automatically chosen to open your file by the office.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.macro|bookmarks|Macro}}
+
+== Macro ==
+This entry is not differ to execute a macro through Tools - Macros entries.
+
+# Click Select button in the Macro section, then the macro selector dialog is opened.
+# Choose a macro in the dialog and click OK button.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.command|bookmarks|Choose a command}}
+
+== Command ==
+You can execute a command which is used to do something through the main menu, 
+context menu or shortcut keys.
+
+# Click Select button in the Command section, then Select Command dialog is opened.
+# Choose a category and choose a command in the list of commands, and then click OK button.
+
+This entry requires living document and the extension trying to use most recent opened window of the document. 
+Therefore create a new document and reopen the dialog when you can see only a few categories in the Select Command dialog.
+
+== Program ==
+You can run a program though bookmark item with this kind of entry. 
+If you have a program which you often use with the office, make 
+an entry for it to run. You can pass arguments to it also.
+
+# Input program command which you want to run in the Program section. 
+# Input arguments if required.
+
+== Something ==
+You have favorite programs to view or edit files depending their 
+file type on your environment. This kind of entry allows you to 
+open a file with it, the program is automatically chosen by 
+your environment.
+
+# Choose a type to open something in the Type section. 
+# Click Select button to choose a file or folder. If you want to open a web page, input URL in the Path section.
+
+If you want to open a file with specific program, try Program type of bookmark.
+
+You can choose web browser to view web pages, 
+file manager to open folder and command to open any files. 
+See [[settings|Settings]] for detail.
+
+== Special ==
+This entry helps you to make entries which require arguments to work useful. 
+
+The following type of entries can be make.
+
+=== Open from specific folder ===
+If you open files from specific folder frequently, make this kind of entry.
+This entry opens dialog to open a file from starting directory specified.
+
+# Choose "Open..." from specific folder in the Type section.
+# Click Select button in the Path section and choose a directory in the directory picker dialog.
+
+This entry might not work with Windows 7 file picker.
+
+=== Save As into specific folder ===
+If you save a file into specific folder frequently, make this kind of entry.
+This entry opens dialog to store a file from starting directory specified.
+
+# Choose "Save As..." into specific folder in the Type section.
+# Click Select button in the Path section and choose a directory in the directory picker dialog.
+
+This entry might not work with Windows 7 file picker.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.place|bookmarks|Place Menu}}
+
+=== Place Menu ===
+This creates a container entry to show selected directory structure and its file contents in it. 
+List of files are dynamically loaded and shown in the sub menu. 
+You can open a file from the list of files. But you can not choose any file filter to open.
+If you need to choose a file filter to open a file, try Open from specific folder entry.
+
+# Choose "Place Menu" in the Type section.
+# Click Select button in the Arguments section, then Place Menu Settings dialog is shown.
+# Click Select button and choose a directory in the directory picker which is opened.
+# Input file name filter if required. See [[directory_pmc|Place Menu]] about this setting.
+
+== Separator ==
+You can use separator to make your items to group up. 
+Choose Insert - Separator entry in the main menu or context menu to create 
+new separator.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.folder|bookmarks|New folder}}
+
+== Folder ==
+If you want to show your bookmark into sub menu of the bookmarks, 
+create new folder and put your bookmarks into it.
+Choose Insert - Folder entry in the main menu or context menu to create 
+new folder entry.
+
+== Tag ==
+This entry shows tagged by specific tag name in the sub menu. 
+This kind of item is created as follows: 
+
+# Expand Tags tree.
+# Start to drag on a tag entry which you want to make a tag entry.
+# Drop it to a folder where you want to insert the item on the tree.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.tag|bookmarks|New tag entry}}
+
+After the creation of the item, you can change its tag name to show 
+items in the data part of the window. Click Select button and choose 
+new tag name from the shown list.
+

@@ -1,0 +1,11 @@
+
+Bookmarks Menu extension provides favorite menu which you can add 
+documents to open directly from the menu.
+
+This extension also provides the following functions: 
+* Execute general commands are the same with normal entries of the menu.
+* Open a file with your favorite program, depends on your environment.
+* Open... or Save As... with specific starting folder.
+* Execute macros.
+* Hierarchical menu which shows file system and allows to open one of it.
+

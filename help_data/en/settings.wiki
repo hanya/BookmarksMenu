@@ -1,0 +1,71 @@
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:settings|bookmarks|Settings}}
+
+You can access the settings through Tools - Options entry in the main menu of the edit window 
+and then choose Bookmarks Menu in the Options dialog.
+
+== Data ==
+The settings of this page are optional.
+
+=== Bookmarks data file ===
+The data of bookmarks is stored in user's profile/config directory. 
+When you specify a file with this setting, the specified file is 
+used to load and save bookmarks data.
+
+This setting is enabled after your office is restarted.
+
+If you want to restore this setting to default, make the field empty.
+
+=== Backup directory ===
+The backup file will be created when create backup file options is enabled. 
+This setting can choose a place to store your backup file. 
+
+If you want to restore this setting to default, make the field empty.
+
+== Settings ==
+This is the page where you can set programs to open something.
+
+=== Web browser ===
+Input path to the web browser which you want to use other than 
+your default web browser.
+
+=== File manager ===
+Specify file manager to open a folder.
+
+=== Open command ===
+Specify open command to open files if you want to use custom one.
+
+=== Default values ===
+THe following values are used for file manager and open command 
+if custom value is not specified to use.
+
+{|
+|Environment
+|File manager
+|Open command
+|-
+|GNOME
+|nautilus
+|gnome-open
+|-
+|KDE
+|kfmclient exec
+|kfmclient exec
+|-
+|Mate
+|caja
+|mate-open
+|-
+|Xfce
+|thunar
+|exo-open
+|-
+|MacOS X
+|open
+|open
+|-
+|Windows
+|explorer.exe
+|rundll32.exe url.dll,FileProtocolHandler
+|}
+

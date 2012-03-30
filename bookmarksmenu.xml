@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wiki2xhp version="2">
+	<meta>
+		<identifier>
+			mytools.bookmarks.BookmarksMenu
+		</identifier>
+		<share_images>
+			True
+		</share_images>
+		<mode>
+			raw
+		</mode>
+		<file_extension>
+			.wiki
+		</file_extension>
+		<wiki/>
+		<out>
+			./help
+		</out>
+		<data>
+			./help_data
+		</data>
+		<html>
+			./help_html
+		</html>
+	</meta>
+	<pages>
+		<node application="bookmarksmenu">
+			<item lang="en" title="Bookmarks Menu"/>
+			<item lang="ja" title="ブックマークメニュー"/>
+			<page file_name="index">
+				<item lang="en" name="index" page_title="Index" title="Index"/>
+				<item lang="ja" name="index" page_title="インデックス" title="インデックス"/>
+			</page>
+			<page file_name="overview">
+				<item lang="en" name="Overview" page_title="Overview" title="Overview"/>
+				<item lang="ja" name="overview" page_title="概要" title="概要"/>
+			</page>
+			<page file_name="window">
+				<item lang="en" name="window" page_title="Edit Window" title="Edit Window"/>
+				<item lang="ja" name="window" page_title="編集ウィンドウ" title="編集ウィンドウ"/>
+			</page>
+			<page file_name="bookmark">
+				<item lang="en" name="bookmark" page_title="New Bookmark" title="New Bookmark"/>
+				<item lang="ja" name="bookmark" page_title="新規ブックマーク" title="新規ブックマーク"/>
+			</page>
+			<page file_name="settings">
+				<item lang="en" name="settings" page_title="Settings" title="Settings"/>
+				<item lang="ja" name="settings" page_title="設定" title="設定"/>
+			</page>
+			<page file_name="migration">
+				<item lang="en" name="migration" page_title="Migration" title="Migration"/>
+				<item lang="ja" name="migration" page_title="移行" title="移行"/>
+			</page>
+			<page file_name="directory_pmc">
+				<item lang="en" name="directory_pmc" page_title="Place Menu" title="Place Menu"/>
+				<item lang="ja" name="directory_pmc" page_title="場所メニュー" title="場所メニュー"/>
+			</page>
+			<page file_name="further">
+				<item lang="en" name="further" page_title="Further Information" title="Further Information"/>
+				<item lang="ja" name="further" page_title="より進んだ情報" title="より進んだ情報"/>
+			</page>
+		</node>
+	</pages>
+</wiki2xhp>

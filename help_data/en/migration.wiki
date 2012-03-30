@@ -1,0 +1,8 @@
+
+You can migrate bookmarks from older Bookmarks Menu extension to new one. 
+
+Choose Tools - Migrate entry in the main menu of the Bookmarks window.
+Converted entries are inserted under the Bookmarks folder. 
+
+Bookmark This and Edit entries are ignored. And maybe there are some 
+problem on conversion of older entries to new entries. 

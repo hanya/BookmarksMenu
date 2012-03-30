@@ -1,0 +1,132 @@
+
+You can edit your bookmarks on edit window of Bookmarks Menu.
+
+The edit window can be opened by Edit Bookmarks entry in the bookmarks menu. 
+If you remove the entry, you can not open the edit window anymore. 
+
+The window is most likely the same with other document window of the office. 
+It is separated in three part: 
+* Left part shows tree structure of your bookmarks, unsorted bookmarks, tags and history. This part shows only folder like items.
+* Top right part shows list of bookmarks which bound to selected folder in the left part.
+* Bottom right part shows data for selected item in the top right part.
+
+Each part is described in the following section.
+
+If you select an item in the tree or the list of bookmarks, focus is moved to 
+the selected part. The focus is important to manipulate the content of these part 
+through main menu. The operation with the menu entries works on focused part.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:tree|bookmarks|Folders in bookmarks}}
+
+== Tree structure ==
+This quartet rooted tree structure shows history, tags, unsorted bookmarks and bookmarks. 
+
+=== History ===
+If you select History, the list shows the list of items 
+which you can see in the File - Recent files. 
+You can open the file from the list or copy them as a bookmark entry.
+
+History tree is readonly, any modification on the tree do not effected.
+
+=== Tags ===
+There is tag data for each bookmark entry. If a bookmark is tagged by 
+its tag data, it is shown under the tags tree.
+You can group up bookmarks with tags.
+
+If you delete tag entry from the tag tree, its entries are not deleted but 
+the tag name is removed from their tag data.
+
+You can not make new bookmark into this tree.
+
+== Unsorted bookmarks ==
+These bookmarks in this entry are not yet sorted.
+
+=== Bookmarks ===
+This is where your bookmarks are shown as tree structure. This 
+tree shows only folders in your bookmarks. When you select 
+a folder in this tree, its contents are shown in the list of bookmarks.
+
+New bookmarks can be inserted to the selected folder through Insert menu. 
+And also, you can manipulate it through context menu.
+These entries can be moved between folders by drag and drop by mouse. 
+If you push Ctrl key at the leaving your mouse button, the item is copied into the destination.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:grid|bookmarks|Bookmarks of selected folder}}
+
+== List of bookmarks ==
+The contents of this part is depends on the selected item in the tree part. 
+You can move item from this part to tree part with drag and drop.
+
+If you select entries in this part, you can open the selected entry in this part, 
+like to choose in the bookmarks menu. Select entries and 
+double click, push enter key or choose Open in the context menu to open selected entries.
+
+The small icon shown at the left side of the list indicates the type of the entry.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:data|bookmarks|Data of selected bookmark}}
+
+== Data ==
+This part shows data of the selected entry. The type of data shown in this part depends on 
+what kind of entry is chosen in the tree or list of bookmarks.
+
+You can change data of the fields in this part. 
+
+== Menu entries ==
+The following entries are used to work with bookmarks.
+
+=== Export ===
+You can export your bookmarks into a file. To export bookmarks, choose File - 
+Export entry in the main menu.
+
+If you want to export only selected part, choose Selection on 
+the file save dialog. Tags and histories can not be exported as selected part.
+
+Exported files can be inserted by Insert - File entry in the main menu.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:command.move|bookmarks|Move bookmarks}}
+
+=== Movement ===
+If you want to move bookmarks from a folder to another one, 
+select bookmarks you want to move, and then choose Edit - Move entry in the main menu. 
+Choose a destination in Movement dialog.
+
+You can move bookmarks with drag and drop between the tree structure 
+and the list of bookmarks. But you can not move folder from the tree to the list of bookmarks. 
+
+And also you can not move bookmarks to histories tree. 
+If you move bookmark to tag tree, the item takes tag name to its tag data.
+
+=== Folder history ===
+If you switch a folder to show its contents, the window keeps 
+older location as a history entry. You can move inside 
+history, choose View - Back or Forward entries in the main menu.
+
+There is history toolbar which can be used to the same way.
+
+=== Shown columns ===
+There are four columns in the list of bookmarks and they can 
+be switched to show except for Name column. 
+Choose View - Columns entry in the main menu to switch these visibility.
+
+=== Insert ===
+You can create new bookmark through Insert menu or context menu on the 
+tree or the list part. See [[bookmark|New Bookmark]] for more detail.
+
+=== Insert from file ===
+You can insert bookmarks from a file. To insert bookmarks from a file, 
+choose Insert - File entry in the main menu. 
+
+=== Migrate ===
+If you have installed older Bookmarks Menu extension, you can 
+migrate older bookmarks to new one. See [[migration|Migration]] for more detail.
+
+=== New Menu ===
+If you want additional bookmarks in other positions in the main menu, 
+try this entry. See [[further|New Bookmarks Wizard]] for more detail.
+
+=== About Bookmarks Menu ===
+Shows version information.
+
+== Shortcut keys ==
+Choose Tools - Customize entry in the main menu and see Keyboard page of the 
+Customize dialog.

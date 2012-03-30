@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpdocument version="1.0">
+  <meta>
+    <topic id="mytools_bookmarks_BookmarksMenu_" indexer="include">
+      <title xml-lang="ja" id="tit"></title>
+      <filename>/mytools.bookmarks.BookmarksMenu/overview.xhp</filename>
+    </topic>
+    <history>
+      <created date="2012-03-31T01:42:01"></created>
+      <lastedited date="2012-03-31T01:42:01"></lastedited>
+    </history>
+  </meta><body><paragraph id="hd_id76651727" level="1" role="heading" xml-lang="ja">概要</paragraph><bookmark branch="index" id="id_id76997750" xml-lang="ja"><bookmark_value>概要</bookmark_value></bookmark><paragraph id="par_id87993452" role="paragraph" xml-lang="ja"> ブックマーク拡張機能はメニューから直接ドキュメントを開くお気に入りメニューを提供します。 </paragraph><paragraph id="par_id53508008" role="paragraph" xml-lang="ja">この拡張機能では他にも次のようなことが行えます。 </paragraph><list format="1" type="unordered"><listitem> メニューにあるような一般的なコマンドの実行 </listitem><listitem> 環境のお気に入りプログラムに従って何かファイルを開く </listitem><listitem> 指定したフォルダを基点にして開く... または名前をつけて保存...を実行 </listitem><listitem> マクロの実行 </listitem><listitem> ファイルシステムを表示して直接ファイルを開けるメニュー </listitem></list><paragraph id="par_id76564321" role="paragraph" xml-lang="ja" /></body>
+</helpdocument>

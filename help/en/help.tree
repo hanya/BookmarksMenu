@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tree_view version="31-03-2012">
+<help_section application="bookmarksmenu" id="96357863" title="Bookmarks Menu">
+<topic id="bookmarksmenu/mytools.bookmarks.BookmarksMenu/index.xhp">Index</topic>
+<topic id="bookmarksmenu/mytools.bookmarks.BookmarksMenu/overview.xhp">Overview</topic>
+<topic id="bookmarksmenu/mytools.bookmarks.BookmarksMenu/window.xhp">Edit Window</topic>
+<topic id="bookmarksmenu/mytools.bookmarks.BookmarksMenu/bookmark.xhp">New Bookmark</topic>
+<topic id="bookmarksmenu/mytools.bookmarks.BookmarksMenu/settings.xhp">Settings</topic>
+<topic id="bookmarksmenu/mytools.bookmarks.BookmarksMenu/migration.xhp">Migration</topic>
+<topic id="bookmarksmenu/mytools.bookmarks.BookmarksMenu/directory_pmc.xhp">Place Menu</topic>
+<topic id="bookmarksmenu/mytools.bookmarks.BookmarksMenu/further.xhp">Further Information</topic>
+</help_section>
+</tree_view>

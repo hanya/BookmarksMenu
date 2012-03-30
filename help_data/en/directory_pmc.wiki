@@ -1,0 +1,46 @@
+
+You can show directory structure and its files as sub menu in the bookmarks menu. 
+And if you choose an entry in the menu, selected file is opened in your office. 
+You do not need to choose a file in file picker dialog to open a file anymore. 
+But you can not choose a file filter to open.
+
+This kind of entry can be created as follows: 
+# Choose Insert - Bookmark entry in the main menu, New Bookmark dialog is opened. 
+# Choose Special from the list of entries on the top of the New Bookmark dialog. 
+# Choose Place Menu in the Type list box.
+# Click Select button in the Arguments category, Directory Pop-up Settings dialog is opened.
+# Click Select button in the Folder entry, and choose a directory in the opened folder picker dialog.
+# Input file filter according to the following section, if required.
+# Click OK to return to the New Bookmark dialog.
+# Input Name and Description if required.
+# Click OK button to finish.
+
+== File name filter ==
+You can set filter to choose what kind of files should be shown in 
+your place menu entry. 
+
+Filter is specified with the following special characters: 
+{|
+|Pattern
+|Description
+|-
+|*
+|Match with all characters (wild card)
+|-
+|?
+|Match with a character
+|-
+|[seq]
+|Match with characters in the seq
+|-
+|[!seq]
+|Match with characters not in the seq
+|}
+
+This kind of filtering can be seen like to choose file extension. 
+For example, *.ods choose files having ods file extension.
+
+Multiple filter can be specified by sequence of filters separated with ";" (semicolon) character. 
+For example, the following filter choose odt and ods files to show in the entry: 
+ *.odt;*.ods
+
