@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oor:component-data xmlns:oor="http://openoffice.org/2001/registry" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:install="http://openoffice.org/2004/installation" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    oor:name="Accelerators" 
+    oor:package="org.openoffice.Office">
+    <node oor:name="PrimaryKeys">
+        <node oor:name="Modules">
+            <node oor:name="mytools.bookmarks.BookmarksMenu" oor:op="fuse">
+                <node oor:name="Z_MOD1" oor:op="replace">
+                    <prop oor:name="Command">
+                        <value xml:lang="en-US">.uno:Undo</value>
+                    </prop>
+                </node>
+                <node oor:name="Y_MOD1" oor:op="replace">
+                    <prop oor:name="Command">
+                        <value xml:lang="en-US">.uno:Redo</value>
+                    </prop>
+                </node>
+                <node oor:name="LEFT_MOD2" oor:op="replace">
+                    <prop oor:name="Command">
+                        <value xml:lang="en-US">mytools.bookmarks:Back</value>
+                    </prop>
+                </node>
+                <node oor:name="RIGHT_MOD2" oor:op="replace">
+                    <prop oor:name="Command">
+                        <value xml:lang="en-US">mytools.bookmarks:Forward</value>
+                    </prop>
+                </node>
+                
+                <node oor:name="RETURN" oor:op="replace">
+                    <prop oor:name="Command">
+                        <value xml:lang="en-US">mytools.bookmarks:Open</value>
+                    </prop>
+                </node>
+                
+            </node>
+        </node>
+    </node>
+</oor:component-data>

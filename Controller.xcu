@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+oor:package="org.openoffice.Office.UI" 
+oor:name="Controller">
+	<node oor:name="Registered">
+		<node oor:name="PopupMenu">
+			<node oor:name="mytools.frame:DirectoryPopupMenu" oor:op="replace">
+				<prop oor:name="Command">
+					<value>mytools.frame:DirectoryPopupMenu</value>
+				</prop>
+				<prop oor:name="Module">
+					<value></value>
+				</prop>
+				<prop oor:name="Controller">
+					<value>bookmarks.DirectoryPopupMenu</value>
+				</prop>
+			</node>
+			<node oor:name="mytools.bookmarks:ShownInfo" oor:op="replace">
+				<prop oor:name="Command">
+					<value>mytools.bookmarks:ShownInfo</value>
+				</prop>
+				<prop oor:name="Module">
+					<value></value>
+				</prop>
+				<prop oor:name="Controller">
+					<value>bookmarks.ShownColumnsPopupMenu</value>
+				</prop>
+			</node>
+		</node>
+	</node>
+</oor:component-data>

@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+oor:package="org.openoffice.Office.UI" 
+oor:name="BookmarksWindowState">
+<node oor:name="UIElements">
+<node oor:name="States">
+<node oor:name="private:resource/toolbar/standardbar" oor:op="replace">
+<prop oor:name="UIName">
+<value xml:lang="en-US">Standard</value>
+<value xml:lang="ja">標準</value>
+</prop>
+<prop oor:name="Docked">
+<value>true</value>
+</prop>
+<prop oor:name="Visible">
+<value>true</value>
+</prop>
+<prop oor:name="ContextSensitive">
+<value>false</value>
+</prop>
+<prop oor:name="DockingArea">
+<value>0</value>
+</prop>
+<prop oor:name="HideFromToolbarMenu">
+<value>false</value>
+</prop>
+<prop oor:name="Locked">
+<value>false</value>
+</prop>
+<prop oor:name="NoClose">
+<value>false</value>
+</prop>
+<prop oor:name="SoftClose">
+<value>false</value>
+</prop>
+<prop oor:name="Style">
+<value>0</value>
+</prop>
+<prop oor:name="Pos">
+<value>-1,-1</value>
+</prop>
+<prop oor:name="DockPos">
+<value>0,0</value>
+</prop>
+</node>
+<node oor:name="private:resource/toolbar/insertbar" oor:op="replace">
+<prop oor:name="UIName">
+<value xml:lang="en-US">Insert</value>
+<value xml:lang="ja">挿入</value>
+</prop>
+<prop oor:name="Docked">
+<value>true</value>
+</prop>
+<prop oor:name="Visible">
+<value>true</value>
+</prop>
+<prop oor:name="ContextSensitive">
+<value>false</value>
+</prop>
+<prop oor:name="DockingArea">
+<value>0</value>
+</prop>
+<prop oor:name="HideFromToolbarMenu">
+<value>false</value>
+</prop>
+<prop oor:name="Locked">
+<value>false</value>
+</prop>
+<prop oor:name="NoClose">
+<value>false</value>
+</prop>
+<prop oor:name="SoftClose">
+<value>false</value>
+</prop>
+<prop oor:name="Style">
+<value>0</value>
+</prop>
+<prop oor:name="Pos">
+<value>-1,-1</value>
+</prop>
+<prop oor:name="DockPos">
+<value>303,0</value>
+</prop>
+</node>
+<node oor:name="private:resource/toolbar/historybar" oor:op="replace">
+<prop oor:name="UIName">
+<value xml:lang="en-US">History</value>
+<value xml:lang="ja">履歴</value>
+</prop>
+<prop oor:name="Docked">
+<value>true</value>
+</prop>
+<prop oor:name="Visible">
+<value>true</value>
+</prop>
+<prop oor:name="ContextSensitive">
+<value>false</value>
+</prop>
+<prop oor:name="DockingArea">
+<value>0</value>
+</prop>
+<prop oor:name="HideFromToolbarMenu">
+<value>false</value>
+</prop>
+<prop oor:name="Locked">
+<value>false</value>
+</prop>
+<prop oor:name="NoClose">
+<value>false</value>
+</prop>
+<prop oor:name="SoftClose">
+<value>false</value>
+</prop>
+<prop oor:name="Style">
+<value>0</value>
+</prop>
+<prop oor:name="Pos">
+<value>-1,-1</value>
+</prop>
+<prop oor:name="DockPos">
+<value>385,0</value>
+</prop>
+</node>
+</node>
+</node>
+</oor:component-data>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-schema 
+xml:lang="en-US" 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+oor:package="org.openoffice.Office.UI" 
+oor:name="BookmarksWindowState">
+	<import oor:component="org.openoffice.Office.UI.WindowState"/>
+	<uses oor:component="org.openoffice.Office.UI.WindowState"/>
+	<templates/>
+	<component>
+		<group oor:name="UIElements">
+			<set oor:name="States" oor:node-type="WindowStateType" oor:component="org.openoffice.Office.UI.WindowState">
+			</set>
+		</group>
+	</component>
+</oor:component-schema>

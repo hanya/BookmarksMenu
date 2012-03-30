@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+oor:name="Addons" 
+oor:package="org.openoffice.Office">
+	<node oor:name="AddonUI">
+		<node oor:name="Images">
+			<node oor:name="mytools.bookmarks:InsertBookmark" oor:op="replace">
+				<prop oor:name="URL">
+					<value>mytools.bookmarks:InsertBookmark</value>
+				</prop>
+				<node oor:name="UserDefinedImages">
+					<prop oor:name="ImageSmallURL">
+						<value>%origin%/icons/addthis_16.png</value>
+					</prop>
+					<prop oor:name="ImageBigURL">
+						<value>%origin%/icons/addthis_26.png</value>
+					</prop>
+                    <prop oor:name="ImageSmallHCURL">
+						<value>%origin%/icons/addthis_16_h.png</value>
+					</prop>
+					<prop oor:name="ImageBigHCURL">
+						<value>%origin%/icons/addthis_26_h.png</value>
+					</prop>
+				</node>
+			</node>
+			<node oor:name="mytools.bookmarks:InsertSeparator" oor:op="replace">
+				<prop oor:name="URL">
+					<value>mytools.bookmarks:InsertSeparator</value>
+				</prop>
+				<node oor:name="UserDefinedImages">
+					<prop oor:name="ImageSmallURL">
+						<value>%origin%/icons/separator_16.png</value>
+					</prop>
+					<prop oor:name="ImageBigURL">
+						<value>%origin%/icons/separator_26.png</value>
+					</prop>
+                    <prop oor:name="ImageSmallHCURL">
+						<value>%origin%/icons/separator_16_h.png</value>
+					</prop>
+					<prop oor:name="ImageBigHCURL">
+						<value>%origin%/icons/separator_26_h.png</value>
+					</prop>
+				</node>
+			</node>
+			<node oor:name="mytools.bookmarks:InsertFolder" oor:op="replace">
+				<prop oor:name="URL">
+					<value>mytools.bookmarks:InsertFolder</value>
+				</prop>
+				<node oor:name="UserDefinedImages">
+					<prop oor:name="ImageSmallURL">
+						<value>%origin%/icons/newfolder_16.png</value>
+					</prop>
+					<prop oor:name="ImageBigURL">
+						<value>%origin%/icons/newfolder_26.png</value>
+					</prop>
+                    <prop oor:name="ImageSmallHCURL">
+						<value>%origin%/icons/newfolder_16_h.png</value>
+					</prop>
+					<prop oor:name="ImageBigHCURL">
+						<value>%origin%/icons/newfolder_26_h.png</value>
+					</prop>
+				</node>
+			</node>
+			<node oor:name="mytools.bookmarks:Back" oor:op="replace">
+				<prop oor:name="URL">
+					<value>mytools.bookmarks:Back</value>
+				</prop>
+				<node oor:name="UserDefinedImages">
+					<prop oor:name="ImageSmallURL">
+						<value>%origin%/icons/back_16.png</value>
+					</prop>
+					<prop oor:name="ImageBigURL">
+						<value>%origin%/icons/back_26.png</value>
+					</prop>
+                    <prop oor:name="ImageSmallHCURL">
+						<value>%origin%/icons/back_16_h.png</value>
+					</prop>
+					<prop oor:name="ImageBigHCURL">
+						<value>%origin%/icons/back_26_h.png</value>
+					</prop>
+				</node>
+			</node>
+			<node oor:name="mytools.bookmarks:Forward" oor:op="replace">
+				<prop oor:name="URL">
+					<value>mytools.bookmarks:Forward</value>
+				</prop>
+				<node oor:name="UserDefinedImages">
+					<prop oor:name="ImageSmallURL">
+						<value>%origin%/icons/forward_16.png</value>
+					</prop>
+					<prop oor:name="ImageBigURL">
+						<value>%origin%/icons/forward_26.png</value>
+					</prop>
+                    <prop oor:name="ImageSmallHCURL">
+						<value>%origin%/icons/forward_16_h.png</value>
+					</prop>
+					<prop oor:name="ImageBigHCURL">
+						<value>%origin%/icons/forward_26_h.png</value>
+					</prop>
+				</node>
+			</node>
+		</node>
+	</node>
+</oor:component-data>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+oor:package="mytools" 
+oor:name="Bookmarks">
+	<node oor:name="Settings">
+		<prop oor:name="WebBrowser" oor:type="xs:string">
+			<value></value>
+		</prop>
+		<prop oor:name="FileManger" oor:type="xs:string">
+			<value></value>
+		</prop>
+		<prop oor:name="OpenCommand" oor:type="xs:string">
+			<value></value>
+		</prop>
+        <prop oor:name="UseCustomWebBrowser" oor:type="xs:boolean">
+			<value>false</value>
+		</prop>
+		<prop oor:name="UseCustomFileManager" oor:type="xs:boolean">
+			<value>false</value>
+		</prop>
+		<prop oor:name="UseCustomOpenCommand" oor:type="xs:boolean">
+			<value>false</value>
+		</prop>
+	</node>
+</oor:component-data>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+oor:package="mytools" 
+oor:name="Bookmarks">
+<node oor:name="Controllers">
+<node oor:name="mytools.bookmarks.BookmarksMenu:top" oor:op="replace">
+<prop oor:name="Name" oor:type="xs:string"><value>top</value></prop>
+<prop oor:name="TreeState" oor:type="xs:string"><value></value></prop>
+<prop oor:name="WindowState" oor:type="xs:string"><value></value></prop>
+<prop oor:name="DataURL"><value></value></prop>
+<prop oor:name="BackupDirectory"><value></value></prop>
+</node></node></oor:component-data>

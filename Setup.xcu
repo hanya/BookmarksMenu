@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+oor:name="Setup" 
+oor:package="org.openoffice">
+	<node oor:name="Office">
+		<node oor:name="Factories">
+			<node oor:name="mytools.bookmarks.BookmarksMenu" oor:op="replace">
+				<prop oor:name="ooSetupFactoryDocumentService">
+					<value>mytools.bookmarks.BookmarksMenu</value>
+				</prop>
+				<prop oor:name="ooSetupFactoryCommandConfigRef">
+					<value>BookmarksCommands</value>
+				</prop>
+				<prop oor:name="ooSetupFactoryActualFilter">
+					<value></value>
+				</prop>
+				<prop oor:name="ooSetupFactoryActualTemplateFilter">
+					<value></value>
+				</prop>
+				<prop oor:name="ooSetupFactoryDefaultFilter">
+					<value></value>
+				</prop>
+				<prop oor:name="ooSetupFactoryEmptyDocumentURL">
+					<value></value>
+				</prop>
+				<prop oor:name="ooSetupFactoryWindowAttributes">
+					<value>,,,;4;</value>
+				</prop>
+				<prop oor:name="ooSetupFactoryIcon">
+					<value>1</value>
+				</prop>
+				<prop oor:name="ooSetupFactoryTemplateFile">
+					<value></value>
+				</prop>
+				<prop oor:name="ooSetupFactorySystemDefaultTemplateChanged">
+					<value>false</value>
+				</prop>
+				<prop oor:name="ooSetupFactoryShortName">
+					<value>bookmarks</value>
+				</prop>
+				<prop oor:name="ooSetupFactoryUIName">
+					<value>Bookmarks</value>
+				</prop>
+				<prop oor:name="ooSetupFactoryWindowStateConfigRef">
+					<value>BookmarksWindowState</value>
+				</prop>
+				<prop oor:name="ooSetupFactoryCmdCategoryConfigRef">
+					<value>GenericCategories</value>
+				</prop>
+			</node>
+		</node>
+	</node>
+</oor:component-data>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+oor:package="org.openoffice.Office" 
+oor:name="OptionsDialog">
+<node oor:name="Modules">
+<node oor:name="mytools.bookmarks.BookmarksMenu" oor:op="fuse">
+<node oor:name="Nodes">
+<node oor:name="mytools.bookmarks.BookmarksMenu.1" oor:op="fuse">
+</node>
+</node>
+</node>
+</node>
+<node oor:name="Nodes">
+<node oor:name="mytools.bookmarks.BookmarksMenu.1" oor:op="fuse">
+<prop oor:name="Label">
+<value xml:lang="en-US">Bookmarks Menu</value>
+<value xml:lang="ja">ブックマークメニュー</value>
+</prop>
+<prop oor:name="OptionsPage">
+<value>%origin%/dialogs/OptionsTop.xdl</value>
+</prop>
+<prop oor:name="AllModules">
+<value>false</value>
+</prop>
+<node oor:name="Leaves">
+<node oor:name="mytools.bookmarks.BookmarksMenu:Data" oor:op="fuse">
+<prop oor:name="Id">
+<value>mytools.bookmarks.BookmarksMenu.Data</value>
+</prop>
+<prop oor:name="Label">
+<value xml:lang="en-US">Data</value>
+<value xml:lang="ja">データ</value>
+</prop>
+<prop oor:name="OptionsPage">
+<value>%origin%/dialogs/OptionsData.xdl</value>
+</prop>
+<prop oor:name="EventHandlerService">
+<value>bookmarks.OptionsPageHandler</value>
+</prop>
+<prop oor:name="GroupId">
+<value>bookmarks</value>
+</prop>
+<prop oor:name="GroupIndex">
+<value>0</value>
+</prop>
+</node>
+<node oor:name="mytools.bookmarks.BookmarksMenu:Settings" oor:op="fuse">
+<prop oor:name="Id">
+<value>mytools.bookmarks.BookmarksMenu.Settings</value>
+</prop>
+<prop oor:name="Label">
+<value xml:lang="en-US">Settings</value>
+<value xml:lang="ja">設定</value>
+</prop>
+<prop oor:name="OptionsPage">
+<value>%origin%/dialogs/Options.xdl</value>
+</prop>
+<prop oor:name="EventHandlerService">
+<value>bookmarks.OptionsPageHandler</value>
+</prop>
+<prop oor:name="GroupId">
+<value>bookmarks</value>
+</prop>
+<prop oor:name="GroupIndex">
+<value>1</value>
+</prop>
+</node>
+</node>
+</node>
+</node>
+</oor:component-data>

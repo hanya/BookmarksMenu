@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-schema 
+xml:lang="en-US" 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+oor:package="mytools" 
+oor:name="Bookmarks">
+	<info>
+		<desc>BookmarksMenu settings.</desc>
+	</info>
+	<templates>
+		<group oor:name="Controller">
+			<info>
+				<desc>Settings for each controller.</desc>
+			</info>
+			<prop oor:name="Name" oor:type="xs:string">
+				<info>
+					<desc>Name of the controller.</desc>
+				</info>
+			</prop>
+			<prop oor:name="TreeState" oor:type="xs:string">
+				<info>
+					<desc>Tree expanded state.</desc>
+				</info>
+			</prop>
+			<prop oor:name="WindowState" oor:type="xs:string">
+				<info>
+					<desc>Window position and something.</desc>
+				</info>
+			</prop>
+            <prop oor:name="DataURL" oor:type="xs:string">
+				<info>
+					<desc>Data file to read and write.</desc>
+				</info>
+			</prop>
+            <prop oor:name="BackupDirectory" oor:type="xs:string">
+				<info>
+					<desc>Directory to store backup files</desc>
+				</info>
+			</prop>
+		</group>
+	</templates>
+	<component>
+		<group oor:name="Settings">
+			<info>
+				<desc>Setting extension wide.</desc>
+			</info>
+			<prop oor:name="WebBrowser" oor:type="xs:string">
+				<info>
+					<desc>Web browser to open web page.</desc>
+				</info>
+			</prop>
+			<prop oor:name="FileManger" oor:type="xs:string">
+				<info>
+					<desc>Custom file manager to open folder.</desc>
+				</info>
+			</prop>
+			<prop oor:name="OpenCommand" oor:type="xs:string">
+				<info>
+					<desc>Open someting.</desc>
+				</info>
+			</prop>
+            <prop oor:name="UseCustomWebBrowser" oor:type="xs:boolean">
+				<info>
+					<desc>Use custom web browser.</desc>
+				</info>
+			</prop>
+			<prop oor:name="UseCustomFileManager" oor:type="xs:boolean">
+				<info>
+					<desc>Use custom file manager.</desc>
+				</info>
+			</prop>
+			<prop oor:name="UseCustomOpenCommand" oor:type="xs:boolean">
+				<info>
+					<desc>Use custom open command.</desc>
+				</info>
+			</prop>
+			
+		</group>
+		<set oor:name="Controllers" oor:node-type="Controller">
+			<info>
+				<desc>Controller specific settings.</desc>
+			</info>
+		</set>
+	</component>
+</oor:component-schema>
