@@ -28,6 +28,18 @@ oor:name="Controller">
 					<value>bookmarks.ShownColumnsPopupMenu</value>
 				</prop>
 			</node>
+            <node oor:name="mytools.bookmarks:TagPopupMenu" oor:op="replace">
+				<prop oor:name="Command">
+					<value>mytools.frame:TagPopupMenu</value>
+				</prop>
+				<prop oor:name="Module">
+					<value></value>
+				</prop>
+				<prop oor:name="Controller">
+					<value>bookmarks.TagPopupMenu</value>
+				</prop>
+			</node>
+            
 		</node>
 	</node>
 </oor:component-data>
