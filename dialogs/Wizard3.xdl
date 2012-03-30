@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Wizard1" dlg:left="0" dlg:top="0" dlg:width="190" dlg:height="120" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:font-weight="150"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:text dlg:style-id="0" dlg:id="label_title_3" dlg:tab-index="3" dlg:left="8" dlg:top="8" dlg:width="170" dlg:height="12" dlg:value="Choose menu position" dlg:nolabel="true"/>
+  <dlg:menulist dlg:id="list_types_position" dlg:tab-index="4" dlg:left="81" dlg:top="76" dlg:width="88" dlg:height="13" dlg:spin="true" dlg:linecount="10"/>
+  <dlg:text dlg:id="label_positioning" dlg:tab-index="5" dlg:left="12" dlg:top="60" dlg:width="63" dlg:height="12" dlg:value="Positioning"/>
+  <dlg:text dlg:id="label_position_type" dlg:tab-index="6" dlg:left="12" dlg:top="76" dlg:width="63" dlg:height="12" dlg:value="Choose in"/>
+  <dlg:menulist dlg:id="list_menu" dlg:tab-index="7" dlg:left="67" dlg:top="25" dlg:width="103" dlg:height="13" dlg:spin="true" dlg:linecount="10"/>
+  <dlg:text dlg:id="label_menu" dlg:tab-index="8" dlg:left="12" dlg:top="25" dlg:width="53" dlg:height="12" dlg:value="Menu"/>
+  <dlg:button dlg:id="btn_position" dlg:tab-index="0" dlg:left="67" dlg:top="43" dlg:width="103" dlg:height="14" dlg:value="~Choose a base position"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="option_before" dlg:tab-index="1" dlg:left="83" dlg:top="60" dlg:width="43" dlg:height="11" dlg:value="~Before" dlg:checked="true"/>
+   <dlg:radio dlg:id="option_after" dlg:tab-index="2" dlg:left="129" dlg:top="60" dlg:width="43" dlg:height="11" dlg:value="~After"/>
+  </dlg:radiogroup>
+ </dlg:bulletinboard>
+</dlg:window>

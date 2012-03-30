@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Edit" dlg:left="14" dlg:top="55" dlg:width="245" dlg:height="170" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:border="none"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:treecontrol dlg:style-id="0" dlg:id="tree" dlg:tab-index="0" dlg:left="0" dlg:top="0" dlg:width="80" dlg:height="170" dlg:tabstop="true" dlg:selectiontype="single"/>
+  <dlg:img dlg:style-id="0" dlg:id="vertsep" dlg:tab-index="1" dlg:left="80" dlg:top="0" dlg:width="2" dlg:height="170" dlg:scale-image="false" dlg:src="file:///home/asuka/Pictures/icons/vertsep.png"/>
+ </dlg:bulletinboard>
+</dlg:window>

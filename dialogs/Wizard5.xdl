@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Wizard1" dlg:left="0" dlg:top="0" dlg:width="190" dlg:height="120" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:font-weight="150"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:text dlg:style-id="0" dlg:id="label_title_5" dlg:tab-index="0" dlg:left="8" dlg:top="8" dlg:width="170" dlg:height="12" dlg:value="Choose options" dlg:nolabel="true"/>
+  <dlg:checkbox dlg:id="check_another" dlg:tab-index="1" dlg:left="12" dlg:top="45" dlg:width="134" dlg:height="12" dlg:value="Show at another position" dlg:checked="false"/>
+  <dlg:checkbox dlg:id="check_include" dlg:tab-index="2" dlg:left="12" dlg:top="59" dlg:width="134" dlg:height="12" dlg:value="Include bookmark data into the package" dlg:checked="false"/>
+ </dlg:bulletinboard>
+</dlg:window>

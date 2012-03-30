@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="BookmarkThis" dlg:left="88" dlg:top="62" dlg:width="163" dlg:height="120" dlg:closeable="true" dlg:moveable="true" dlg:title="New Bookmark">
+ <dlg:bulletinboard>
+  <dlg:text dlg:id="label_name" dlg:tab-index="0" dlg:left="5" dlg:top="5" dlg:width="35" dlg:height="12" dlg:value="Name"/>
+  <dlg:text dlg:id="label_folder" dlg:tab-index="8" dlg:left="5" dlg:top="20" dlg:width="35" dlg:height="12" dlg:value="Folder"/>
+  <dlg:text dlg:id="label_description" dlg:tab-index="9" dlg:left="5" dlg:top="76" dlg:width="35" dlg:height="12" dlg:value="Description"/>
+  <dlg:button dlg:id="btn_help" dlg:help-url="mytools.bookmarks.BookmarksMenu:new.this" dlg:tab-index="7" dlg:left="5" dlg:top="105" dlg:width="41" dlg:height="12" dlg:value="Help" dlg:button-type="help"/>
+  <dlg:button dlg:id="btn_ok" dlg:tab-index="5" dlg:left="73" dlg:top="105" dlg:width="41" dlg:height="12" dlg:default="true" dlg:value="OK" dlg:button-type="ok"/>
+  <dlg:button dlg:id="btn_cancel" dlg:tab-index="6" dlg:left="118" dlg:top="105" dlg:width="41" dlg:height="12" dlg:value="Cancel" dlg:button-type="cancel"/>
+  <dlg:treecontrol dlg:id="tree_folder" dlg:tab-index="2" dlg:left="45" dlg:top="20" dlg:width="113" dlg:height="22" dlg:tabstop="true" dlg:selectiontype="single"/>
+  <dlg:textfield dlg:id="edit_name" dlg:tab-index="1" dlg:left="45" dlg:top="5" dlg:width="113" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_description" dlg:tab-index="4" dlg:left="45" dlg:top="76" dlg:width="113" dlg:height="25" dlg:multiline="true"/>
+  <dlg:button dlg:id="btn_folder" dlg:tab-index="3" dlg:left="45" dlg:top="45" dlg:width="50" dlg:height="12" dlg:value="New ~Folder"/>
+  <dlg:text dlg:id="label_tags" dlg:tab-index="10" dlg:left="5" dlg:top="60" dlg:width="35" dlg:height="12" dlg:value="Tags"/>
+  <dlg:textfield dlg:id="edit_tags" dlg:tab-index="11" dlg:left="45" dlg:top="60" dlg:width="113" dlg:height="12"/>
+ </dlg:bulletinboard>
+</dlg:window>

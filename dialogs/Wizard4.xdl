@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Wizard1" dlg:left="0" dlg:top="0" dlg:width="190" dlg:height="120" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:font-weight="150"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:text dlg:style-id="0" dlg:id="label_title_4" dlg:tab-index="3" dlg:left="8" dlg:top="8" dlg:width="170" dlg:height="12" dlg:value="Document types which this menu item is shown" dlg:nolabel="true"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="option_types_all" dlg:tab-index="0" dlg:left="13" dlg:top="25" dlg:width="54" dlg:height="12" dlg:value="A~ll" dlg:checked="true"/>
+   <dlg:radio dlg:id="option_types_select" dlg:tab-index="1" dlg:left="13" dlg:top="41" dlg:width="54" dlg:height="12" dlg:value="~Select"/>
+  </dlg:radiogroup>
+  <dlg:menulist dlg:id="list_types" dlg:tab-index="2" dlg:left="74" dlg:top="25" dlg:width="86" dlg:height="84" dlg:multiselection="true"/>
+ </dlg:bulletinboard>
+</dlg:window>

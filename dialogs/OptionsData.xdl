@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="OptionsData" dlg:left="0" dlg:top="0" dlg:width="260" dlg:height="185" dlg:closeable="true" dlg:moveable="true" dlg:title="OptionsData" dlg:withtitlebar="false">
+ <dlg:bulletinboard>
+  <dlg:fixedline dlg:id="line_data" dlg:tab-index="0" dlg:left="5" dlg:top="4" dlg:width="245" dlg:height="10" dlg:value="Bookmarks data file"/>
+  <dlg:textfield dlg:id="edit_data" dlg:tab-index="1" dlg:left="8" dlg:top="20" dlg:width="195" dlg:height="12"/>
+  <dlg:fixedline dlg:id="line_backup" dlg:tab-index="5" dlg:left="5" dlg:top="40" dlg:width="245" dlg:height="10" dlg:value="Backup directory"/>
+  <dlg:textfield dlg:id="edit_backup" dlg:tab-index="3" dlg:left="8" dlg:top="57" dlg:width="194" dlg:height="12"/>
+  <dlg:button dlg:id="btn_backup" dlg:tab-index="4" dlg:left="208" dlg:top="57" dlg:width="39" dlg:height="12" dlg:value="~Select"/>
+  <dlg:button dlg:id="btn_data" dlg:tab-index="2" dlg:left="209" dlg:top="20" dlg:width="39" dlg:height="12" dlg:value="~Select"/>
+ </dlg:bulletinboard>
+</dlg:window>

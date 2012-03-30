@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Selector" dlg:left="24" dlg:top="14" dlg:width="193" dlg:height="185" dlg:closeable="true" dlg:moveable="true" dlg:title="Macro Selector">
+ <dlg:bulletinboard>
+  <dlg:text dlg:id="label_libraries" dlg:tab-index="2" dlg:left="3" dlg:top="1" dlg:width="84" dlg:height="12" dlg:value="Libraries" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_names" dlg:tab-index="6" dlg:left="93" dlg:top="1" dlg:width="95" dlg:height="12" dlg:value="Names" dlg:nolabel="true"/>
+  <dlg:treecontrol dlg:id="tree_libraries" dlg:tab-index="0" dlg:left="3" dlg:top="15" dlg:width="88" dlg:height="111" dlg:tabstop="true"/>
+  <dlg:menulist dlg:id="list_names" dlg:tab-index="1" dlg:left="93" dlg:top="15" dlg:width="97" dlg:height="111"/>
+  <dlg:button dlg:id="btn_help" dlg:help-url="mytools.bookmarks.BookmarksMenu:new.macro" dlg:tab-index="5" dlg:left="3" dlg:top="168" dlg:width="41" dlg:height="14" dlg:value="Help" dlg:button-type="help"/>
+  <dlg:button dlg:id="btn_cancel" dlg:tab-index="4" dlg:left="148" dlg:top="168" dlg:width="41" dlg:height="14" dlg:value="Cancel" dlg:button-type="cancel"/>
+  <dlg:fixedline dlg:id="line_description" dlg:tab-index="7" dlg:left="3" dlg:top="130" dlg:width="186" dlg:height="9" dlg:value="Description"/>
+  <dlg:text dlg:id="label_description" dlg:tab-index="8" dlg:left="8" dlg:top="141" dlg:width="181" dlg:height="23"/>
+  <dlg:button dlg:id="btn_ok" dlg:tab-index="3" dlg:left="103" dlg:top="168" dlg:width="41" dlg:height="14" dlg:default="true" dlg:value="OK" dlg:button-type="ok"/>
+ </dlg:bulletinboard>
+</dlg:window>

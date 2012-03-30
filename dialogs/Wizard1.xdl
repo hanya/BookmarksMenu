@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Wizard1" dlg:left="0" dlg:top="0" dlg:width="190" dlg:height="120" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:font-weight="150"/>
+  <dlg:style dlg:style-id="1" dlg:border="none"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:text dlg:style-id="0" dlg:id="label_title_1" dlg:tab-index="2" dlg:left="8" dlg:top="8" dlg:width="170" dlg:height="12" dlg:value="Input name which is used as menu identifier" dlg:nolabel="true"/>
+  <dlg:combobox dlg:id="combo_name" dlg:tab-index="0" dlg:left="14" dlg:top="25" dlg:width="102" dlg:height="12" dlg:spin="true" dlg:maxlength="50"/>
+  <dlg:text dlg:id="label_name" dlg:tab-index="1" dlg:left="18" dlg:top="41" dlg:width="93" dlg:height="12" dlg:value="[A-Za-z0-9_]+$" dlg:checked="false"/>
+  <dlg:text dlg:id="label_description" dlg:tab-index="3" dlg:left="24" dlg:top="77" dlg:width="153" dlg:height="25" dlg:value="This wizard generates an extension package which adds bookmarks menu in the menu." dlg:multiline="true"/>
+  <dlg:img dlg:style-id="1" dlg:id="ImageControl1" dlg:tab-index="4" dlg:left="8" dlg:top="77" dlg:width="16" dlg:height="25" dlg:scale-image="false" dlg:src="private:graphicrepository/res/info_16.png"/>
+ </dlg:bulletinboard>
+</dlg:window>

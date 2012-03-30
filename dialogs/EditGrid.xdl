@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="EditGrid" dlg:left="85" dlg:top="19" dlg:width="135" dlg:height="93" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false"/>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Options" dlg:left="0" dlg:top="0" dlg:width="260" dlg:height="185" dlg:closeable="true" dlg:moveable="true" dlg:title="Options" dlg:withtitlebar="false">
+ <dlg:bulletinboard>
+  <dlg:fixedline dlg:id="line_webbrowser" dlg:tab-index="1" dlg:left="5" dlg:top="4" dlg:width="245" dlg:height="10" dlg:value="Web browser"/>
+  <dlg:fixedline dlg:id="line_filemanager" dlg:tab-index="10" dlg:left="5" dlg:top="47" dlg:width="245" dlg:height="10" dlg:value="File manager"/>
+  <dlg:fixedline dlg:id="line_opencommand" dlg:tab-index="11" dlg:left="5" dlg:top="89" dlg:width="245" dlg:height="10" dlg:value="Open command"/>
+  <dlg:checkbox dlg:id="check_webbrowser" dlg:tab-index="0" dlg:left="9" dlg:top="17" dlg:width="155" dlg:height="12" dlg:value="~Use custom" dlg:checked="false"/>
+  <dlg:checkbox dlg:id="check_filemanager" dlg:tab-index="4" dlg:left="8" dlg:top="59" dlg:width="155" dlg:height="12" dlg:value="~Use custom" dlg:checked="false"/>
+  <dlg:checkbox dlg:id="check_opencommand" dlg:tab-index="7" dlg:left="8" dlg:top="101" dlg:width="155" dlg:height="12" dlg:value="~Use custom" dlg:checked="false"/>
+  <dlg:textfield dlg:id="edit_webbrowser" dlg:tab-index="2" dlg:left="8" dlg:top="31" dlg:width="195" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_filemanager" dlg:tab-index="5" dlg:left="8" dlg:top="75" dlg:width="194" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_opencommand" dlg:tab-index="8" dlg:left="8" dlg:top="116" dlg:width="194" dlg:height="12"/>
+  <dlg:button dlg:id="btn_webbrowser" dlg:tab-index="3" dlg:left="209" dlg:top="31" dlg:width="39" dlg:height="12" dlg:value="~Select"/>
+  <dlg:button dlg:id="btn_filemanager" dlg:tab-index="6" dlg:left="208" dlg:top="75" dlg:width="39" dlg:height="12" dlg:value="~Select"/>
+  <dlg:button dlg:id="btn_opencommand" dlg:tab-index="9" dlg:left="208" dlg:top="116" dlg:width="39" dlg:height="12" dlg:value="~Select"/>
+ </dlg:bulletinboard>
+</dlg:window>

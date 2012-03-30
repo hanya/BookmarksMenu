@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="EditData" dlg:left="82" dlg:top="110" dlg:width="172" dlg:height="127" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:bulletinboard>
+  <dlg:text dlg:id="label_name" dlg:tab-index="0" dlg:left="3" dlg:top="6" dlg:width="33" dlg:height="12" dlg:value="Name" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_value1" dlg:tab-index="1" dlg:left="3" dlg:top="22" dlg:width="33" dlg:height="12" dlg:value="" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_value2" dlg:tab-index="2" dlg:left="3" dlg:top="38" dlg:width="33" dlg:height="12" dlg:value="" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_tags" dlg:tab-index="3" dlg:left="3" dlg:top="54" dlg:width="33" dlg:height="12" dlg:value="Tags" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_description" dlg:tab-index="4" dlg:left="3" dlg:top="84" dlg:width="33" dlg:height="12" dlg:value="Description" dlg:nolabel="true"/>
+  
+  <dlg:textfield dlg:id="edit_name" dlg:tab-index="5" dlg:help-text="Shown as label in the menu" dlg:left="40" dlg:top="6" dlg:width="127" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_value1" dlg:tab-index="6" dlg:left="40" dlg:top="22" dlg:width="90" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_value2" dlg:tab-index="8" dlg:left="40" dlg:top="38" dlg:width="126" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_tags" dlg:tab-index="9" dlg:help-text="Separate tags with commas" dlg:left="40" dlg:top="54" dlg:width="102" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_description" dlg:tab-index="10" dlg:help-text="Shown as tooltip in the menu" dlg:left="40" dlg:top="85" dlg:width="126" dlg:height="37" dlg:multiline="true"/>
+  <dlg:button dlg:id="btn_value1" dlg:tab-index="7" dlg:left="133" dlg:top="22" dlg:width="35" dlg:height="12" dlg:value="~Select"/>
+ </dlg:bulletinboard>
+</dlg:window>

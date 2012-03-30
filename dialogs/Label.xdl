@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Label" dlg:left="90" dlg:top="94" dlg:width="163" dlg:height="64" dlg:closeable="true" dlg:moveable="true" dlg:title="Label">
+ <dlg:bulletinboard>
+  <dlg:text dlg:id="label_locale" dlg:tab-index="0" dlg:left="7" dlg:top="6" dlg:width="41" dlg:height="12" dlg:value="Locale" dlg:nolabel="true"/>
+  <dlg:menulist dlg:id="list_locale" dlg:tab-index="1" dlg:left="51" dlg:top="6" dlg:width="68" dlg:height="12" dlg:spin="true"/>
+  <dlg:text dlg:id="label_label" dlg:tab-index="2" dlg:left="7" dlg:top="24" dlg:width="41" dlg:height="12" dlg:value="Label" dlg:nolabel="true"/>
+  <dlg:textfield dlg:id="edit_label" dlg:tab-index="3" dlg:left="51" dlg:top="24" dlg:width="68" dlg:height="12"/>
+  <dlg:button dlg:id="btn_help" dlg:help-url="mytools.bookmarks.BookmarksMenu:wizard.label" dlg:tab-index="6" dlg:left="5" dlg:top="44" dlg:width="41" dlg:height="12" dlg:value="Help" dlg:button-type="help"/>
+  <dlg:button dlg:id="btn_ok" dlg:tab-index="4" dlg:left="74" dlg:top="44" dlg:width="41" dlg:height="12" dlg:default="true" dlg:value="OK" dlg:button-type="ok"/>
+  <dlg:button dlg:id="btn_cancel" dlg:tab-index="5" dlg:left="118" dlg:top="44" dlg:width="41" dlg:height="12" dlg:value="Cancel" dlg:button-type="cancel"/>
+ </dlg:bulletinboard>
+</dlg:window>

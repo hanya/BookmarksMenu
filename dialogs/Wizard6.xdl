@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Wizard1" dlg:left="0" dlg:top="0" dlg:width="190" dlg:height="120" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:font-weight="150"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:text dlg:style-id="0" dlg:id="label_title_6" dlg:tab-index="0" dlg:left="8" dlg:top="8" dlg:width="170" dlg:height="12" dlg:value="Generate extension package" dlg:nolabel="true"/>
+  <!--
+  <dlg:button dlg:id="btn_install" dlg:tab-index="1" dlg:left="22" dlg:top="25" dlg:width="68" dlg:height="14" dlg:value="Install"/>
+  <dlg:button dlg:id="btn_export" dlg:tab-index="2" dlg:left="22" dlg:top="45" dlg:width="68" dlg:height="14" dlg:value="Export"/>
+  -->
+  <dlg:text dlg:id="label_description" dlg:tab-index="1" dlg:left="24" dlg:top="77" dlg:width="153" dlg:height="25" dlg:value="Click Finish button to save extension package." dlg:multiline="true"/>
+ </dlg:bulletinboard>
+</dlg:window>
