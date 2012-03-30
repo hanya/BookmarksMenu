@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menu:menubar PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "menubar.dtd">
+<menu:menubar xmlns:menu="http://openoffice.org/2001/menu" menu:id="menubar">
+ <menu:menu menu:id=".uno:PickList" menu:label="">
+  <menu:menupopup>
+   <menu:menuitem menu:id=".uno:AddDirect"/>
+   <menu:menuitem menu:id=".uno:Open"/>
+   <menu:menuitem menu:id=".uno:RecentFileList"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:CloseDoc"/>
+   <menu:menuitem menu:id=".uno:Save"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:ExportTo"/>
+   <menu:menuseparator/>
+   <menu:menu menu:id=".uno:TemplateMenu" menu:label="">
+    <menu:menupopup>
+     <menu:menuitem menu:id=".uno:Organizer"/>
+     <menu:menuitem menu:id=".uno:AddressBookSource"/>
+     <menu:menuitem menu:id=".uno:SaveAsTemplate"/>
+     <menu:menuitem menu:id=".uno:OpenTemplate"/>
+    </menu:menupopup>
+   </menu:menu>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:Quit"/>
+  </menu:menupopup>
+ </menu:menu>
+ <menu:menu menu:id=".uno:EditMenu" menu:label="">
+  <menu:menupopup>
+   <menu:menuitem menu:id=".uno:Undo"/>
+   <menu:menuitem menu:id=".uno:Redo"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:Cut"/>
+   <menu:menuitem menu:id=".uno:Copy"/>
+   <menu:menuitem menu:id=".uno:Paste"/>
+   <menu:menuitem menu:id=".uno:SelectAll"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id="mytools.bookmarks:Move"/>
+  </menu:menupopup>
+ </menu:menu>
+ <menu:menu menu:id=".uno:ViewMenu" menu:label="">
+  <menu:menupopup>
+   <menu:menuitem menu:id="mytools.bookmarks:Back"/>
+   <menu:menuitem menu:id="mytools.bookmarks:Forward"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:AvailableToolbars"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id="mytools.bookmarks:ShownInfo"/>
+  </menu:menupopup>
+ </menu:menu>
+ <menu:menu menu:id=".uno:InsertMenu" menu:label="">
+  <menu:menupopup>
+   <menu:menuitem menu:id="mytools.bookmarks:InsertBookmark"/>
+   <menu:menuitem menu:id="mytools.bookmarks:InsertSeparator"/>
+   <menu:menuitem menu:id="mytools.bookmarks:InsertFolder"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:InsertDoc"/>
+  </menu:menupopup>
+ </menu:menu>
+ <menu:menu menu:id=".uno:ToolsMenu" menu:label="">
+  <menu:menupopup>
+   <menu:menuitem menu:id="mytools.bookmarks:Migration"/>
+   <menu:menuitem menu:id="mytools.bookmarks:NewMenu"/>
+   <menu:menuseparator/>
+   <menu:menu menu:id=".uno:MacrosMenu" menu:label="">
+    <menu:menupopup>
+     <menu:menuitem menu:id=".uno:RunMacro"/>
+     <menu:menu menu:id=".uno:ScriptOrganizer" menu:label="">
+      <menu:menupopup/>
+     </menu:menu>
+     <menu:menuseparator/>
+     <menu:menuitem menu:id=".uno:MacroOrganizer?TabId:short=1"/>
+    </menu:menupopup>
+   </menu:menu>
+   <menu:menuitem menu:id="service:com.sun.star.deployment.ui.PackageManagerDialog"/>
+   <menu:menuitem menu:id=".uno:ConfigureDialog"/>
+   <menu:menuitem menu:id=".uno:OptionsTreeDialog"/>
+  </menu:menupopup>
+ </menu:menu>
+ <menu:menu menu:id=".uno:WindowList" menu:label="">
+  <menu:menupopup>
+   <menu:menuitem menu:id=".uno:CloseWin"/>
+   <menu:menuseparator/>
+  </menu:menupopup>
+ </menu:menu>
+ <menu:menu menu:id=".uno:HelpMenu" menu:label="">
+  <menu:menupopup>
+   <menu:menuitem menu:id=".uno:HelpIndex"/>
+   <menu:menuitem menu:id=".uno:ExtendedHelp"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id="mytools.bookmarks:About"/>
+   <menu:menuseparator/>
+   <menu:menuitem menu:id=".uno:About"/>
+  </menu:menupopup>
+ </menu:menu>
+</menu:menubar>
