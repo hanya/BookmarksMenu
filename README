@@ -1,0 +1,18 @@
+
+This is an extension provides favorite menu for OpenOffice.
+
+Requirements
+ Current version supports Apache OpenOffice 3.4 and later version. 
+ This is written in Python, which is required to execute 
+ PyUNO bridge installation.
+ This extension has following problems on LibreOffice: 
+ - Drag and drop movement do not work on the grid control.
+
+Packaging
+ Compiling is not required but files have to be packed into 
+OXT package. zip command is required to make package.
+ > ./mkzip.sh
+
+ Help files are converted from MediaWiki syntax to xhp format. 
+mwxhp is used this task.
+ > python mwxhpconv -f bookmarksmenu.xml
