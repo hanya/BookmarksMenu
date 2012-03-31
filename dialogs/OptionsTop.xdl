@@ -9,6 +9,6 @@
   <dlg:fixedline dlg:id="line" dlg:tab-index="3" dlg:left="5" dlg:top="32" dlg:width="250" dlg:height="2"/>
   <dlg:text dlg:style-id="0" dlg:id="label_title" dlg:tab-index="1" dlg:left="31" dlg:top="9" dlg:width="150" dlg:height="16" dlg:value="&amp;id.OptionsTop.label_title.Label"/>
   <dlg:img dlg:style-id="1" dlg:id="image_logo" dlg:tab-index="0" dlg:left="6" dlg:top="4" dlg:width="20" dlg:height="25" dlg:scale-image="false" dlg:src="vnd.sun.star.extension://mytools.bookmarks.BookmarksMenu/icons/settings_32.png"/>
-  <dlg:text dlg:id="label_description" dlg:tab-index="2" dlg:left="30" dlg:top="41" dlg:width="184" dlg:height="55" dlg:value="&amp;id.OptionsTop.label_description.Label"/>
+  <dlg:text dlg:id="label_description" dlg:tab-index="2" dlg:left="30" dlg:top="41" dlg:width="220" dlg:height="55" dlg:value="&amp;id.OptionsTop.label_description.Label"/>
  </dlg:bulletinboard>
 </dlg:window>
