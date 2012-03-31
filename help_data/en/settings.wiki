@@ -48,9 +48,13 @@ if custom value is not specified to use.
 |nautilus
 |gnome-open
 |-
-|KDE
+|KDE 3
 |kfmclient exec
 |kfmclient exec
+|-
+|KDE 4
+|kioclient exec
+|kioclient exec
 |-
 |Mate
 |caja
