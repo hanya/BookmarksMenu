@@ -40,6 +40,11 @@
 #* ファイル選択ダイアログでファイルの種類を選択すると、ファイルを開くときに利用されます。
 #* すべてのファイルを選択すると、ファイルの種類は自動的に判別されます。
 
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.document.filter|bookmarks|Document filter}}
+
+フィルタセクションの入力ボタンをクリックすると、フィルタダイアログが開きます。
+このダイアログでファイルを開くフィルタを選択できます。
+
 {{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.macro|bookmarks|マクロ}}
 
 == マクロ ==
@@ -58,6 +63,11 @@
 
 この項目では一番最近開いたドキュメントのウィンドウから情報を取得しようとします。
 したがって、カテゴリがほとんど表示されなかった場合、一度ダイアログを閉じて、新しいドキュメントを開いてから、再度コマンド選択ダイアログを開いてください。
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.command.arguments|bookmarks|引数入力}}
+
+引数セクションの入力ボタンをクリックすると、引数ダイアログがひらきます。
+キー、値の組を入力してください。このダイアログでは十組までの引数が入力できます。
 
 == プログラム ==
 この項目ではプログラムを実行します。

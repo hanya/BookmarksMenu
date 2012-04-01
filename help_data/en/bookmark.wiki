@@ -42,6 +42,11 @@ If you want to open a file in the office, choose this entry.
 #* If you choose a file filter in the file picker dialog, it is used to open your file.
 #* If you choose All files as a filter, the filter is automatically chosen to open your file by the office.
 
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.document.filter|bookmarks|Document filter}}
+
+When you click Input button in the Filter section, File filter dialog is opened. 
+You can choose a filter to open the file in this dialog.
+
 {{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.macro|bookmarks|Macro}}
 
 == Macro ==
@@ -61,6 +66,11 @@ context menu or shortcut keys.
 
 This entry requires living document and the extension trying to use most recent opened window of the document. 
 Therefore create a new document and reopen the dialog when you can see only a few categories in the Select Command dialog.
+
+{{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.command.arguments|bookmarks|Input arguments}}
+
+When you click Input button in the arguments section, Arguments dialog is shown. 
+Input key, value pairs, the dialog allows you to input up to ten pairs.
 
 == Program ==
 You can run a program though bookmark item with this kind of entry. 
