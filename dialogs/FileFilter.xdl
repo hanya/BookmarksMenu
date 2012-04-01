@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="FileFilter" dlg:left="66" dlg:top="60" dlg:width="163" dlg:height="55" dlg:closeable="true" dlg:moveable="true" dlg:title="File filter">
+ <dlg:bulletinboard>
+  <dlg:menulist dlg:id="list_filter" dlg:tab-index="1" dlg:left="5" dlg:top="18" dlg:width="147" dlg:height="12" dlg:spin="true" dlg:linecount="10"/>
+  <dlg:text dlg:id="label_filter" dlg:tab-index="0" dlg:left="3" dlg:top="2" dlg:width="69" dlg:height="12" dlg:value="File filter" dlg:nolabel="true"/>
+  <dlg:button dlg:id="btn_help" dlg:tab-index="4" dlg:left="5" dlg:top="36" dlg:width="41" dlg:height="12" dlg:value="Help" dlg:button-type="help"/>
+  <dlg:button dlg:id="btn_ok" dlg:tab-index="2" dlg:left="73" dlg:top="36" dlg:width="41" dlg:height="12" dlg:default="true" dlg:value="OK" dlg:button-type="ok"/>
+  <dlg:button dlg:id="btn_cancel" dlg:tab-index="3" dlg:left="118" dlg:top="36" dlg:width="41" dlg:height="12" dlg:value="Cancel" dlg:button-type="cancel"/>
+ </dlg:bulletinboard>
+</dlg:window>

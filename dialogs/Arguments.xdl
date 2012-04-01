@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="Arguments" dlg:left="60" dlg:top="60" dlg:width="191" dlg:height="88" dlg:closeable="true" dlg:moveable="true" dlg:title="Arguments">
+ <dlg:styles>
+  <dlg:style dlg:style-id="0" dlg:border="none"/>
+ </dlg:styles>
+ <dlg:bulletinboard>
+  <dlg:button dlg:id="btn_help" dlg:tab-index="14" dlg:left="7" dlg:top="71" dlg:width="41" dlg:height="12" dlg:value="Help" dlg:button-type="help"/>
+  <dlg:button dlg:id="btn_ok" dlg:tab-index="12" dlg:left="75" dlg:top="71" dlg:width="41" dlg:height="12" dlg:default="true" dlg:value="OK" dlg:button-type="ok"/>
+  <dlg:button dlg:id="btn_cancel" dlg:tab-index="13" dlg:left="120" dlg:top="71" dlg:width="41" dlg:height="12" dlg:value="Cancel" dlg:button-type="cancel"/>
+  <dlg:text dlg:id="label_key" dlg:tab-index="0" dlg:left="3" dlg:top="3" dlg:width="58" dlg:height="11" dlg:value="Key" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_value" dlg:tab-index="1" dlg:left="65" dlg:top="3" dlg:width="110" dlg:height="11" dlg:value="Value" dlg:nolabel="true"/>
+  <dlg:scrollbar dlg:style-id="0" dlg:id="scroll" dlg:tab-index="11" dlg:left="178" dlg:top="15" dlg:width="8" dlg:height="44" dlg:align="vertical" dlg:pageincrement="3" dlg:maxpos="7" dlg:tabstop="false"/>
+  <dlg:textfield dlg:id="edit_key1" dlg:tab-index="2" dlg:left="3" dlg:top="15" dlg:width="58" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_key2" dlg:tab-index="5" dlg:left="3" dlg:top="31" dlg:width="58" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_key3" dlg:tab-index="8" dlg:left="3" dlg:top="47" dlg:width="58" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_value1" dlg:tab-index="3" dlg:left="64" dlg:top="15" dlg:width="75" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_value2" dlg:tab-index="6" dlg:left="64" dlg:top="31" dlg:width="75" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_value3" dlg:tab-index="9" dlg:left="64" dlg:top="47" dlg:width="75" dlg:height="12"/>
+  <dlg:button dlg:id="btn_value1" dlg:tab-index="4" dlg:left="143" dlg:top="15" dlg:width="32" dlg:height="12" dlg:value="~Select"/>
+  <dlg:button dlg:id="btn_value2" dlg:tab-index="7" dlg:left="143" dlg:top="31" dlg:width="32" dlg:height="12" dlg:value="~Select"/>
+  <dlg:button dlg:id="btn_value3" dlg:tab-index="10" dlg:left="143" dlg:top="47" dlg:width="32" dlg:height="12" dlg:value="~Select"/>
+ </dlg:bulletinboard>
+</dlg:window>
