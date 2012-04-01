@@ -3,32 +3,33 @@
 <dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="NewBookmark" dlg:left="58" dlg:top="67" dlg:width="173" dlg:height="155" dlg:closeable="true" dlg:moveable="true" dlg:title="New Bookmark">
  <dlg:bulletinboard>
   <dlg:text dlg:id="label_name" dlg:tab-index="0" dlg:left="5" dlg:top="35" dlg:width="33" dlg:height="12" dlg:value="Name" dlg:nolabel="true"/>
-  <dlg:text dlg:id="label_value1" dlg:tab-index="15" dlg:left="5" dlg:top="51" dlg:width="33" dlg:height="12" dlg:value="Value1" dlg:nolabel="true"/>
-  <dlg:text dlg:id="label_value2" dlg:tab-index="16" dlg:left="5" dlg:top="67" dlg:width="33" dlg:height="12" dlg:value="Value2" dlg:nolabel="true"/>
-  <dlg:text dlg:id="label_description" dlg:tab-index="17" dlg:left="5" dlg:top="99" dlg:width="33" dlg:height="12" dlg:value="Description" dlg:nolabel="true"/>
-  <dlg:textfield dlg:id="edit_name" dlg:tab-index="1" dlg:left="42" dlg:top="35" dlg:width="127" dlg:height="12"/>
-  <dlg:textfield dlg:id="edit_value1" dlg:tab-index="6" dlg:left="42" dlg:top="51" dlg:width="90" dlg:height="12"/>
-  <dlg:textfield dlg:id="edit_value2" dlg:tab-index="8" dlg:left="42" dlg:top="67" dlg:width="126" dlg:height="12"/>
-  <dlg:textfield dlg:id="edit_description" dlg:tab-index="10" dlg:left="42" dlg:top="99" dlg:width="126" dlg:height="37" dlg:multiline="true"/>
-  <dlg:button dlg:id="btn_value1" dlg:tab-index="7" dlg:left="135" dlg:top="51" dlg:width="35" dlg:height="12" dlg:value="~Select"/>
-  <dlg:button dlg:id="btn_ok" dlg:tab-index="11" dlg:left="47" dlg:top="141" dlg:width="41" dlg:height="12" dlg:default="true" dlg:value="OK" dlg:button-type="ok"/>
-  <dlg:button dlg:id="btn_cancel" dlg:tab-index="12" dlg:left="89" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="Cancel" dlg:button-type="cancel"/>
-  <dlg:button dlg:id="btn_help" dlg:help-url="mytools.bookmarks.BookmarksMenu:new" dlg:tab-index="14" dlg:left="3" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="Help" dlg:button-type="help"/>
-  <dlg:text dlg:id="label_type" dlg:tab-index="18" dlg:left="5" dlg:top="9" dlg:width="33" dlg:height="12" dlg:value="Type" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_type" dlg:tab-index="1" dlg:left="5" dlg:top="9" dlg:width="33" dlg:height="12" dlg:value="Type" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_value1" dlg:tab-index="2" dlg:left="5" dlg:top="51" dlg:width="33" dlg:height="12" dlg:value="Value1" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_value2" dlg:tab-index="3" dlg:left="5" dlg:top="67" dlg:width="33" dlg:height="12" dlg:value="Value2" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_tags" dlg:tab-index="4" dlg:left="5" dlg:top="82" dlg:width="33" dlg:height="12" dlg:value="Tags" dlg:nolabel="true"/>
+  <dlg:text dlg:id="label_description" dlg:tab-index="5" dlg:left="5" dlg:top="99" dlg:width="33" dlg:height="12" dlg:value="Description" dlg:nolabel="true"/>
+  <dlg:textfield dlg:id="edit_name" dlg:tab-index="6" dlg:left="42" dlg:top="35" dlg:width="127" dlg:height="12"/>
   <dlg:radiogroup>
-   <dlg:radio dlg:id="option_file" dlg:tab-index="2" dlg:left="43" dlg:top="6" dlg:width="41" dlg:height="12" dlg:value="File" dlg:checked="true"/>
-   <dlg:radio dlg:id="option_folder" dlg:tab-index="3" dlg:left="86" dlg:top="6" dlg:width="41" dlg:height="12" dlg:value="Folder"/>
-   <dlg:radio dlg:id="option_web" dlg:tab-index="4" dlg:left="128" dlg:top="6" dlg:width="41" dlg:height="12" dlg:value="Web"/>
+   <dlg:radio dlg:id="option_file" dlg:tab-index="7" dlg:left="43" dlg:top="6" dlg:width="41" dlg:height="12" dlg:value="File" dlg:checked="true"/>
+   <dlg:radio dlg:id="option_folder" dlg:tab-index="8" dlg:left="86" dlg:top="6" dlg:width="41" dlg:height="12" dlg:value="Folder"/>
+   <dlg:radio dlg:id="option_web" dlg:tab-index="9" dlg:left="128" dlg:top="6" dlg:width="41" dlg:height="12" dlg:value="Web"/>
   </dlg:radiogroup>
-  <dlg:menulist dlg:id="list_special" dlg:tab-index="5" dlg:left="42" dlg:top="20" dlg:width="127" dlg:height="12" dlg:spin="true">
+  <dlg:menulist dlg:id="list_special" dlg:tab-index="10" dlg:left="42" dlg:top="20" dlg:width="127" dlg:height="12" dlg:spin="true">
    <dlg:menupopup>
     <dlg:menuitem dlg:value="&quot;Open...&quot; from specific folder"/>
     <dlg:menuitem dlg:value="&quot;Save As...&quot; into specific folder"/>
     <dlg:menuitem dlg:value="Place Menu"/>
    </dlg:menupopup>
   </dlg:menulist>
-  <dlg:button dlg:id="btn_reset" dlg:tab-index="13" dlg:left="132" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="~Reset"/>
-  <dlg:text dlg:id="label_tags" dlg:tab-index="19" dlg:left="5" dlg:top="82" dlg:width="33" dlg:height="12" dlg:value="Tags" dlg:nolabel="true"/>
-  <dlg:textfield dlg:id="edit_tags" dlg:tab-index="9" dlg:left="42" dlg:top="82" dlg:width="126" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_value1" dlg:tab-index="11" dlg:left="42" dlg:top="51" dlg:width="90" dlg:height="12"/>
+  <dlg:button dlg:id="btn_value1" dlg:tab-index="12" dlg:left="135" dlg:top="51" dlg:width="35" dlg:height="12" dlg:value="~Select"/>
+  <dlg:textfield dlg:id="edit_value2" dlg:tab-index="13" dlg:left="42" dlg:top="67" dlg:width="126" dlg:height="12"/>
+  <dlg:button dlg:id="btn_value2" dlg:tab-index="14" dlg:left="135" dlg:top="51" dlg:width="35" dlg:height="12" dlg:value="~Input"/>
+  <dlg:textfield dlg:id="edit_tags" dlg:tab-index="15" dlg:left="42" dlg:top="82" dlg:width="126" dlg:height="12"/>
+  <dlg:textfield dlg:id="edit_description" dlg:tab-index="16" dlg:left="42" dlg:top="99" dlg:width="126" dlg:height="37" dlg:multiline="true"/>
+  <dlg:button dlg:id="btn_ok" dlg:tab-index="17" dlg:left="47" dlg:top="141" dlg:width="41" dlg:height="12" dlg:default="true" dlg:value="OK" dlg:button-type="ok"/>
+  <dlg:button dlg:id="btn_cancel" dlg:tab-index="18" dlg:left="89" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="Cancel" dlg:button-type="cancel"/>
+  <dlg:button dlg:id="btn_help" dlg:help-url="mytools.bookmarks.BookmarksMenu:new" dlg:tab-index="19" dlg:left="3" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="Help" dlg:button-type="help"/>
+  <dlg:button dlg:id="btn_reset" dlg:tab-index="20" dlg:left="132" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="~Reset"/>
  </dlg:bulletinboard>
 </dlg:window>
