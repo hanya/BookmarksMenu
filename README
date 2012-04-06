@@ -1,10 +1,10 @@
 
-This is an extension provides favorite menu for OpenOffice.
+Bookmarks Menu is an extension which provides farovite menu.
 
 Requirements
  Current version supports Apache OpenOffice 3.4 and later version. 
- This is written in Python, which is required to execute 
- PyUNO bridge installation.
+ This is written in Python, which is required to execute PyUNO bridge 
+installation.
  This extension has following problems on LibreOffice: 
  - Drag and drop movement do not work on the grid control.
 
