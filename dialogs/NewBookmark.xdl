@@ -29,7 +29,7 @@
   <dlg:textfield dlg:id="edit_description" dlg:tab-index="16" dlg:left="42" dlg:top="99" dlg:width="126" dlg:height="37" dlg:multiline="true"/>
   <dlg:button dlg:id="btn_ok" dlg:tab-index="17" dlg:left="47" dlg:top="141" dlg:width="41" dlg:height="12" dlg:default="true" dlg:value="OK" dlg:button-type="ok"/>
   <dlg:button dlg:id="btn_cancel" dlg:tab-index="18" dlg:left="89" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="Cancel" dlg:button-type="cancel"/>
-  <dlg:button dlg:id="btn_help" dlg:help-url="mytools.bookmarks.BookmarksMenu:new" dlg:tab-index="19" dlg:left="3" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="Help" dlg:button-type="help"/>
-  <dlg:button dlg:id="btn_reset" dlg:tab-index="20" dlg:left="132" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="~Reset"/>
+  <dlg:button dlg:id="btn_help" dlg:help-url="mytools.bookmarks.BookmarksMenu:new" dlg:tab-index="20" dlg:left="3" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="Help" dlg:button-type="help"/>
+  <dlg:button dlg:id="btn_reset" dlg:tab-index="19" dlg:left="132" dlg:top="141" dlg:width="41" dlg:height="12" dlg:value="~Reset"/>
  </dlg:bulletinboard>
 </dlg:window>
