@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<components xmlns="http://openoffice.org/2010/uno-components">
+ <component loader="com.sun.star.loader.Python"
+  uri="registration.py">
+  <implementation name="bookmarks.BookmarksPopup">
+   <service name="com.sun.star.frame.PopupMenuController"/>
+  </implementation>
+  <implementation name="bookmarks.ShownColumnsPopupMenu">
+   <service name="com.sun.star.frame.PopupMenuController"/>
+  </implementation>
+  <implementation name="bookmarks.OptionsPageHandler">
+   <service name="bookmarks.OptionsPageHandler"/>
+  </implementation>
+  <implementation name="bookmarks.BookmarksMenuManager">
+   <service name="bookmarks.BookmarksMenuManager"/>
+  </implementation>
+  <implementation name="bookmarks.DirectoryPopupMenu">
+   <service name="com.sun.star.frame.PopupMenuController"/>
+  </implementation>
+  <implementation name="bookmarks.TagPopupMenu">
+   <service name="com.sun.star.frame.PopupMenuController"/>
+  </implementation>
+ </component>
+</components>
