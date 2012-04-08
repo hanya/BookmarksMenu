@@ -135,7 +135,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         "Choose position", 
         "Choose document types", 
         "Options", 
-        "Install", 
+        "Save package", 
     )
     
     ID_BOOKMARKS = "id.label.bookmarks"
