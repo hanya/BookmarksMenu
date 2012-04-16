@@ -1,0 +1,612 @@
+#. strings
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-31 15:43+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.9.0\n"
+"X-Accelerator-Marker: ~\n"
+
+#: id.OptionsTop.label_title.Label
+msgid "Bookmarks Menu"
+msgstr "ブックマークメニュー"
+
+#: id.label.bookmarks
+msgid "~Bookmarks"
+msgstr "ブックマーク(~B)"
+
+#: id.name.bookmarks
+msgid "Bookmarks"
+msgstr "ブックマーク"
+
+#: id.label.ok
+msgid "OK"
+msgstr "OK"
+
+#: id.label.cancel
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: id.label.help
+msgid "Help"
+msgstr "ヘルプ"
+
+#: id.label.save
+msgid "~Save"
+msgstr "保存(~S)"
+
+#: id.label.discard
+msgid "~Discard"
+msgstr "破棄(~D)"
+
+#: id.error
+msgid "Error"
+msgstr "エラー"
+
+#: id.item.label.name
+msgid "Name"
+msgstr "名前"
+
+#: id.item.label.value
+msgid "Value"
+msgstr "値"
+
+#: id.item.label.description
+msgid "Description"
+msgstr "説明"
+
+#: id.item.tags
+msgid "Tags"
+msgstr "タグ"
+
+#: id.item.label.filter
+msgid "File filter"
+msgstr "フィルタ"
+
+#: id.item.program
+msgid "Program"
+msgstr "プログラム"
+
+#: id.item.arguments
+msgid "Arguments"
+msgstr "引数"
+
+#: id.item.command
+msgid "Command"
+msgstr "コマンド"
+
+#: id.item.path
+msgid "Path"
+msgstr "パス"
+
+#: id.item.document
+msgid "Document"
+msgstr "ドキュメント"
+
+#: id.item.macro
+msgid "Macro"
+msgstr "マクロ"
+
+#: id.item.something
+msgid "Something"
+msgstr "何か"
+
+#: id.item.special
+msgid "Special"
+msgstr "特殊"
+
+#: id.item.type
+msgid "Type"
+msgstr "種類"
+
+#: id.item.file
+msgid "File"
+msgstr "ファイル"
+
+#: id.item.folder
+msgid "Folder"
+msgstr "フォルダ"
+
+#: id.item.web
+msgid "Web"
+msgstr "ウェブ"
+
+#: id.item.unsorted
+msgid "Unsorted Bookmarks"
+msgstr "未整理のブックマーク"
+
+#: id.item.tag.name
+msgid "Tag name"
+msgstr "タグ名"
+
+#: id.dialog.title.folder
+msgid "New Folder"
+msgstr "新しいフォルダ"
+
+#: id.dialog.title.bookmark
+msgid "New Bookmark"
+msgstr "新しいブックマーク"
+
+#: id.dialog.title.macro.selector
+msgid "Macro Selector"
+msgstr "マクロ選択"
+
+#: id.dialog.select.command
+msgid "Select Command"
+msgstr "コマンド選択"
+
+#: id.libraries
+msgid "Libraries"
+msgstr "ライブラリ"
+
+#: id.names
+msgid "Names"
+msgstr "マクロ"
+
+#: id.categories
+msgid "Categories"
+msgstr "カテゴリ"
+
+#: id.commands
+msgid "Commands"
+msgstr "コマンド"
+
+#: id.label.show.command
+msgid "~Show command"
+msgstr "コマンド表示(~S)"
+
+#: id.file.filter
+msgid "File name filter"
+msgstr "ファイル名フィルタ"
+
+#: id.query.key
+msgid "Key"
+msgstr "キー"
+
+#: id.tooltip.document
+msgid "Open document in the office"
+msgstr "オフィスソフトでドキュメントを開きます"
+
+#: id.tooltip.macro
+msgid "Execute macro"
+msgstr "マクロを実行します"
+
+#: id.tooltip.command
+msgid "General menu entry"
+msgstr "普通のメニュー項目"
+
+#: id.tooltip.program
+msgid "Execute program"
+msgstr "プログラムを実行します"
+
+#: id.tooltip.something
+msgid "Open something"
+msgstr "何かを開きます"
+
+#: id.tooltip.special
+msgid "Create special entry"
+msgstr "特殊な項目を作成します"
+
+#: id.open.from
+msgid "\"Open...\" from specific folder"
+msgstr "指定したフォルダからファイルを開く"
+
+#: id.saveas.into
+msgid "\"Save As...\" into specific folder"
+msgstr "指定したフォルダに保存"
+
+#: id.directory.popup
+msgid "Place Menu"
+msgstr "場所メニュー"
+
+#: id.web.browser
+msgid "Web browser"
+msgstr "ウェブブラウザ"
+
+#: id.file.manager
+msgid "File manager"
+msgstr "ファイルマネージャ"
+
+#: id.open.command
+msgid "Open command"
+msgstr "ファイルを開くコマンド"
+
+#: id.use.custom
+msgid "~Use custom"
+msgstr "指定したものを利用"
+
+#: id.label.reset
+msgid "~Reset"
+msgstr "リセット(~R)"
+
+#: id.options.bookmarks.data.file
+msgid "Bookmarks data file"
+msgstr "ブックマークデータファイル"
+
+#: id.options.backup.directory
+msgid "Backup directory"
+msgstr "バックアップディレクトリ"
+
+#: id.error.unable.to.bookmark
+msgid "Unable to bookmark this document."
+msgstr "このドキュメントはブックマークできません。"
+
+#: id.error.not.stored
+msgid "This document is not stored yet."
+msgstr "このドキュメントは保存されていません。"
+
+#: id.OptionsTop.label_description.Label
+msgid "This is where you can choose settings for Bookmarks Menu extension."
+msgstr "ブックマーク拡張機能の設定を行います。"
+
+#: id.extension.description
+msgid "This extension provides favorite menu."
+msgstr "お気に入りメニューを提供します"
+
+#: id.move
+msgid "Move"
+msgstr "移動"
+
+#: id.move.to
+msgid "Move to"
+msgstr "移動先"
+
+#: id.script.organizer
+msgid "Script organizer"
+msgstr "マクロの管理"
+
+#: id.label.document.type
+msgid "Document types"
+msgstr "ドキュメントの種類"
+
+#: id.menu.add.this
+msgid "Bookmark ~This Document..."
+msgstr "このドキュメントをブックマーク(~T)"
+
+#: id.menu.edit
+msgid "~Edit Bookmarks..."
+msgstr "ブックマークの編集(~E)"
+
+#: id.title.about
+msgid "About Bookmarks Menu"
+msgstr "ブックマークメニューについて"
+
+#: id.title.directory.popup
+msgid "Place Menu Settings"
+msgstr "場所メニュー設定"
+
+#: id.options.settings
+msgid "Settings"
+msgstr "設定"
+
+#: id.options.data
+msgid "Data"
+msgstr "データ"
+
+#: id.toolbar.standardbar
+msgid "Standard"
+msgstr "標準"
+
+#: id.toolbar.insertbar
+msgid "Insert"
+msgstr "挿入"
+
+#: id.toolbar.historybar
+msgid "History"
+msgstr "履歴"
+
+#: id.command.InsertBookmark
+msgid "~Bookmark..."
+msgstr "ブックマーク(~B)..."
+
+#: id.command.InsertSeparator
+msgid "~Separator"
+msgstr "区切り(~S)"
+
+#: id.command.InsertFolder
+msgid "~Folder..."
+msgstr "フォルダ(~F)..."
+
+#: id.command.Back
+msgid "~Back"
+msgstr "戻る(~B)"
+
+#: id.command.Forward
+msgid "~Forward"
+msgstr "進む(~F)"
+
+#: id.command.Move
+msgid "~Move..."
+msgstr "移動(~M)..."
+
+#: id.command.Open
+msgid "~Open"
+msgstr "開く(~O)"
+
+#: id.command.ShownInfo
+msgid "~Columns"
+msgstr "列(~C)"
+
+#: id.command.Migration
+msgid "M~igrate..."
+msgstr "移行(~I)..."
+
+#: id.command.Delete
+msgid "~Remove"
+msgstr "削除(~R)"
+
+#: id.command.NewMenu
+msgid "~New Menu..."
+msgstr "新規メニュー(~N)..."
+
+#: id.command.About
+msgid "~About Bookmarks Menu"
+msgstr "ブックマークメニューの情報(~A)"
+
+#: id.menu.open.all
+msgid "Open ~All"
+msgstr "すべて開く(~A)"
+
+#: id.error.insert.doc
+msgid "This file does not contain bookmarks."
+msgstr "このファイルにはブックマークが含まれていません。"
+
+#: id.migrate.not.found
+msgid "Older bookmarks menu was not found."
+msgstr "古いブックマークメニューは見つかりませんでした。"
+
+#: id.message.query.save
+msgid "The bookmarks \"%s\" has been modified.\nDo you want to save your changes?"
+msgstr "ブックマーク \"%s\" は変更されています。\n変更を保存しますか？"
+
+#: id.options.change.bookmarks.file
+msgid "The change of bookmarks file is enabled after restarting the office."
+msgstr "ブックマークデータファイルの変更は再起動後に適用されます。"
+
+#: id.label.new
+msgid "~New"
+msgstr "新規(~N)"
+
+#: id.label.delete
+msgid "~Delete"
+msgstr "削除(~D)"
+
+#: id.label.select
+msgid "~Select"
+msgstr "選択(~S)"
+
+#: id.label.input
+msgid "~Input"
+msgstr "入力(~I)"
+
+#: id.tooltip.name
+msgid "Shown as label in the menu"
+msgstr "メニューでラベルとして表示されます"
+
+#: id.tooltip.tags
+msgid "Separate tags with commas"
+msgstr "コンマ区切りで複数指定できます"
+
+#: id.tooltip.description
+msgid "Shown as tooltip in the menu"
+msgstr "メニューでツールチップとして表示されます"
+
+#: id.label.undo
+msgid "Undo: %s"
+msgstr "元に戻す: %s"
+
+#: id.label.redo
+msgid "Redo: %s"
+msgstr "やり直し: %s"
+
+#: id.undo.name.migrate
+msgid "Migrate"
+msgstr "移行"
+
+#: id.undo.name.insert.file
+msgid "Insert from file"
+msgstr "ファイルから挿入"
+
+#: id.undo.name.paste
+msgid "Paste"
+msgstr "貼り付け"
+
+#: id.undo.name.delete
+msgid "Delete"
+msgstr "削除"
+
+#: id.undo.name.cut
+msgid "Cut"
+msgstr "切り取り"
+
+#: id.undo.name.change.tag
+msgid "Change tag"
+msgstr "タグ変更"
+
+#: id.undo.name.delete.tag
+msgid "Delete tag"
+msgstr "タグ削除"
+
+#: id.undo.name.insert.separator
+msgid "Insert separator"
+msgstr "区切り挿入"
+
+#: id.undo.name.insert.folder
+msgid "Insert folder"
+msgstr "フォルダ挿入"
+
+#: id.undo.name.insert.item
+msgid "Insert item"
+msgstr "項目挿入"
+
+#: id.undo.name.change.content
+msgid "Change bookmark"
+msgstr "ブックマーク変更"
+
+#: id.undo.name.change.name
+msgid "Change name"
+msgstr "名前変更"
+
+#: id.undo.name.change.description
+msgid "Change description"
+msgstr "説明変更"
+
+#: id.wizard.title
+msgid "New Bookmarks Extension Package"
+msgstr "新規ブックマーク拡張機能パッケージ"
+
+#: id.wizard.define.name
+msgid "Define name"
+msgstr "名前を定義"
+
+#: id.wizard.define.label
+msgid "Define label"
+msgstr "ラベルを指定"
+
+#: id.wizard.choose.position
+msgid "Choose position"
+msgstr "位置を選択"
+
+#: id.wizard.choose.type
+msgid "Choose document types"
+msgstr "ドキュメント形式を選択"
+
+#: id.wizard.options
+msgid "Options"
+msgstr "オプション"
+
+#: id.wizard.save.package
+msgid "Save package"
+msgstr "パッケージ保存"
+
+#: id.wizard.title.step1
+msgid "Input name which is used as menu identifier"
+msgstr "メニューの固有名を入力してください"
+
+#: id.wizard.title.step2
+msgid "Edit menu label"
+msgstr "メニューのラベルを編集してください"
+
+#: id.wizard.title.step3
+msgid "Choose menu position"
+msgstr "メニューを追加する位置を選択してください"
+
+#: id.wizard.title.step4
+msgid "Document types which this menu item is shown"
+msgstr "メニューを表示したいドキュメント形式を選択してください"
+
+#: id.wizard.title.step5
+msgid "Choose options"
+msgstr "オプションを選択してください"
+
+#: id.wizard.title.step6
+msgid "Generate extension package"
+msgstr "拡張機能パッケージ生成"
+
+#: id.wizard.another
+msgid "Show at another position"
+msgstr "別の場所に表示"
+
+#: id.wizard.help.text.step1
+msgid "This wizard generates an extension package which adds bookmarks menu in the menu."
+msgstr "このウィザードはメニューにブックマークメニューを追加する拡張機能を作成します。"
+
+#: id.locale
+msgid "Locale"
+msgstr "言語と地域"
+
+#: id.menu
+msgid "Menu"
+msgstr "メニュー"
+
+#: id.positioning
+msgid "Positioning"
+msgstr "位置"
+
+#: id.before
+msgid "Before"
+msgstr "前に"
+
+#: id.after
+msgid "After"
+msgstr "後ろに"
+
+#: id.choose.in
+msgid "Choose in"
+msgstr "以下から選択"
+
+#: id.include
+msgid "Include bookmark data into the package"
+msgstr "パッケージにブックマークデータを含める"
+
+#: id.another.package
+msgid "Another %s"
+msgstr "別の%s"
+
+#: id.description.after
+msgid "After %s"
+msgstr "%s の後"
+
+#: id.description.before
+msgid "Before %s"
+msgstr "%s の前"
+
+#: id.label.menu.position
+msgid "Menu position"
+msgstr "メニューの位置"
+
+#: id.label.choose.base.position
+msgid "~Choose a base position"
+msgstr "基点を選択(~C)"
+
+#: id.label.after
+msgid "~After"
+msgstr "後(~A)"
+
+#: id.label.before
+msgid "~Before"
+msgstr "前(~B)"
+
+#: id.label.label
+msgid "Label"
+msgstr "ラベル"
+
+#: id.label.module
+msgid "Module"
+msgstr "モジュール"
+
+#: id.label.specify
+msgid "~Specify"
+msgstr "指定(~S)"
+
+#: id.label.all
+msgid "A~ll"
+msgstr "すべて(~L)"
+
+#: id.label.edit
+msgid "~Edit"
+msgstr "編集(~E)"
+
+#: id.label.add
+msgid "A~dd"
+msgstr "追加(~D)"
+
+#: id.label.finish
+msgid "Click Finish button to save extension package."
+msgstr "完了ボタンをクリックして拡張機能パッケージを保存してください。"
+
+#: id.all.files
+msgid "All files (*.*)"
+msgstr "すべてのファイル (*.*)"
+
+#: id.label.new.folder
+msgid "New ~Folder"
+msgstr "新規フォルダ(~F)"
+

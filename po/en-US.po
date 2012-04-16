@@ -1,0 +1,612 @@
+#. strings
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-31 15:43+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en-US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.9.0\n"
+"X-Accelerator-Marker: ~\n"
+
+#: id.OptionsTop.label_title.Label
+msgid "Bookmarks Menu"
+msgstr "Bookmarks Menu"
+
+#: id.label.bookmarks
+msgid "~Bookmarks"
+msgstr "~Bookmarks"
+
+#: id.name.bookmarks
+msgid "Bookmarks"
+msgstr "Bookmarks"
+
+#: id.label.ok
+msgid "OK"
+msgstr "OK"
+
+#: id.label.cancel
+msgid "Cancel"
+msgstr "Cancel"
+
+#: id.label.help
+msgid "Help"
+msgstr "Help"
+
+#: id.label.save
+msgid "~Save"
+msgstr "~Save"
+
+#: id.label.discard
+msgid "~Discard"
+msgstr "~Discard"
+
+#: id.error
+msgid "Error"
+msgstr "Error"
+
+#: id.item.label.name
+msgid "Name"
+msgstr "Name"
+
+#: id.item.label.value
+msgid "Value"
+msgstr "Value"
+
+#: id.item.label.description
+msgid "Description"
+msgstr "Description"
+
+#: id.item.tags
+msgid "Tags"
+msgstr "Tags"
+
+#: id.item.label.filter
+msgid "File filter"
+msgstr "File filter"
+
+#: id.item.program
+msgid "Program"
+msgstr "Program"
+
+#: id.item.arguments
+msgid "Arguments"
+msgstr "Arguments"
+
+#: id.item.command
+msgid "Command"
+msgstr "Command"
+
+#: id.item.path
+msgid "Path"
+msgstr "Path"
+
+#: id.item.document
+msgid "Document"
+msgstr "Document"
+
+#: id.item.macro
+msgid "Macro"
+msgstr "Macro"
+
+#: id.item.something
+msgid "Something"
+msgstr "Something"
+
+#: id.item.special
+msgid "Special"
+msgstr "Special"
+
+#: id.item.type
+msgid "Type"
+msgstr "Type"
+
+#: id.item.file
+msgid "File"
+msgstr "File"
+
+#: id.item.folder
+msgid "Folder"
+msgstr "Folder"
+
+#: id.item.web
+msgid "Web"
+msgstr "Web"
+
+#: id.item.unsorted
+msgid "Unsorted Bookmarks"
+msgstr "Unsorted Bookmarks"
+
+#: id.item.tag.name
+msgid "Tag name"
+msgstr "Tag name"
+
+#: id.dialog.title.folder
+msgid "New Folder"
+msgstr "New Folder"
+
+#: id.dialog.title.bookmark
+msgid "New Bookmark"
+msgstr "New Bookmark"
+
+#: id.dialog.title.macro.selector
+msgid "Macro Selector"
+msgstr "Macro Selector"
+
+#: id.dialog.select.command
+msgid "Select Command"
+msgstr "Select Command"
+
+#: id.libraries
+msgid "Libraries"
+msgstr "Libraries"
+
+#: id.names
+msgid "Names"
+msgstr "Names"
+
+#: id.categories
+msgid "Categories"
+msgstr "Categories"
+
+#: id.commands
+msgid "Commands"
+msgstr "Commands"
+
+#: id.label.show.command
+msgid "~Show command"
+msgstr "~Show command"
+
+#: id.file.filter
+msgid "File name filter"
+msgstr "File name filter"
+
+#: id.query.key
+msgid "Key"
+msgstr "Key"
+
+#: id.tooltip.document
+msgid "Open document in the office"
+msgstr "Open document in the office"
+
+#: id.tooltip.macro
+msgid "Execute macro"
+msgstr "Execute macro"
+
+#: id.tooltip.command
+msgid "General menu entry"
+msgstr "General menu entry"
+
+#: id.tooltip.program
+msgid "Execute program"
+msgstr "Execute program"
+
+#: id.tooltip.something
+msgid "Open something"
+msgstr "Open something"
+
+#: id.tooltip.special
+msgid "Create special entry"
+msgstr "Create special entry"
+
+#: id.open.from
+msgid "\"Open...\" from specific folder"
+msgstr "\"Open...\" from specific folder"
+
+#: id.saveas.into
+msgid "\"Save As...\" into specific folder"
+msgstr "\"Save As...\" into specific folder"
+
+#: id.directory.popup
+msgid "Place Menu"
+msgstr "Place Menu"
+
+#: id.web.browser
+msgid "Web browser"
+msgstr "Web browser"
+
+#: id.file.manager
+msgid "File manager"
+msgstr "File manager"
+
+#: id.open.command
+msgid "Open command"
+msgstr "Open command"
+
+#: id.use.custom
+msgid "~Use custom"
+msgstr "~Use custom"
+
+#: id.label.reset
+msgid "~Reset"
+msgstr "~Reset"
+
+#: id.options.bookmarks.data.file
+msgid "Bookmarks data file"
+msgstr "Bookmarks data file"
+
+#: id.options.backup.directory
+msgid "Backup directory"
+msgstr "Backup directory"
+
+#: id.error.unable.to.bookmark
+msgid "Unable to bookmark this document."
+msgstr "Unable to bookmark this document."
+
+#: id.error.not.stored
+msgid "This document is not stored yet."
+msgstr "This document is not stored yet."
+
+#: id.OptionsTop.label_description.Label
+msgid "This is where you can choose settings for Bookmarks Menu extension."
+msgstr "This is where you can choose settings for Bookmarks Menu extension."
+
+#: id.extension.description
+msgid "This extension provides favorite menu."
+msgstr "This extension provides favorite menu."
+
+#: id.move
+msgid "Move"
+msgstr "Move"
+
+#: id.move.to
+msgid "Move to"
+msgstr "Move to"
+
+#: id.script.organizer
+msgid "Script organizer"
+msgstr "Script organizer"
+
+#: id.label.document.type
+msgid "Document types"
+msgstr "Document types"
+
+#: id.menu.add.this
+msgid "Bookmark ~This Document..."
+msgstr "Bookmark ~This Document..."
+
+#: id.menu.edit
+msgid "~Edit Bookmarks..."
+msgstr "~Edit Bookmarks..."
+
+#: id.title.about
+msgid "About Bookmarks Menu"
+msgstr "About Bookmarks Menu"
+
+#: id.title.directory.popup
+msgid "Place Menu Settings"
+msgstr "Place Menu Settings"
+
+#: id.options.settings
+msgid "Settings"
+msgstr "Settings"
+
+#: id.options.data
+msgid "Data"
+msgstr "Data"
+
+#: id.toolbar.standardbar
+msgid "Standard"
+msgstr "Standard"
+
+#: id.toolbar.insertbar
+msgid "Insert"
+msgstr "Insert"
+
+#: id.toolbar.historybar
+msgid "History"
+msgstr "History"
+
+#: id.command.InsertBookmark
+msgid "~Bookmark..."
+msgstr "~Bookmark..."
+
+#: id.command.InsertSeparator
+msgid "~Separator"
+msgstr "~Separator"
+
+#: id.command.InsertFolder
+msgid "~Folder..."
+msgstr "~Folder..."
+
+#: id.command.Back
+msgid "~Back"
+msgstr "~Back"
+
+#: id.command.Forward
+msgid "~Forward"
+msgstr "~Forward"
+
+#: id.command.Move
+msgid "~Move..."
+msgstr "~Move..."
+
+#: id.command.Open
+msgid "~Open"
+msgstr "~Open"
+
+#: id.command.ShownInfo
+msgid "~Columns"
+msgstr "~Columns"
+
+#: id.command.Migration
+msgid "M~igrate..."
+msgstr "M~igrate..."
+
+#: id.command.Delete
+msgid "~Remove"
+msgstr "~Remove"
+
+#: id.command.NewMenu
+msgid "~New Menu..."
+msgstr "~New Menu..."
+
+#: id.command.About
+msgid "~About Bookmarks Menu"
+msgstr "~About Bookmarks Menu"
+
+#: id.menu.open.all
+msgid "Open ~All"
+msgstr "Open ~All"
+
+#: id.error.insert.doc
+msgid "This file does not contain bookmarks."
+msgstr "This file does not contain bookmarks."
+
+#: id.migrate.not.found
+msgid "Older bookmarks menu was not found."
+msgstr "Older bookmarks menu was not found."
+
+#: id.message.query.save
+msgid "The bookmarks \"%s\" has been modified.\nDo you want to save your changes?"
+msgstr "The bookmarks \"%s\" has been modified.\nDo you want to save your changes?"
+
+#: id.options.change.bookmarks.file
+msgid "The change of bookmarks file is enabled after restarting the office."
+msgstr "The change of bookmarks file is enabled after restarting the office."
+
+#: id.label.new
+msgid "~New"
+msgstr "~New"
+
+#: id.label.delete
+msgid "~Delete"
+msgstr "~Delete"
+
+#: id.label.select
+msgid "~Select"
+msgstr "~Select"
+
+#: id.label.input
+msgid "~Input"
+msgstr "~Input"
+
+#: id.tooltip.name
+msgid "Shown as label in the menu"
+msgstr "Shown as label in the menu"
+
+#: id.tooltip.tags
+msgid "Separate tags with commas"
+msgstr "Separate tags with commas"
+
+#: id.tooltip.description
+msgid "Shown as tooltip in the menu"
+msgstr "Shown as tooltip in the menu"
+
+#: id.label.undo
+msgid "Undo: %s"
+msgstr "Undo: %s"
+
+#: id.label.redo
+msgid "Redo: %s"
+msgstr "Redo: %s"
+
+#: id.undo.name.migrate
+msgid "Migrate"
+msgstr "Migrate"
+
+#: id.undo.name.insert.file
+msgid "Insert from file"
+msgstr "Insert from file"
+
+#: id.undo.name.paste
+msgid "Paste"
+msgstr "Paste"
+
+#: id.undo.name.delete
+msgid "Delete"
+msgstr "Delete"
+
+#: id.undo.name.cut
+msgid "Cut"
+msgstr "Cut"
+
+#: id.undo.name.change.tag
+msgid "Change tag"
+msgstr "Change tag"
+
+#: id.undo.name.delete.tag
+msgid "Delete tag"
+msgstr "Delete tag"
+
+#: id.undo.name.insert.separator
+msgid "Insert separator"
+msgstr "Insert separator"
+
+#: id.undo.name.insert.folder
+msgid "Insert folder"
+msgstr "Insert folder"
+
+#: id.undo.name.insert.item
+msgid "Insert item"
+msgstr "Insert item"
+
+#: id.undo.name.change.content
+msgid "Change bookmark"
+msgstr "Change bookmark"
+
+#: id.undo.name.change.name
+msgid "Change name"
+msgstr "Change name"
+
+#: id.undo.name.change.description
+msgid "Change description"
+msgstr "Change description"
+
+#: id.wizard.title
+msgid "New Bookmarks Extension Package"
+msgstr "New Bookmarks Extension Package"
+
+#: id.wizard.define.name
+msgid "Define name"
+msgstr "Define name"
+
+#: id.wizard.define.label
+msgid "Define label"
+msgstr "Define label"
+
+#: id.wizard.choose.position
+msgid "Choose position"
+msgstr "Choose position"
+
+#: id.wizard.choose.type
+msgid "Choose document types"
+msgstr "Choose document types"
+
+#: id.wizard.options
+msgid "Options"
+msgstr "Options"
+
+#: id.wizard.save.package
+msgid "Save package"
+msgstr "Save package"
+
+#: id.wizard.title.step1
+msgid "Input name which is used as menu identifier"
+msgstr "Input name which is used as menu identifier"
+
+#: id.wizard.title.step2
+msgid "Edit menu label"
+msgstr "Edit menu label"
+
+#: id.wizard.title.step3
+msgid "Choose menu position"
+msgstr "Choose menu position"
+
+#: id.wizard.title.step4
+msgid "Document types which this menu item is shown"
+msgstr "Document types which this menu item is shown"
+
+#: id.wizard.title.step5
+msgid "Choose options"
+msgstr "Choose options"
+
+#: id.wizard.title.step6
+msgid "Generate extension package"
+msgstr "Generate extension package"
+
+#: id.wizard.another
+msgid "Show at another position"
+msgstr "Show at another position"
+
+#: id.wizard.help.text.step1
+msgid "This wizard generates an extension package which adds bookmarks menu in the menu."
+msgstr "This wizard generates an extension package which adds bookmarks menu in the menu."
+
+#: id.locale
+msgid "Locale"
+msgstr "Locale"
+
+#: id.menu
+msgid "Menu"
+msgstr "Menu"
+
+#: id.positioning
+msgid "Positioning"
+msgstr "Positioning"
+
+#: id.before
+msgid "Before"
+msgstr "Before"
+
+#: id.after
+msgid "After"
+msgstr "After"
+
+#: id.choose.in
+msgid "Choose in"
+msgstr "Choose in"
+
+#: id.include
+msgid "Include bookmark data into the package"
+msgstr "Include bookmark data into the package"
+
+#: id.another.package
+msgid "Another %s"
+msgstr "Another %s"
+
+#: id.description.after
+msgid "After %s"
+msgstr "After %s"
+
+#: id.description.before
+msgid "Before %s"
+msgstr "Before %s"
+
+#: id.label.menu.position
+msgid "Menu position"
+msgstr "Menu position"
+
+#: id.label.choose.base.position
+msgid "~Choose a base position"
+msgstr "~Choose a base position"
+
+#: id.label.after
+msgid "~After"
+msgstr "~After"
+
+#: id.label.before
+msgid "~Before"
+msgstr "~Before"
+
+#: id.label.label
+msgid "Label"
+msgstr "Label"
+
+#: id.label.module
+msgid "Module"
+msgstr "Module"
+
+#: id.label.specify
+msgid "~Specify"
+msgstr "~Specify"
+
+#: id.label.all
+msgid "A~ll"
+msgstr "A~ll"
+
+#: id.label.edit
+msgid "~Edit"
+msgstr "~Edit"
+
+#: id.label.add
+msgid "A~dd"
+msgstr "A~dd"
+
+#: id.label.finish
+msgid "Click Finish button to save extension package."
+msgstr "Click Finish button to save extension package."
+
+#: id.all.files
+msgid "All files (*.*)"
+msgstr "All files (*.*)"
+
+#: id.label.new.folder
+msgid "New ~Folder"
+msgstr "New ~Folder"
+
