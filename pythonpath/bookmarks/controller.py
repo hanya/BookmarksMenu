@@ -334,7 +334,8 @@ class UIController(unohelper.Base, ComponentBase,
             elif path == COMMANDS.CMD_FORWARD:
                 return self.imple.history.has_next()
             elif path == COMMANDS.CMD_MOVE:
-                if view_mode & imple.MODE_BOOKMRAKS:
+                if (view_mode & imple.MODE_BOOKMRAKS) or \
+                    (view_mode & imple.MODE_UNSORTED):
                     window = self.imple.window
                     if window.get_mode() == window.MODE_TREE:
                         return not (view_mode & imple.MODE_ROOT)
