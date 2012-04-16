@@ -16,3 +16,8 @@ OXT package. zip command is required to make package.
  Help files are converted from MediaWiki syntax to xhp format. 
 mwxhp is used this task.
  > python mwxhpconv -f bookmarksmenu.xml
+
+ String resources are stored in po files for each locales. 
+ They have to be converted into each files and this can be 
+ done by genres.py script.
+ > python genres.py
