@@ -6,8 +6,8 @@
       <filename>/mytools.bookmarks.BookmarksMenu/overview.xhp</filename>
     </topic>
     <history>
-      <created date="2012-03-31T01:42:01"></created>
-      <lastedited date="2012-03-31T01:42:01"></lastedited>
+      <created date="2012-04-19T22:38:20"></created>
+      <lastedited date="2012-04-19T22:38:20"></lastedited>
     </history>
-  </meta><body><paragraph id="hd_id76651727" level="1" role="heading" xml-lang="ja">概要</paragraph><bookmark branch="index" id="id_id76997750" xml-lang="ja"><bookmark_value>概要</bookmark_value></bookmark><paragraph id="par_id87993452" role="paragraph" xml-lang="ja"> ブックマーク拡張機能はメニューから直接ドキュメントを開くお気に入りメニューを提供します。 </paragraph><paragraph id="par_id53508008" role="paragraph" xml-lang="ja">この拡張機能では他にも次のようなことが行えます。 </paragraph><list format="1" type="unordered"><listitem> メニューにあるような一般的なコマンドの実行 </listitem><listitem> 環境のお気に入りプログラムに従って何かファイルを開く </listitem><listitem> 指定したフォルダを基点にして開く... または名前をつけて保存...を実行 </listitem><listitem> マクロの実行 </listitem><listitem> ファイルシステムを表示して直接ファイルを開けるメニュー </listitem></list><paragraph id="par_id76564321" role="paragraph" xml-lang="ja" /></body>
+  </meta><body><paragraph id="hd_id84979201" level="1" role="heading" xml-lang="ja">概要</paragraph><bookmark branch="index" id="id_id98297267" xml-lang="ja"><bookmark_value>概要</bookmark_value></bookmark><paragraph id="par_id88912933" role="paragraph" xml-lang="ja"> ブックマークメニュー拡張機能はメニューから直接ドキュメントを開けるお気に入りメニューを提供します。 </paragraph><paragraph id="par_id23949819" role="paragraph" xml-lang="ja">この拡張機能では次のような機能も利用できます。 </paragraph><list format="1" type="unordered"><listitem> メニューから利用できる普通の項目と同じコマンドを実行 </listitem><listitem> 環境の設定に従って、お気に入りのプログラムでファイルを開く </listitem><listitem> 開く... または保存... メニューを特定のフォルダを基点として実行 </listitem><listitem> マクロの実行 </listitem><listitem> 階層構造のメニューにファイルシステムを表示、そこからファイルを開く </listitem></list><paragraph id="par_id25847447" role="paragraph" xml-lang="ja" /></body>
 </helpdocument>

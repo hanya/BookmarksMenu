@@ -1,5 +1,5 @@
 
-You can edit your bookmarks on edit window of Bookmarks Menu.
+You can edit your bookmarks on the edit window of Bookmarks Menu.
 
 The edit window can be opened by Edit Bookmarks entry in the bookmarks menu. 
 If you remove the entry, you can not open the edit window anymore. 
@@ -47,7 +47,7 @@ tree shows only folders in your bookmarks. When you select
 a folder in this tree, its contents are shown in the list of bookmarks.
 
 New bookmarks can be inserted to the selected folder through Insert menu. 
-And also, you can manipulate it through context menu.
+And also, you can manipulate it through the context menu.
 These entries can be moved between folders by drag and drop by mouse. 
 If you push Ctrl key at the leaving your mouse button, the item is copied into the destination.
 
@@ -57,7 +57,7 @@ If you push Ctrl key at the leaving your mouse button, the item is copied into t
 The contents of this part is depends on the selected item in the tree part. 
 You can move item from this part to tree part with drag and drop.
 
-If you select entries in this part, you can open the selected entry in this part, 
+If you select entries in this part, you can open the selected entries in this part, 
 like to choose in the bookmarks menu. Select entries and 
 double click, push enter key or choose Open in the context menu to open selected entries.
 
@@ -106,10 +106,10 @@ There is history toolbar which can be used to the same way.
 === Shown columns ===
 There are four columns in the list of bookmarks and they can 
 be switched to show except for Name column. 
-Choose View - Columns entry in the main menu to switch these visibility.
+Choose View - Columns entry to switch these visibility in the main menu .
 
 === Insert ===
-You can create new bookmark through Insert menu or context menu on the 
+You can create new bookmark through Insert menu or the context menu on the 
 tree or the list part. See [[bookmark|New Bookmark]] for more detail.
 
 === Insert from file ===

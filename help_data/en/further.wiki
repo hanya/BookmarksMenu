@@ -2,25 +2,25 @@
 == File ==
 Your bookmark data is stored under user's profile/config directory. 
 Each file has name like bookmarks_name.json. 
-Do not change its name, if you change it, the extension failed to find it.
+Do not change its name, if you change it, the extension failes to find it.
 
 == Backup ==
 When you store the modification on the bookmark window, backup file is created 
 for each day. They are stored in user's profile/backup/bookmarks directory.
 
-If you have a problem on the data, try to copy from backup directory to the config 
-according to File section. 
+If you have a problem on the data, try to copy a file from backup directory 
+to the config directory according to File section. 
 
 You can insert bookmarks from these backup by Insert - File entry in the main menu.
 
 == Open bookmark editor directly ==
 To open bookmark editor window directly, pass argument like as follows: 
- soffice "service:bookmarks.BookmarksMenuManager?Edit&top"
+ >soffice "service:bookmarks.BookmarksMenuManager?Edit&top"
 
 {{Bookmark|hid/mytools.bookmarks.BookmarksMenu:wizard|bookmarks|New Bookmarks Wizard}}
 
 == New Bookmarks Wizard ==
-You can prepare bookmarks menu in other position in the main menu. 
+You can prepare bookmarks menu in other position of the main menu. 
 It can be the same entries with original one or it can be completely 
 different one.
 

@@ -6,8 +6,8 @@
       <filename>/mytools.bookmarks.BookmarksMenu/migration.xhp</filename>
     </topic>
     <history>
-      <created date="2012-03-31T01:42:01"></created>
-      <lastedited date="2012-03-31T01:42:01"></lastedited>
+      <created date="2012-04-19T22:38:21"></created>
+      <lastedited date="2012-04-19T22:38:21"></lastedited>
     </history>
-  </meta><body><paragraph id="hd_id52391791" level="1" role="heading" xml-lang="ja">移行</paragraph><bookmark branch="index" id="id_id92993751" xml-lang="ja"><bookmark_value>移行</bookmark_value></bookmark><paragraph id="par_id30705416" role="paragraph" xml-lang="ja"> 旧ブックマークメニューから項目を変換できます。 </paragraph><paragraph id="par_id39513443" role="paragraph" xml-lang="ja">ブックマークの編集ウィンドウのメインメニューでツール - 移行を選択してください。 変換された項目はブックマークフォルダに追加されます。 </paragraph><paragraph id="par_id99538104" role="paragraph" xml-lang="ja">「このドキュメントをブックマーク」と「ブックマークの編集」項目は変換されません。 また、他にも変換時に問題があるかもしれません。 </paragraph></body>
+  </meta><body><paragraph id="hd_id73308855" level="1" role="heading" xml-lang="ja">移行</paragraph><bookmark branch="index" id="id_id38496241" xml-lang="ja"><bookmark_value>移行</bookmark_value></bookmark><paragraph id="par_id94396490" role="paragraph" xml-lang="ja"> 旧ブックマークメニューから新ブックマークメニューへ項目を変換できます。  </paragraph><paragraph id="par_id06085950" role="paragraph" xml-lang="ja">ブックマークの編集ウィンドウのメインメニューでツール - 移行を選択してください。 変換された項目はブックマークフォルダに追加されます。  </paragraph><paragraph id="par_id11298901" role="paragraph" xml-lang="ja">「このドキュメントをブックマーク」と「ブックマークの編集」項目は変換されません。 また、他にも変換時に問題があるかもしれません。  </paragraph></body>
 </helpdocument>

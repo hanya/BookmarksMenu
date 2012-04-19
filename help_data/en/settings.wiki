@@ -36,7 +36,7 @@ Specify file manager to open a folder.
 Specify open command to open files if you want to use custom one.
 
 === Default values ===
-THe following values are used for file manager and open command 
+The following values are used for file manager and open command 
 if custom value is not specified to use.
 
 {|

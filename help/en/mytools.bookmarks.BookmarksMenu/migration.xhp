@@ -6,8 +6,8 @@
       <filename>/mytools.bookmarks.BookmarksMenu/migration.xhp</filename>
     </topic>
     <history>
-      <created date="2012-03-31T01:42:01"></created>
-      <lastedited date="2012-03-31T01:42:01"></lastedited>
+      <created date="2012-04-19T22:38:20"></created>
+      <lastedited date="2012-04-19T22:38:20"></lastedited>
     </history>
-  </meta><body><paragraph id="hd_id08648822" level="1" role="heading" xml-lang="en">Migration</paragraph><bookmark branch="index" id="id_id68418406" xml-lang="en"><bookmark_value>Migration</bookmark_value></bookmark><paragraph id="par_id51093563" role="paragraph" xml-lang="en"> You can migrate bookmarks from older Bookmarks Menu extension to new one.  </paragraph><paragraph id="par_id31723621" role="paragraph" xml-lang="en">Choose Tools - Migrate entry in the main menu of the Bookmarks window. Converted entries are inserted under the Bookmarks folder.  </paragraph><paragraph id="par_id91752656" role="paragraph" xml-lang="en">Bookmark This and Edit entries are ignored. And maybe there are some  problem on conversion of older entries to new entries.  </paragraph></body>
+  </meta><body><paragraph id="hd_id82641534" level="1" role="heading" xml-lang="en">Migration</paragraph><bookmark branch="index" id="id_id89308558" xml-lang="en"><bookmark_value>Migration</bookmark_value></bookmark><paragraph id="par_id63776932" role="paragraph" xml-lang="en"> You can migrate bookmarks from older Bookmarks Menu extension to new one.  </paragraph><paragraph id="par_id75090852" role="paragraph" xml-lang="en">Choose Tools - Migrate entry in the main menu of the Bookmarks window. Converted entries are inserted under the Bookmarks folder.  </paragraph><paragraph id="par_id11010353" role="paragraph" xml-lang="en">Bookmark This and Edit entries are ignored. And maybe there are some  problem on conversion of older entries to new entries.  </paragraph></body>
 </helpdocument>

@@ -25,13 +25,13 @@ Here is general way to insert new bookmark using New Bookmark dialog.
 #* When the list of entries is focused, new bookmark is inserted at the selected position.
 # Choose Insert - Bookmark entry in the main menu of the Bookmark window. Or choose Bookmark entry in the context menu.
 # Then New Bookmark dialog is opened.
-# Choose a type from the top part ot the dialog.
+# Choose a type from the top part of the dialog.
 # Input name, description and other required values according to the kind of entry.
 # Click OK button to make it.
 
 Click Reset button to clear all fields.
 
-The way to make each kind of items are described in the followoing section.
+The way to make each kind of items are described in the following section.
 And descriptions in the following sections are summarized only on the New Bookmark dialog.
 
 == Document ==
@@ -64,13 +64,13 @@ context menu or shortcut keys.
 # Click Select button in the Command section, then Select Command dialog is opened.
 # Choose a category and choose a command in the list of commands, and then click OK button.
 
-This entry requires living document and the extension trying to use most recent opened window of the document. 
+This entry requires living document and the extension try to use most recent opened window of the document. 
 Therefore create a new document and reopen the dialog when you can see only a few categories in the Select Command dialog.
 
 {{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.command.arguments|bookmarks|Input arguments}}
 
 When you click Input button in the arguments section, Arguments dialog is shown. 
-Input key, value pairs, the dialog allows you to input up to ten pairs.
+Input key and value pairs, the dialog allows you to input up to ten pairs.
 
 == Program ==
 You can run a program though bookmark item with this kind of entry. 
@@ -139,18 +139,20 @@ new separator.
 {{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.folder|bookmarks|New folder}}
 
 == Folder ==
-If you want to show your bookmark into sub menu of the bookmarks, 
-create new folder and put your bookmarks into it.
+If you want to show your bookmarks into sub menu of the bookmarks, 
+create new folder and put them into it.
 Choose Insert - Folder entry in the main menu or context menu to create 
 new folder entry.
 
 == Tag ==
-This entry shows tagged by specific tag name in the sub menu. 
+This entry shows tagged by specific name in the sub menu. 
 This kind of item is created as follows: 
 
 # Expand Tags tree.
 # Start to drag on a tag entry which you want to make a tag entry.
 # Drop it to a folder where you want to insert the item on the tree.
+
+You can make this kind of entry by copy and paste of tag nodes.
 
 {{Bookmark|hid/mytools.bookmarks.BookmarksMenu:new.tag|bookmarks|New tag entry}}
 

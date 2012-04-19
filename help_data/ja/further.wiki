@@ -8,13 +8,13 @@
 ブックマークウィンドウ上での変更を保存するとき、バックアップファイルが一日一回作成されます。
 これらのファイルはユーザーのプロファイル/backup/bookmarks ディレクトリに保存されます。
 
-ブックマークデータに不具合が起きた場合、ファイルセクションの説明に従ってバックアップから config ディレクトリに移動させてください。
+ブックマークデータに不具合が起きた場合、ファイルセクションの説明に従ってバックアップから config ディレクトリに移動させてください。 
 
 これらのバックアップファイルからブックマークをメインメニューの挿入 - ファイルから挿入できます。
 
 == ブックマーク編集ウィンドウを直接開く ==
 ブックマーク編集ウィンドウを直接開くには、次のように引数を渡してください。
- soffice "service:bookmarks.BookmarksMenuManager?Edit&top"
+ >soffice "service:bookmarks.BookmarksMenuManager?Edit&top"
 
 {{Bookmark|hid/mytools.bookmarks.BookmarksMenu:wizard|bookmarks|新規ブックマーク拡張機能ウィザード}}
 
