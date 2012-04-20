@@ -1,3 +1,4 @@
+#! /bin/env python
 
 import os, os.path
 
@@ -204,9 +205,9 @@ class ToolbarXCU(XCUData):
             self.add_prop("SoftClose", "false")
             self.add_prop("Style", "0")
             self.add_prop("Pos", "-1,-1")
-            if i == 0:
+            if key[11:] == "standardbar":
                 v = 0
-            elif i > 0:
+            elif key[11:] == "insertbar":
                 v = 303
             else:
                 v = 385
