@@ -1880,8 +1880,7 @@ class BookmarksControllerImple(object):
     
     def query_saving(self):
         """ Let user to choose save or not. """
-        message = self._("The bookmarks \"%s\" has been modified." + \
-                "\\nDo you want to save your changes?")
+        message = self._("The bookmarks \"%s\" has been modified.\nDo you want to save your changes?")
         message = message.replace("\\n", "\n") % self.manager.bookmark_name
         try:
             n = self.window.query(
