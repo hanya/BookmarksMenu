@@ -483,6 +483,20 @@ class BookmarkThisDialog(BookmarkTreeDialog):
         
         def update_tag_tree(self):
             pass
+        
+        def change_display_item(self):
+            pass
+        
+        def insert_items_to_current(self, pos, items):
+            pass
+        
+        def get_node_by_data(self, data):
+            p = self.window.tree_get_bookmarks_root()
+            node = p.find_node_by_data(data)
+            if not node:
+                p = self.window.tree_get_unsorted_root()
+                node = p.find_node_by_data(data)
+            return node
     
     class ButtonListener(ActionListenerBase):
         def actionPerformed(self, ev):
