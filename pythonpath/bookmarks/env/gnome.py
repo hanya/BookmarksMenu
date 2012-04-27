@@ -1,3 +1,3 @@
 
 OPEN = "gnome-open"
-FILE_MANGER = "nautilus"
+FILE_MANAGER = "nautilus"
