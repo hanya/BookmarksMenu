@@ -75,7 +75,10 @@ def get_extension_dirurl(ctx, extid):
     pip_name = "/singletons/com.sun.star.deployment.PackageInformationProvider"
     if ctx.hasByName(pip_name):
         pip = ctx.getByName(pip_name)
-        return pip.getPackageLocation(extid)
+        try:
+            return pip.getPackageLocation(extid)
+        except:
+            pass # ubuntu-2d
     return ""
 
 
