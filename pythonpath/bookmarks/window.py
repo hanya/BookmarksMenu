@@ -131,6 +131,7 @@ class MouseDraggingManager(unohelper.Base, XMouseListener, XMouseMotionListener)
             self.color = 0
         else:
             self.color = 0xffffff
+        self.row_height = None
         self.MODE_TREE = act.MODE_TREE
         self.MODE_GRID = act.MODE_GRID
         self.POSITION_NONE = act.POSITION_NONE
@@ -481,13 +482,27 @@ class MouseDraggingManager(unohelper.Base, XMouseListener, XMouseMotionListener)
             self.pos = pos
     
     def get_grid_row_height(self, grid):
-        font_height = grid.StyleSettings.FieldFont.Height
-        row_height = grid.convertPointToPixel(Point(font_height, 0), 8).X
-        row_height += 4 + 2 # margin and line height
-        if font_height > 11:
-            row_height += 1 # whats this?
-        return row_height
-    
+        if self.row_height is None:
+            def go_to_next_row(start_y):
+                ny = start_y
+                _row = grid.getRowAtPoint(0, ny)
+                
+                for i in range(30):
+                    row = grid.getRowAtPoint(0, ny)
+                    if row != _row:
+                        return ny
+                    ny += 1
+                return None
+            
+            y = go_to_next_row(0)
+            if y is None:
+                return 0
+            y2 = go_to_next_row(y)
+            if y2 is None:
+                return 0
+            self.row_height = y2 - y
+            
+        return self.row_height
     
     def erase_grid_older_drawing(self, grid, pos, row, row_height):
         grid.getPeer().invalidateRect(
@@ -1401,14 +1416,6 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
             (0, False, 2, True, False, 1, True))
         grid_cont_model.insertByName(self.NAME_GRID, grid_model)
         grid = grid_cont.getControl(self.NAME_GRID)
-        
-        import sys
-        if sys.platform == "win32":
-            font_height = grid.StyleSettings.FieldFont.Height
-            _font_height = grid.convertPointToPixel(Point(font_height, 0), 8).X
-            #print(font_height, _font_height)
-            grid_model.RowHeight = _font_height
-            grid_model.ColumnHeaderHeight = _font_height
         
         import bookmarks.tools
         if bookmarks.tools.check_interface(
