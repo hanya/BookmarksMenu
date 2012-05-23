@@ -298,7 +298,7 @@ def as_resource(d):
         for c in v:
             a = ord(c)
             if a > 0x7f:
-                cs.append("\\u%4x" % a)
+                cs.append("\\u%04x" % a)
             else:
                 cs.append(c)
         lines.append("%s=%s" % (k, "".join(cs)))
