@@ -504,6 +504,10 @@ class Item(BaseItem, DescriptiveItem):
         """ Returns command without arguments. """
         return self.command.split("?", 1)[0]
     
+    def has_arguments(self):
+        parts = self.command.split("?", 1)
+        return len(parts) == 2 and len(parts[1]) > 0
+    
     def as_json(self):
         """ Returns JSON-able object. """
         return {
