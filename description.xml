@@ -3,9 +3,9 @@
 xmlns:xlink="http://www.w3.org/1999/xlink"
 xmlns:d="http://openoffice.org/extensions/description/2006">
 <identifier value="mytools.bookmarks.BookmarksMenu" />
-<version value="1.0.2" />
+<version value="1.0.3" />
 <dependencies>
-<OpenOffice.org-minimal-version value="3.4" d:name="OpenOffice.org 3.4" />
+<d:OpenOffice.org-minimal-version value="3.4" d:name="OpenOffice.org 3.4" />
 </dependencies>
 <registration>
 <simple-license accept-by="admin" default-license-id="this" suppress-on-update="true" suppress-if-required="true">
@@ -20,4 +20,7 @@ xmlns:d="http://openoffice.org/extensions/description/2006">
 <src lang="en-US" xlink:href="descriptions/desc_en-US.txt"/>
 <src lang="ja" xlink:href="descriptions/desc_ja.txt"/>
 </extension-description>
+<update-information>
+<src xlink:href="https://github.com/downloads/hanya/BookmarksMenu/BookmarksMenu.update.xml"/>
+</update-information>
 </description>
