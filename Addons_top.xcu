@@ -1,23 +1,44 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <oor:component-data 
-xmlns:oor="http://openoffice.org/2001/registry" 
-xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-oor:name="Addons" 
-oor:package="org.openoffice.Office">
-<node oor:name="AddonUI"><node oor:name="OfficeMenuBarMerging">
+  xmlns:oor="http://openoffice.org/2001/registry" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  oor:package="org.openoffice.Office" 
+  oor:name="Addons">
+<node oor:name="AddonUI">
+<node oor:name="OfficeMenuBarMerging">
 <node oor:name="mytools.bookmarks.BookmarksMenu" oor:op="fuse">
 <node oor:name="mytools.bookmarks.BookmarksMenu:top" oor:op="replace">
-<prop oor:name="MergePoint"><value>.uno:HelpMenu</value></prop>
-<prop oor:name="MergeCommand"><value>AddBefore</value></prop>
-<prop oor:name="MergeFallback"><value>AddPath</value></prop>
-<prop oor:name="MergeContext"><value></value></prop>
+<prop oor:name="MergePoint">
+<value>.uno:HelpMenu</value>
+</prop>
+<prop oor:name="MergeCommand">
+<value>AddBefore</value>
+</prop>
+<prop oor:name="MergeFallback">
+<value>AddPath</value>
+</prop>
+<prop oor:name="MergeContext">
+<value></value>
+</prop>
 <node oor:name="MenuItems">
 <node oor:name="child" oor:op="replace">
 <prop oor:name="Title">
 <value xml:lang="en-US">~Bookmarks</value>
 <value xml:lang="ja">ブックマーク(~B)</value>
 </prop>
-<prop oor:name="URL" oor:type="xs:string"><value>mytools.bookmarks.BookmarksMenu:top</value></prop>
-<prop oor:name="Target"><value>_self</value></prop>
-<prop oor:name="Context"><value></value></prop>
-</node></node></node></node></node></node></oor:component-data>
+<prop oor:name="URL">
+<value>mytools.bookmarks.BookmarksMenu:top</value>
+</prop>
+<prop oor:name="Target">
+<value>_self</value>
+</prop>
+<prop oor:name="Context">
+<value></value>
+</prop>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</oor:component-data>

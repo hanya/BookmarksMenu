@@ -1,27 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <oor:component-data 
-xmlns:oor="http://openoffice.org/2001/registry" 
-xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-oor:package="org.openoffice.Office.UI" 
-oor:name="BookmarksCommands">
+  xmlns:oor="http://openoffice.org/2001/registry" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  oor:package="org.openoffice.Office.UI" 
+  oor:name="BookmarksCommands">
 <node oor:name="UserInterface">
 <node oor:name="Commands">
-<node oor:name="mytools.bookmarks:InsertBookmark" oor:op="replace">
+<node oor:name="mytools.bookmarks:About" oor:op="replace">
 <prop oor:name="Label">
-<value xml:lang="en-US">~Bookmark...</value>
-<value xml:lang="ja">ブックマーク(~B)...</value>
-</prop>
-</node>
-<node oor:name="mytools.bookmarks:InsertSeparator" oor:op="replace">
-<prop oor:name="Label">
-<value xml:lang="en-US">~Separator</value>
-<value xml:lang="ja">区切り(~S)</value>
-</prop>
-</node>
-<node oor:name="mytools.bookmarks:InsertFolder" oor:op="replace">
-<prop oor:name="Label">
-<value xml:lang="en-US">~Folder...</value>
-<value xml:lang="ja">フォルダ(~F)...</value>
+<value xml:lang="en-US">~About Bookmarks Menu</value>
+<value xml:lang="ja">ブックマークメニューの情報(~A)</value>
 </prop>
 </node>
 <node oor:name="mytools.bookmarks:Back" oor:op="replace">
@@ -30,16 +18,52 @@ oor:name="BookmarksCommands">
 <value xml:lang="ja">戻る(~B)</value>
 </prop>
 </node>
+<node oor:name="mytools.bookmarks:Delete" oor:op="replace">
+<prop oor:name="Label">
+<value xml:lang="en-US">~Remove</value>
+<value xml:lang="ja">削除(~R)</value>
+</prop>
+</node>
 <node oor:name="mytools.bookmarks:Forward" oor:op="replace">
 <prop oor:name="Label">
 <value xml:lang="en-US">~Forward</value>
 <value xml:lang="ja">進む(~F)</value>
 </prop>
 </node>
+<node oor:name="mytools.bookmarks:InsertBookmark" oor:op="replace">
+<prop oor:name="Label">
+<value xml:lang="en-US">~Bookmark...</value>
+<value xml:lang="ja">ブックマーク(~B)...</value>
+</prop>
+</node>
+<node oor:name="mytools.bookmarks:InsertFolder" oor:op="replace">
+<prop oor:name="Label">
+<value xml:lang="en-US">~Folder...</value>
+<value xml:lang="ja">フォルダ(~F)...</value>
+</prop>
+</node>
+<node oor:name="mytools.bookmarks:InsertSeparator" oor:op="replace">
+<prop oor:name="Label">
+<value xml:lang="en-US">~Separator</value>
+<value xml:lang="ja">区切り(~S)</value>
+</prop>
+</node>
+<node oor:name="mytools.bookmarks:Migration" oor:op="replace">
+<prop oor:name="Label">
+<value xml:lang="en-US">M~igrate...</value>
+<value xml:lang="ja">移行(~I)...</value>
+</prop>
+</node>
 <node oor:name="mytools.bookmarks:Move" oor:op="replace">
 <prop oor:name="Label">
 <value xml:lang="en-US">~Move...</value>
 <value xml:lang="ja">移動(~M)...</value>
+</prop>
+</node>
+<node oor:name="mytools.bookmarks:NewMenu" oor:op="replace">
+<prop oor:name="Label">
+<value xml:lang="en-US">~New Menu...</value>
+<value xml:lang="ja">新規メニュー(~N)...</value>
 </prop>
 </node>
 <node oor:name="mytools.bookmarks:Open" oor:op="replace">
@@ -52,30 +76,6 @@ oor:name="BookmarksCommands">
 <prop oor:name="Label">
 <value xml:lang="en-US">~Columns</value>
 <value xml:lang="ja">列(~C)</value>
-</prop>
-</node>
-<node oor:name="mytools.bookmarks:Migration" oor:op="replace">
-<prop oor:name="Label">
-<value xml:lang="en-US">M~igrate...</value>
-<value xml:lang="ja">移行(~I)...</value>
-</prop>
-</node>
-<node oor:name="mytools.bookmarks:Delete" oor:op="replace">
-<prop oor:name="Label">
-<value xml:lang="en-US">~Remove</value>
-<value xml:lang="ja">削除(~R)</value>
-</prop>
-</node>
-<node oor:name="mytools.bookmarks:NewMenu" oor:op="replace">
-<prop oor:name="Label">
-<value xml:lang="en-US">~New Menu...</value>
-<value xml:lang="ja">新規メニュー(~N)...</value>
-</prop>
-</node>
-<node oor:name="mytools.bookmarks:About" oor:op="replace">
-<prop oor:name="Label">
-<value xml:lang="en-US">~About Bookmarks Menu</value>
-<value xml:lang="ja">ブックマークメニューの情報(~A)</value>
 </prop>
 </node>
 </node>
