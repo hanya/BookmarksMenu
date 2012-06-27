@@ -1,4 +1,4 @@
-#! /bin/env python
+#!/usr/bin/env python
 
 import os, os.path
 
@@ -12,7 +12,7 @@ xmlns:d="http://openoffice.org/extensions/description/2006">
 <identifier value="mytools.bookmarks.BookmarksMenu" />
 <version value="{VERSION}" />
 <dependencies>
-<OpenOffice.org-minimal-version value="3.4" d:name="OpenOffice.org 3.4" />
+<d:OpenOffice.org-minimal-version value="3.4" d:name="OpenOffice.org 3.4" />
 </dependencies>
 <registration>
 <simple-license accept-by="admin" default-license-id="this" suppress-on-update="true" suppress-if-required="true">
@@ -25,12 +25,26 @@ xmlns:d="http://openoffice.org/extensions/description/2006">
 <extension-description>
 {DESCRIPTIONS}
 </extension-description>
+<update-information>
+<src xlink:href="https://github.com/downloads/hanya/BookmarksMenu/BookmarksMenu.update.xml"/>
+</update-information>
 </description>"""
 
-"""<name lang="en-US">Bookmarks Menu</name>
-<name lang="ja"></name>"""
-"""<src lang="en-US" xlink:href="descriptions/desc_en-US.txt"/>
-<src lang="ja" xlink:href="descriptions/desc_ja.txt"/>"""
+
+update_feed = """<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://openoffice.org/extensions/update/2006" 
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:d="http://openoffice.org/extensions/description/2006">
+<identifier value="mytools.bookmarks.BookmarksMenu" />
+<version value="{VERSION}" />
+<dependencies>
+<d:OpenOffice.org-minimal-version value="3.4" d:name="OpenOffice.org 3.4" />
+</dependencies>
+<update-download>
+<src xlink:href="https://github.com/downloads/hanya/BookmarksMenu/BookmarksMenu-{VERSION}.oxt"/>
+</update-download>
+</description>
+"""
 
 
 def genereate_description(d):
@@ -44,7 +58,7 @@ def genereate_description(d):
     descs = []
     for lang, v in d.iteritems():
         desc = v["id.extension.description"]
-        with open("descriptions/desc_{LANG}.txt", "w") as f:
+        with open("descriptions/desc_{LANG}.txt".format(LANG=lang), "w") as f:
             f.write(desc.encode("utf-8"))
         descs.append("<src lang=\"{LANG}\" xlink:href=\"descriptions/desc_{LANG}.txt\"/>".format(LANG=lang))
     
@@ -317,6 +331,13 @@ def write_options_resource(d):
         write_resource(name.format(LANG=lang.replace("-", "_")), _d)
 
 
+def write_update_feed():
+    version = read_version()
+    s = update_feed.format(VERSION=version)
+    with open("./BookmarksMenu.update.xml", "w") as f:
+        f.write(s.encode("utf-8"))
+
+
 def main():
     prefix = "strings_"
     res_dir = "resources"
@@ -359,6 +380,7 @@ def main():
         f.write(s)#.encode("utf-8"))
     
     write_options_resource(locales)
+    write_update_feed()
     
 
 def write_resource(res_path, d):
