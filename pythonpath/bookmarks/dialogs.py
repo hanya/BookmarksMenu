@@ -1226,32 +1226,175 @@ class FileFilterDialog(LayoutedDialog):
       )
 
 
+from com.sun.star.view import XSelectionChangeListener
+from com.sun.star.awt.tree import XTreeExpansionListener
+
 class MacroSelectorDialog(LayoutedDialog):
     """ Let user to choose a macro. """
     
-    SCRIPT_URI = "vnd.sun.star.script:mytools_bookmarks.Selector.MacroSelector?language=Basic&location=application"
     DIALOG_URI = DIALOG_DIR + "Selector.xdl"
     
+    IMAGE_SCRIPT = "private:graphicrepository/res/im30821.png"
+    IMAGE_CONTAINER = "private:graphicrepository/res/im30820.png"
+    IMAGE_ROOT = "private:graphicrepository/res/harddisk_16.png"
+    IMAGE_DOCUMENT = "private:graphicrepository/res/sc05500.png"
+    
+    class NodeWrapper(object):
+        def __init__(self, act, node):
+            self.act = act
+            self._node = node
+        
+        def getName(self):
+            return self.act._node_get_name(self._node)
+        
+        def getChildNodes(self):
+            return self.act._node_get_child_nodes(self._node)
+        
+        def hasChildNodes(self):
+            return self.act._node_has_child_nodes(self._node)
+        
+        def getType(self):
+            return self.act._node_get_type(self._node)
+        
+        def getPropertyValue(self, name):
+            return self.act._node_get_property_value(self._node, name)
+    
+    
+    class MacroSelectorTreeExpansionListener(ListenerBase, XTreeExpansionListener):
+        def treeExpanding(self, ev): pass
+        def treeCollapsing(self, ev): pass
+        def treeExpanded(self, ev): pass
+        def treeCollapsed(self, ev): pass
+        def requestChildNodes(self, ev):
+            tree_node = ev.Source.getSelection()
+            if tree_node.getChildCount() <= 0:
+                self.act.create_children(tree_node)
+    
+    class MacroSelectorTreeSelectionListener(ListenerBase, XSelectionChangeListener):
+        def selectionChanged(self, ev):
+            self.act.fill_description(None)
+            tree_node = ev.Source.getSelection()
+            if tree_node:
+                self.act.fill_macro_names(tree_node)
+    
+    class MacroSelectorItemListener(ItemListenerBase):
+        def itemStateChanged(self, ev):
+            pos = ev.Selected
+            if pos >= 0:
+                self.act.fill_description(ev.Source.getModel().getItemData(pos))
+    
+    def _result(self):
+        uri = None
+        list_names = self.get("list_names")
+        pos = list_names.getSelectedItemPos()
+        if pos >= 0:
+            uri = self.NodeWrapper(
+                self, list_names.getModel().getItemData(pos)).getPropertyValue("URI")
+        return uri
+    
+    def create_children(self, tree_parent, top=False):
+        _wrapper = self.NodeWrapper
+        parent_node = _wrapper(self, tree_parent.DataValue)
+        for _child in parent_node.getChildNodes():
+            child = _wrapper(self, _child)
+            if child.getType():
+                item_name = child.getName()
+                tree_child_node = self.tree_data_model.createNode(
+                                        item_name, child.hasChildNodes())
+                tree_parent.appendChild(tree_child_node)
+                tree_child_node.DataValue = _child
+                if top:
+                    if item_name == "user" or item_name == "share":
+                        icon = self.IMAGE_ROOT
+                    else:
+                        icon = self.IMAGE_DOCUMENT
+                else:
+                    icon = self.IMAGE_CONTAINER
+                tree_child_node.setNodeGraphicURL(icon)
+    
+    def fill_macro_names(self, tree_parent):
+        _wrapper = self.NodeWrapper
+        parent_node = _wrapper(self, tree_parent.DataValue)
+        image_script = self.IMAGE_SCRIPT
+        list_names_model = self.get("list_names").getModel()
+        list_names_model.removeAllItems()
+        
+        for pos, _child in enumerate(parent_node.getChildNodes()):
+            child = _wrapper(self, _child)
+            if not child.getType():
+                list_names_model.insertItem(
+                            pos, child.getName(), image_script)
+                list_names_model.setItemData(pos, _child)
+    
+    def fill_description(self, node):
+        text = ""
+        if node:
+            try:
+                text = self.NodeWrapper(self, node).getPropertyValue("Description")
+            except:
+                pass
+        self.set_label("label_description", text)
+    
     def _init(self):
+        self.tree_data_model = None
+        self._init_idl_methods()
+        self._init_tree()
+        
         self.layouter = self._init_layout()
         self.layouter.layout()
     
-    def execute(self):
-        if self.dialog is None:
-            self.create_dialog()
-            self._init()
-        from bookmarks.tools import create_script
-        type_string = uno.getTypeByName("string")
-        m = None
-        if self.res:
-            m = self.create_service("com.sun.star.container.EnumerableMap")
-            m.initialize((type_string, type_string))
-            for k, v in self.res.iteritems():
-                m.put(k, v)
-        script = create_script(self.ctx, self.SCRIPT_URI)
-        result, dummy, dummy = script.invoke((m, self.dialog), (), ())
-        self.dialog.dispose()
-        return result
+    def _init_tree(self):
+        nf = self.ctx.getValueByName(
+            "/singletons/com.sun.star.script.browse.theBrowseNodeFactory")
+        root_node = nf.createView(uno.getConstantByName(
+            "com.sun.star.script.browse.BrowseNodeFactoryViewTypes.MACROSELECTOR"))
+        
+        self.tree_data_model = self.create_service(
+                    "com.sun.star.awt.tree.MutableTreeDataModel")
+        tree_libraries = self.get("tree_libraries")
+        tree_libraries_model = tree_libraries.getModel()
+        
+        tree_root_node = self.tree_data_model.createNode("ROOT", False)
+        tree_root_node.DataValue = root_node
+        self.tree_data_model.setRoot(tree_root_node)
+        tree_libraries_model.SelectionType = uno.Enum(
+                    "com.sun.star.view.SelectionType", "SINGLE")
+        tree_libraries_model.DataModel = self.tree_data_model
+        
+        self.create_children(tree_root_node, True)
+        tree_libraries_model.RootDisplayed = False
+        
+        tree_libraries.addSelectionChangeListener(
+                self.MacroSelectorTreeSelectionListener(self))
+        tree_libraries.addTreeExpansionListener(
+                self.MacroSelectorTreeExpansionListener(self))
+        self.get("list_names").addItemListener(self.MacroSelectorItemListener(self))
+        
+        tree_libraries.makeNodeVisible(tree_root_node.getChildAt(0))
+    
+    def _init_idl_methods(self):
+        """ Workaround for invocation problem, i120458. """
+        cr = self.create_service("com.sun.star.reflection.CoreReflection")
+        idl_XPropertyValue = cr.forName("com.sun.star.beans.XPropertySet")
+        self._idl_getPropertyValue = idl_XPropertyValue.getMethod("getPropertyValue").invoke
+        idl_XBrowseNode = cr.forName("com.sun.star.script.browse.XBrowseNode")
+        for name in ("getName", "getChildNodes", "hasChildNodes", "getType"):
+            setattr(self, "_idl_" + name, idl_XBrowseNode.getMethod(name).invoke)
+    
+    def _node_get_name(self, node):
+        return self._idl_getName(node, ())[0]
+    
+    def _node_get_child_nodes(self, node):
+        return self._idl_getChildNodes(node, ())[0]
+    
+    def _node_has_child_nodes(self, node):
+        return self._idl_hasChildNodes(node, ())[0]
+    
+    def _node_get_type(self, node):
+        return self._idl_getType(node, ())[0]
+    
+    def _node_get_property_value(self, node, name):
+        return self._idl_getPropertyValue(node, (name,))[0]
     
     def _init_layout(self):
         return DialogLayout(

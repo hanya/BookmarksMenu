@@ -11,7 +11,7 @@ zip -9 -o $NAME-$VERSION.oxt \
   registration.components \
   pythonpath/**/*.py pythonpath/**/**/*.py \
   *.xcu *.xcs registration.py \
-  resources/* mytools_bookmarks/* \
+  resources/* \
   bookmarks/**/*.xml \
   help/**/* help/**/**/* \
   LICENSE CHANGES NOTICE Translators
