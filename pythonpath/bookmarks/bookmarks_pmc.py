@@ -23,7 +23,7 @@ from com.sun.star.beans import PropertyValue
 from bookmarks import \
     CONFIG_NODE_CONTROLLERS, NAME_NAME
 from bookmarks.tools import get_config, \
-	get_module_name, get_popup_names
+    get_module_name, get_popup_names
 import bookmarks.base
 from bookmarks import TAG_POPUP_IMPLE_NAME
 
