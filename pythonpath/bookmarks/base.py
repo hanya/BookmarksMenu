@@ -64,7 +64,15 @@ class PopupMenuControllerBase(XPopupMenuController, XInitialization,
     def updatePopupMenu(self): pass
     
     # XInitialization
-    def initialize(self, args): pass
+    def initialize(self, args):
+        for arg in args:
+            if arg.Name == "Frame":
+                self.frame = arg.Value
+            elif arg.Name == "CommandURL":
+                self.command = arg.Value
+        self.parse_command_url(self.command)
+    
+    def parse_command_url(self, command): pass
     
     # XDispatchProvider
     def queryDispatch(self, url, name, flags): pass
