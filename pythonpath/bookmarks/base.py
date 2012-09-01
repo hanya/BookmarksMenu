@@ -53,28 +53,34 @@ class ServiceInfo(XServiceInfo):
 
 from com.sun.star.lang import XInitialization
 from com.sun.star.frame import \
-	XDispatchProvider, XPopupMenuController, XStatusListener
+    XDispatchProvider, XPopupMenuController, XStatusListener
 
 
 class PopupMenuControllerBase(XPopupMenuController, XInitialization, 
                         XDispatchProvider, XStatusListener, ServiceInfo):
-	
-	# XPopupMenuController
-	def setPopupMenu(self, popup): pass
-	def updatePopupMenu(self): pass
-	
-	# XInitialization
-	def initialize(self, args): pass
-	
-	# XDispatchProvider
-	def queryDispatch(self, url, name, flags): pass
-	def queryDispatches(self, requests): pass
-	
-	# XStatusListener
-	def statusChanged(self, ev): pass
-	
-	def create_sub_popup(self):
-		""" Create popupmenu instance. """
-		return self.ctx.getServiceManager().\
-			createInstanceWithContext("com.sun.star.awt.PopupMenu", self.ctx)
+    
+    # XPopupMenuController
+    def setPopupMenu(self, popup): pass
+    def updatePopupMenu(self): pass
+    
+    # XInitialization
+    def initialize(self, args): pass
+    
+    # XDispatchProvider
+    def queryDispatch(self, url, name, flags): pass
+    def queryDispatches(self, requests): pass
+    
+    # XStatusListener
+    def statusChanged(self, ev): pass
+    
+    def create_service(self, name, args=None):
+        smgr = self.ctx.getServiceManager()
+        if args:
+            return smgr.createInstanceWithArgumentsAndContext(name, args, self.ctx)
+        else:
+            return smgr.createInstanceWithContext(name, self.ctx)
+    
+    def create_sub_popup(self):
+        """ Create popupmenu instance. """
+        return self.create_service("com.sun.star.awt.PopupMenu")
 
