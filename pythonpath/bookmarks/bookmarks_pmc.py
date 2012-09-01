@@ -110,7 +110,8 @@ class BookmarksPopupBase(unohelper.Base,
                         self.fill_popup(popup, self.sub_popups[id])
                         popup.addMenuListener(self)
                 elif item.get_command_only() in self.popup_menus and \
-                    not item.has_arguments():
+                    (item.get_command().startswith("mytools.frame") or 
+                    not item.has_arguments()):
                     self.treat_popup(item, popup)
         except:
             pass
@@ -130,7 +131,8 @@ class BookmarksPopupBase(unohelper.Base,
                     popup.setTipHelpText(id, desc)
                 
                 if command in self.popup_menus and \
-                    not child.has_arguments():
+                   (command.startswith("mytools.frame") or \
+                    not child.has_arguments()):
                     sub_popup = self.create_sub_popup()
                     popup.setPopupMenu(id, sub_popup)
                     self.sub_popups[id] = child
