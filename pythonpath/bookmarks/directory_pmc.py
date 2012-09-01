@@ -63,8 +63,7 @@ class DirectoryPopup(unohelper.Base,
         self.executor = bookmarks.command.DispatchExecutor(self.ctx)
         self.valid = False
         self.initialize(args)
-        sfa = ctx.getServiceManager().createInstanceWithContext(
-            "com.sun.star.ucb.SimpleFileAccess", self.ctx)
+        sfa = self.create_service("com.sun.star.ucb.SimpleFileAccess")
         if sfa.exists(self.base_url) and sfa.isFolder(self.base_url):
             self.sfa = sfa
             self.valid = True
@@ -72,15 +71,6 @@ class DirectoryPopup(unohelper.Base,
         from bookmarks.resource import CurrentStringResource
         res = CurrentStringResource.get(ctx)
         self._label_open_all = res.get("Open ~All")
-    
-    # XInitialization
-    def initialize(self, args):
-        for arg in args:
-            if arg.Name == "Frame":
-                self.frame = arg.Value
-            elif arg.Name == "CommandURL":
-                self.command = arg.Value
-        self.parse_command_url(self.command)
     
     def parse_command_url(self, command):
         """ Parse arguments of the command. """
