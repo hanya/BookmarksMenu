@@ -3,7 +3,7 @@
 xmlns:xlink="http://www.w3.org/1999/xlink"
 xmlns:d="http://openoffice.org/extensions/description/2006">
 <identifier value="mytools.bookmarks.BookmarksMenu" />
-<version value="1.0.4" />
+<version value="1.0.5" />
 <dependencies>
 <d:OpenOffice.org-minimal-version value="3.4" d:name="OpenOffice.org 3.4" />
 </dependencies>
@@ -13,10 +13,12 @@ xmlns:d="http://openoffice.org/extensions/description/2006">
 </simple-license>
 </registration>
 <display-name>
+<name lang="de-DE">Lesezeichen-Menü</name>
 <name lang="en-US">Bookmarks Menu</name>
 <name lang="ja">ブックマークメニュー</name>
 </display-name>
 <extension-description>
+<src lang="de-DE" xlink:href="descriptions/desc_de-DE.txt"/>
 <src lang="en-US" xlink:href="descriptions/desc_en-US.txt"/>
 <src lang="ja" xlink:href="descriptions/desc_ja.txt"/>
 </extension-description>

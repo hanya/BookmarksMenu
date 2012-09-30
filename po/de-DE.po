@@ -1,0 +1,618 @@
+# 
+# Translators:
+#   <ust-news@web.de>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: BookmarksMenu\n"
+"Report-Msgid-Bugs-To: https://github.com/hanya/BookmarksMenu/issues\n"
+"POT-Creation-Date: 2012-03-31 15:43+0200\n"
+"PO-Revision-Date: 2012-09-29 12:43+0000\n"
+"Last-Translator: u.stb <ust-news@web.de>\n"
+"Language-Team: German (Germany) (http://www.transifex.com/projects/p/bookmarksmenuforopenoffice/language/de_DE/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Accelerator-Marker: ~\n"
+"X-Generator: Translate Toolkit 1.9.0\n"
+
+#: id.OptionsTop.label_title.Label
+msgid "Bookmarks Menu"
+msgstr "Lesezeichen-Menü"
+
+#: id.label.bookmarks
+msgid "~Bookmarks"
+msgstr "~Lesezeichenver"
+
+#: id.name.bookmarks
+msgid "Bookmarks"
+msgstr "Lesezeichen"
+
+#: id.label.ok
+msgid "OK"
+msgstr "OK"
+
+#: id.label.cancel
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: id.label.help
+msgid "Help"
+msgstr "Hilfe"
+
+#: id.label.save
+msgid "~Save"
+msgstr "~Speichern"
+
+#: id.label.discard
+msgid "~Discard"
+msgstr "~Verwerfen"
+
+#: id.error
+msgid "Error"
+msgstr "Fehler"
+
+#: id.item.label.name
+msgid "Name"
+msgstr "Name"
+
+#: id.item.label.value
+msgid "Value"
+msgstr "Wert"
+
+#: id.item.label.description
+msgid "Description"
+msgstr "Beschreibung"
+
+#: id.item.tags
+msgid "Tags"
+msgstr "Tags"
+
+#: id.item.label.filter
+msgid "File filter"
+msgstr "Dateifilter"
+
+#: id.item.program
+msgid "Program"
+msgstr "Programm"
+
+#: id.item.arguments
+msgid "Arguments"
+msgstr "Argumente"
+
+#: id.item.command
+msgid "Command"
+msgstr "Befehl"
+
+#: id.item.path
+msgid "Path"
+msgstr "Pfad"
+
+#: id.item.document
+msgid "Document"
+msgstr "Dokument"
+
+#: id.item.macro
+msgid "Macro"
+msgstr "Makro"
+
+#: id.item.something
+msgid "Something"
+msgstr "Sonstiges"
+
+#: id.item.special
+msgid "Special"
+msgstr "Spezial"
+
+#: id.item.type
+msgid "Type"
+msgstr "Typ"
+
+#: id.item.file
+msgid "File"
+msgstr "Datei"
+
+#: id.item.folder
+msgid "Folder"
+msgstr "Ordner"
+
+#: id.item.web
+msgid "Web"
+msgstr "Web"
+
+#: id.item.unsorted
+msgid "Unsorted Bookmarks"
+msgstr "Unsortierte Lesezeichen"
+
+#: id.item.tag.name
+msgid "Tag name"
+msgstr "Tagname"
+
+#: id.dialog.title.folder
+msgid "New Folder"
+msgstr "Neuer Ordner"
+
+#: id.dialog.title.bookmark
+msgid "New Bookmark"
+msgstr "Neues Lesezeichen"
+
+#: id.dialog.title.macro.selector
+msgid "Macro Selector"
+msgstr "Makro auswählen"
+
+#: id.dialog.select.command
+msgid "Select Command"
+msgstr "Befehl auswählen"
+
+#: id.libraries
+msgid "Libraries"
+msgstr "Bibliotheken"
+
+#: id.names
+msgid "Names"
+msgstr "Namen"
+
+#: id.categories
+msgid "Categories"
+msgstr "Kategorien"
+
+#: id.commands
+msgid "Commands"
+msgstr "Befehle"
+
+#: id.label.show.command
+msgid "~Show command"
+msgstr "~Zeige Befehl"
+
+#: id.file.filter
+msgid "File name filter"
+msgstr "Dateinamenfilter"
+
+#: id.query.key
+msgid "Key"
+msgstr "Schlüssel"
+
+#: id.tooltip.document
+msgid "Open document in the office"
+msgstr "Öffne Dokument in OpenOffice"
+
+#: id.tooltip.macro
+msgid "Execute macro"
+msgstr "Makro ausführen"
+
+#: id.tooltip.command
+msgid "General menu entry"
+msgstr "Genereller Menüeintrag"
+
+#: id.tooltip.program
+msgid "Execute program"
+msgstr "Programm ausführen"
+
+#: id.tooltip.something
+msgid "Open something"
+msgstr "Öffne Sonstiges"
+
+#: id.tooltip.special
+msgid "Create special entry"
+msgstr "Erzeuge speziellen Eintrag"
+
+#: id.open.from
+msgid "\"Open...\" from specific folder"
+msgstr "\"Öffne...\" aus einem spezifiziertem Ordner"
+
+#: id.saveas.into
+msgid "\"Save As...\" into specific folder"
+msgstr "\"Speichern als...\" in einen spezifizierten Ordner"
+
+#: id.directory.popup
+msgid "Place Menu"
+msgstr "Menü platzieren"
+
+#: id.web.browser
+msgid "Web browser"
+msgstr "Webbrowser"
+
+#: id.file.manager
+msgid "File manager"
+msgstr "Dateimanager"
+
+#: id.open.command
+msgid "Open command"
+msgstr "Befehl öffnen"
+
+#: id.use.custom
+msgid "~Use custom"
+msgstr "Das ~Übliche wählen"
+
+#: id.label.reset
+msgid "~Reset"
+msgstr "~Zurücksetzen"
+
+#: id.options.bookmarks.data.file
+msgid "Bookmarks data file"
+msgstr "Lesezeichen-Datendatei"
+
+#: id.options.backup.directory
+msgid "Backup directory"
+msgstr "Backupverzeichnis"
+
+#: id.error.unable.to.bookmark
+msgid "Unable to bookmark this document."
+msgstr "Das Setzen eines Lesezeichens verhindern"
+
+#: id.error.not.stored
+msgid "This document is not stored yet."
+msgstr "Dieses Dokument ist bisher noch nicht gespeichert"
+
+#: id.OptionsTop.label_description.Label
+msgid "This is where you can choose settings for Bookmarks Menu extension."
+msgstr "Hier können Sie die Einstellungen für die Lesezeichen-Menü Erweiterung wählen"
+
+#: id.extension.description
+msgid "This extension provides favorite menu."
+msgstr "Diese Erweiterung ermöglicht ein Favoritenmenü"
+
+#: id.move
+msgid "Move"
+msgstr "Verschieben"
+
+#: id.move.to
+msgid "Move to"
+msgstr "Verschieben nach"
+
+#: id.script.organizer
+msgid "Script organizer"
+msgstr "Skript Organizer"
+
+#: id.label.document.type
+msgid "Document types"
+msgstr "Dokumententyp"
+
+#: id.menu.add.this
+msgid "Bookmark ~This Document..."
+msgstr "Lesezeichen für dieses ~Dokument setzen"
+
+#: id.menu.edit
+msgid "~Edit Bookmarks..."
+msgstr "~Lesezeichen bearbeiten"
+
+#: id.title.about
+msgid "About Bookmarks Menu"
+msgstr "Über Lesezeichen-Menü"
+
+#: id.title.directory.popup
+msgid "Place Menu Settings"
+msgstr "Menüeinstellungen platzieren"
+
+#: id.options.settings
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: id.options.data
+msgid "Data"
+msgstr "Daten"
+
+#: id.toolbar.standardbar
+msgid "Standard"
+msgstr "Standard"
+
+#: id.toolbar.insertbar
+msgid "Insert"
+msgstr "Einfügen"
+
+#: id.toolbar.historybar
+msgid "History"
+msgstr "History"
+
+#: id.command.InsertBookmark
+msgid "~Bookmark..."
+msgstr "~Lesezeichen"
+
+#: id.command.InsertSeparator
+msgid "~Separator"
+msgstr "~Trenner"
+
+#: id.command.InsertFolder
+msgid "~Folder..."
+msgstr "~Ordner"
+
+#: id.command.Back
+msgid "~Back"
+msgstr "~Zurück"
+
+#: id.command.Forward
+msgid "~Forward"
+msgstr "~Vor"
+
+#: id.command.Move
+msgid "~Move..."
+msgstr "~Verschieben"
+
+#: id.command.Open
+msgid "~Open"
+msgstr "~Öffnen"
+
+#: id.command.ShownInfo
+msgid "~Columns"
+msgstr "~Spalten"
+
+#: id.command.Migration
+msgid "M~igrate..."
+msgstr "~Migrieren ..."
+
+#: id.command.Delete
+msgid "~Remove"
+msgstr "~Entfernen"
+
+#: id.command.NewMenu
+msgid "~New Menu..."
+msgstr "~Neues Menü"
+
+#: id.command.About
+msgid "~About Bookmarks Menu"
+msgstr "Über Lesezeichen-Menü"
+
+#: id.menu.open.all
+msgid "Open ~All"
+msgstr "Öffne ~Alle"
+
+#: id.error.insert.doc
+msgid "This file does not contain bookmarks."
+msgstr "Diese Datei enthält keine Lesezeichen"
+
+#: id.migrate.not.found
+msgid "Older bookmarks menu was not found."
+msgstr "Altes Lesezeichen-Menü wurde nicht gefunden"
+
+#: id.message.query.save
+msgid ""
+"The bookmarks \"%s\" has been modified.\n"
+"Do you want to save your changes?"
+msgstr "Die Lesezeichen \"%s\" wurden verändert.\nWollen Sie die Änderungen speichern?"
+
+#: id.options.change.bookmarks.file
+msgid "The change of bookmarks file is enabled after restarting the office."
+msgstr "Die Änderung der Lesezeichendatei wird nach einem Neustart von OpenOffice aktiviert."
+
+#: id.label.new
+msgid "~New"
+msgstr "~Neu"
+
+#: id.label.delete
+msgid "~Delete"
+msgstr "~Löschen"
+
+#: id.label.select
+msgid "~Select"
+msgstr "~Auswählen"
+
+#: id.label.input
+msgid "~Input"
+msgstr "~Eingabe"
+
+#: id.tooltip.name
+msgid "Shown as label in the menu"
+msgstr "Als Label im Menü angezeigt"
+
+#: id.tooltip.tags
+msgid "Separate tags with commas"
+msgstr "Tags mit Kommas separieren"
+
+#: id.tooltip.description
+msgid "Shown as tooltip in the menu"
+msgstr "Als Tooltip im Menü angezeigt"
+
+#: id.label.undo
+msgid "Undo: %s"
+msgstr "Rückgängig: %s"
+
+#: id.label.redo
+msgid "Redo: %s"
+msgstr "Wiederholen: %s"
+
+#: id.undo.name.migrate
+msgid "Migrate"
+msgstr "Migrieren"
+
+#: id.undo.name.insert.file
+msgid "Insert from file"
+msgstr "Aus Datei einfügen"
+
+#: id.undo.name.paste
+msgid "Paste"
+msgstr "Einfügen"
+
+#: id.undo.name.delete
+msgid "Delete"
+msgstr "Löschen"
+
+#: id.undo.name.cut
+msgid "Cut"
+msgstr "Ausschneiden"
+
+#: id.undo.name.change.tag
+msgid "Change tag"
+msgstr "Tag wechseln"
+
+#: id.undo.name.delete.tag
+msgid "Delete tag"
+msgstr "Tag löschen"
+
+#: id.undo.name.insert.separator
+msgid "Insert separator"
+msgstr "Trenner einfügen"
+
+#: id.undo.name.insert.folder
+msgid "Insert folder"
+msgstr "Ordner einfügen"
+
+#: id.undo.name.insert.item
+msgid "Insert item"
+msgstr "Objekt einfügen"
+
+#: id.undo.name.change.content
+msgid "Change bookmark"
+msgstr "Lesezeichen ändern"
+
+#: id.undo.name.change.name
+msgid "Change name"
+msgstr "Namen ändern"
+
+#: id.undo.name.change.description
+msgid "Change description"
+msgstr "Beschreibung ändern"
+
+#: id.wizard.title
+msgid "New Bookmarks Extension Package"
+msgstr "Neues Leseziechen Extension Package"
+
+#: id.wizard.define.name
+msgid "Define name"
+msgstr "Namen definieren"
+
+#: id.wizard.define.label
+msgid "Define label"
+msgstr "Label definieren"
+
+#: id.wizard.choose.position
+msgid "Choose position"
+msgstr "Position wählen"
+
+#: id.wizard.choose.type
+msgid "Choose document types"
+msgstr "Dukumententyp wählen"
+
+#: id.wizard.options
+msgid "Options"
+msgstr "Optionen"
+
+#: id.wizard.save.package
+msgid "Save package"
+msgstr "Paket speicherrn"
+
+#: id.wizard.title.step1
+msgid "Input name which is used as menu identifier"
+msgstr "Einfügename, der als Menü-Identifier benutzt wird"
+
+#: id.wizard.title.step2
+msgid "Edit menu label"
+msgstr "Menülabel bearbeiten"
+
+#: id.wizard.title.step3
+msgid "Choose menu position"
+msgstr "Menüposition wählen"
+
+#: id.wizard.title.step4
+msgid "Document types which this menu item is shown"
+msgstr "Dokumententypen, in denen dieser Menüeintrag gezeigt wird"
+
+#: id.wizard.title.step5
+msgid "Choose options"
+msgstr "Optionen wählen"
+
+#: id.wizard.title.step6
+msgid "Generate extension package"
+msgstr "Erzeuge extension package"
+
+#: id.wizard.another
+msgid "Show at another position"
+msgstr "An einer anderen Position zeigen"
+
+#: id.wizard.help.text.step1
+msgid ""
+"This wizard generates an extension package which adds bookmarks menu in the "
+"menu."
+msgstr "Dieser Assistent erzeugt ein extension package, das \"Lesezeichen-Menü\" im Menü hinzufügt"
+
+#: id.locale
+msgid "Locale"
+msgstr "Sprache"
+
+#: id.menu
+msgid "Menu"
+msgstr "Menü"
+
+#: id.positioning
+msgid "Positioning"
+msgstr "Positionierung"
+
+#: id.before
+msgid "Before"
+msgstr "Zuvor"
+
+#: id.after
+msgid "After"
+msgstr "Danach"
+
+#: id.choose.in
+msgid "Choose in"
+msgstr "Wähle in"
+
+#: id.include
+msgid "Include bookmark data into the package"
+msgstr "Schließe Leseziechndaten im package ein"
+
+#: id.another.package
+msgid "Another %s"
+msgstr "Ein weiteres %s"
+
+#: id.description.after
+msgid "After %s"
+msgstr "Nach %s"
+
+#: id.description.before
+msgid "Before %s"
+msgstr "Vor %s"
+
+#: id.label.menu.position
+msgid "Menu position"
+msgstr "Menüposition"
+
+#: id.label.choose.base.position
+msgid "~Choose a base position"
+msgstr "~Wähle eine Basisposition"
+
+#: id.label.after
+msgid "~After"
+msgstr "~Danach"
+
+#: id.label.before
+msgid "~Before"
+msgstr "~Zuvor"
+
+#: id.label.label
+msgid "Label"
+msgstr "Label"
+
+#: id.label.module
+msgid "Module"
+msgstr "Modul"
+
+#: id.label.specify
+msgid "~Specify"
+msgstr "~Spezifiziere"
+
+#: id.label.all
+msgid "A~ll"
+msgstr "A~lle"
+
+#: id.label.edit
+msgid "~Edit"
+msgstr "~Bearbeiten"
+
+#: id.label.add
+msgid "A~dd"
+msgstr "Hin~zufügen"
+
+#: id.label.finish
+msgid "Click Finish button to save extension package."
+msgstr "Auf Beenden klicken um das extension package zu sichern"
+
+#: id.all.files
+msgid "All files (*.*)"
+msgstr "Alle Dateien (*.*)"
+
+#: id.label.new.folder
+msgid "New ~Folder"
+msgstr "Neuer ~Ordner"
