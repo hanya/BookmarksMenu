@@ -249,7 +249,7 @@ class BookmarksCommands(object):
             
         data = [icon, item.get_name()]
         if show_tags:
-			data.append(",".join(item.get_tags()))
+            data.append(",".join(item.get_tags()))
         if show_value:
             data.append(value)
         if show_description:
