@@ -17,6 +17,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">Lesezeichen-Menü</value>
 <value xml:lang="en-US">Bookmarks Menu</value>
+<value xml:lang="fr">Menu des marques-pages</value>
 <value xml:lang="ja">ブックマークメニュー</value>
 </prop>
 <prop oor:name="OptionsPage">
@@ -33,6 +34,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">Daten</value>
 <value xml:lang="en-US">Data</value>
+<value xml:lang="fr">Données</value>
 <value xml:lang="ja">データ</value>
 </prop>
 <prop oor:name="OptionsPage">
@@ -55,6 +57,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">Einstellungen</value>
 <value xml:lang="en-US">Settings</value>
+<value xml:lang="fr">Paramètres</value>
 <value xml:lang="ja">設定</value>
 </prop>
 <prop oor:name="OptionsPage">

@@ -10,6 +10,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">Über Lesezeichen-Menü</value>
 <value xml:lang="en-US">~About Bookmarks Menu</value>
+<value xml:lang="fr">~À propos de 'Bookmarks Menu'</value>
 <value xml:lang="ja">ブックマークメニューの情報(~A)</value>
 </prop>
 </node>
@@ -17,6 +18,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Zurück</value>
 <value xml:lang="en-US">~Back</value>
+<value xml:lang="fr">~Précédent</value>
 <value xml:lang="ja">戻る(~B)</value>
 </prop>
 </node>
@@ -24,6 +26,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Entfernen</value>
 <value xml:lang="en-US">~Remove</value>
+<value xml:lang="fr">~Retirer</value>
 <value xml:lang="ja">削除(~R)</value>
 </prop>
 </node>
@@ -31,6 +34,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Vor</value>
 <value xml:lang="en-US">~Forward</value>
+<value xml:lang="fr">~Suivant</value>
 <value xml:lang="ja">進む(~F)</value>
 </prop>
 </node>
@@ -38,6 +42,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Lesezeichen</value>
 <value xml:lang="en-US">~Bookmark...</value>
+<value xml:lang="fr">~Marque-page...</value>
 <value xml:lang="ja">ブックマーク(~B)...</value>
 </prop>
 </node>
@@ -45,6 +50,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Ordner</value>
 <value xml:lang="en-US">~Folder...</value>
+<value xml:lang="fr">~Dossier...</value>
 <value xml:lang="ja">フォルダ(~F)...</value>
 </prop>
 </node>
@@ -52,6 +58,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Trenner</value>
 <value xml:lang="en-US">~Separator</value>
+<value xml:lang="fr">~Séparateur</value>
 <value xml:lang="ja">区切り(~S)</value>
 </prop>
 </node>
@@ -59,6 +66,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Migrieren ...</value>
 <value xml:lang="en-US">M~igrate...</value>
+<value xml:lang="fr">~Migrer</value>
 <value xml:lang="ja">移行(~I)...</value>
 </prop>
 </node>
@@ -66,6 +74,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Verschieben</value>
 <value xml:lang="en-US">~Move...</value>
+<value xml:lang="fr">~Déplacer...</value>
 <value xml:lang="ja">移動(~M)...</value>
 </prop>
 </node>
@@ -73,6 +82,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Neues Menü</value>
 <value xml:lang="en-US">~New Menu...</value>
+<value xml:lang="fr">~Nouveau Menu</value>
 <value xml:lang="ja">新規メニュー(~N)...</value>
 </prop>
 </node>
@@ -80,6 +90,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Öffnen</value>
 <value xml:lang="en-US">~Open</value>
+<value xml:lang="fr">~Ouvrir</value>
 <value xml:lang="ja">開く(~O)</value>
 </prop>
 </node>
@@ -87,6 +98,7 @@
 <prop oor:name="Label">
 <value xml:lang="de-DE">~Spalten</value>
 <value xml:lang="en-US">~Columns</value>
+<value xml:lang="fr">~Colonnes</value>
 <value xml:lang="ja">列(~C)</value>
 </prop>
 </node>
