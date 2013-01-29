@@ -31,7 +31,7 @@ xmlns:d="http://openoffice.org/extensions/description/2006">
 {DESCRIPTIONS}
 </extension-description>
 <update-information>
-<src xlink:href="https://github.com/downloads/hanya/BookmarksMenu/BookmarksMenu.update.xml"/>
+<src xlink:href="https://raw.github.com/hanya/BookmarksMenu/master/files/BookmarksMenu.update.xml"/>
 </update-information>
 </description>"""
 
