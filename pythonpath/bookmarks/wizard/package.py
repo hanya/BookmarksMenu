@@ -144,7 +144,7 @@ class Package(object):
             temp = self.create_service("com.sun.star.util.PathSubstitution").\
                 substituteVariables("$(user)/temp", True)
             if self.sfa.isReadOnly(temp):
-                raise StandardError("Temp file can not be created.")
+                raise Exception("Temp file can not be created.")
         if not temp.endswith("/"):
             temp += "/"
         return temp
@@ -251,14 +251,14 @@ class Package(object):
     
     def export(self, url):
         if not self.file_exists(self.package_url):
-            raise StandardError("Extension package lost.")
+            raise Exception("Extension package lost.")
         if self.file_exists(url):
             self.sfa.kill(url)
         self.sfa.copy(self.package_url, url)
     
     def install(self, command_env):
         if not self.file_exists(self.package_url):
-            raise StandardError("Extension package lost.")
+            raise Exception("Extension package lost.")
         manager = self.ctx.getByName(
             "/singletons/com.sun.star.deployment.ExtensionManager")
         ac = manager.createAbortChannel()
@@ -270,7 +270,7 @@ class Package(object):
                 ac, 
                 command_env
             )
-        except Exception, e:
+        except Exception as e:
             print(e)
             return False
         return True

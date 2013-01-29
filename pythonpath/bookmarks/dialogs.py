@@ -289,14 +289,14 @@ class ArgumentsDialog(LayoutedDialog):
         d = self.args["query"]
         self.length = len(d)
         
-        for i, (k, v) in enumerate(d.iteritems()):
+        for i, (k, v) in enumerate(d.items()):
             self.data[i] = (k, v)
         
         self._init_ui()
         try:
             self.layouter = self._init_layout()
             self.layouter.layout()
-        except Exception, e:
+        except Exception as e:
             print(e)
         self.update_value(self.pos, read=False)
     
@@ -502,7 +502,7 @@ class BookmarkThisDialog(BookmarkTreeDialog):
         def actionPerformed(self, ev):
             try:
                 self.act.button_pushed()
-            except Exception, e:
+            except Exception as e:
                 print(e)
                 traceback.print_exc()
     
@@ -726,7 +726,7 @@ class CommandsDialog(LayoutedDialog):
             try:
                 command = list_commands_model.getItemData(index)
                 description = self.get_active_help_text(command)
-            except Exception, e:
+            except Exception as e:
                 print(e)
             self.set_description(description)
     
@@ -740,7 +740,7 @@ class CommandsDialog(LayoutedDialog):
             try:
                 self.update_commands(category)
                 self.get(self.NAME_LIST_COMMANDS).selectItemPos(0, True)
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def update_scripts_category(self):
@@ -757,7 +757,7 @@ class CommandsDialog(LayoutedDialog):
         try:
             languages.remove("Basic")
             languages.remove("Java")
-        except Exception, e:
+        except Exception as e:
             pass
             print(e)
         languages = tuple(languages)
@@ -828,7 +828,7 @@ class CommandsDialog(LayoutedDialog):
             s = text_input.readString((), False)
             f.closeInput()
             return s
-        except Exception, e:
+        except Exception as e:
             print(e)
         #if isinstance(s, uno.ByteSequence):
         #   return s.value.encode("UTF-8")
@@ -908,7 +908,7 @@ class CommandsDialog(LayoutedDialog):
                 if type_name != DOCUMENT_IMPLE_NAME:
                     component = frame.getController().getModel()
                     break
-            except Exception, e:
+            except Exception as e:
                 print(e)
         if not component:
             try:
@@ -1473,7 +1473,7 @@ class MoveDialog(BookmarkTreeDialog):
         def actionPerformed(self, ev):
             try:
                 self.act.button_pushed()
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def button_pushed(self):
@@ -1709,7 +1709,7 @@ class NewBookmarkDialog(LayoutedDialog):
         """ Input button event. """
         try:
             getattr(self, "choose_value2_%s" % self.PAGES[self.chooser.get_active()])()
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def button_pushed(self):

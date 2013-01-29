@@ -173,7 +173,7 @@ class Model(unohelper.Base, ComponentBase,
                     (self.NAME_BACKUP_DIRECTORY, -1, string_type, 0), 
                 )
             )
-        except Exception, e:
+        except Exception as e:
             print(e)
         return None
     

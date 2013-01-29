@@ -43,7 +43,7 @@ class TreeWindow(object):
         try:
             self.tree_make_visible(node) # make it visible before to select it
             self.tree.select(node)
-        except Exception, e:
+        except Exception as e:
             print("Error on tree_set_selection: %s" % node)
             print(e.__class__)
     
@@ -250,7 +250,7 @@ class GridWindow(object):
         """ Remove number of rows. """
         data_model = self.grid_get_data_model()
         if positions is None:
-            positions = range(index, index + count)
+            positions = list(range(index, index + count))
         for position in positions[::-1]:
             data_model.removeRow(position)
     

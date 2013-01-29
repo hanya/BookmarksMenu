@@ -12,6 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
+import uno
 import unohelper
 from com.sun.star.beans import PropertyValue, StringPair
 from com.sun.star.lang import Locale
@@ -112,15 +113,35 @@ def get_current_resource(ctx, dir_url, file_name):
     return load_resource_as_dict(ctx, dir_url, file_name, get_current_locale(ctx))
 
 from com.sun.star.awt import Rectangle
+
 def show_message(ctx, frame, message, title="", type="messbox", buttons=1, labels=None):
     """ Show text in message box. """
-    #from com.sun.star.awt import Rectangle
     try:
         peer = frame.getContainerWindow()
     except:
         peer = frame
-    box = peer.getToolkit().createMessageBox(
-        peer, Rectangle(), type, buttons, title, message)
+    
+    older_imple = check_method_parameter(
+        ctx, "com.sun.star.awt.XMessageBoxFactory", 
+        "createMessageBox", 1, "com.sun.star.awt.Rectangle")
+    
+    if older_imple:
+        box = peer.getToolkit().createMessageBox(
+            peer, Rectangle(), type, buttons, title, message)
+    else:
+        if type == "messbox":
+            name = "MESSAGEBOX"
+        elif type == "infobox":
+            name = "INFOBOX"
+        elif type == "warningbox":
+            name = "WARNINGBOX"
+        elif type == "errorbox":
+            name = "ERRORBOX"
+        elif type == "querybox":
+            name = "QUERYBOX"
+        type = uno.getConstantByName("com.sun.star.awt.MessageBoxType." + name)
+        box = peer.getToolkit().createMessageBox(
+            peer, type, buttons, title, message)
     
     ws = box.getWindows()
     if labels and len(ws) == len(labels):
@@ -200,7 +221,7 @@ def copy_file(ctx, source, dest, overwrite=False):
                 return
         if sfa.exists(source):
             sfa.copy(source, dest)
-    except Exception, e:
+    except Exception as e:
         if not sfa.exists(dir_url(dest)):
             sfa.createFolder(dir_url(dest))
         if sfa.exists(source):
@@ -237,6 +258,20 @@ def check_interface(ctx, interface_name, method_names):
     except:
         return False
     return True
+
+
+def check_method_parameter(ctx, interface_name, method_name, param_index, param_type):
+    """ Check the method has specific type parameter at the specific position. """
+    cr = create_service(ctx, "com.sun.star.reflection.CoreReflection")
+    try:
+        idl = cr.forName(interface_name)
+        m = idl.getMethod(method_name)
+        if m:
+            info = m.getParameterInfos()[param_index]
+            return info.aType.getName() == param_type
+    except:
+        pass
+    return False
 
 
 def get_extension_package(ctx, ext_id):
@@ -291,7 +326,7 @@ class FileFilterManager(object):
         fp.appendFilterGroup("all", (sp(self.all_files, "*.*"),))
         for group in self.filter_groups:
             fp.appendFilterGroup(group[0], tuple([sp(uiname, filter) 
-					for uiname, name, filter in group[1]]))
+                for uiname, name, filter in group[1]]))
     
     def get_internal_name(self, uiname):
         """ Get internal name of the filter from its UI name. """

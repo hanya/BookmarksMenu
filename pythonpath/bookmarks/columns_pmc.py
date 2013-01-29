@@ -68,7 +68,13 @@ class ShownColumnsPopupMenu(unohelper.Base,
     def activate(self, ev): pass
     def deactivate(self, ev): pass
     def highlight(self, ev): pass
-    def select(self, ev):
+    
+    # since AOO 4.0
+    def itemActivated(self, ev): pass
+    def itemDeactivated(self, ev): pass
+    def itemHighlighted(self, ev): pass
+    
+    def itemSelected(self, ev):
         if self.valid:
             command = ev.Source.getCommand(ev.MenuId)
             view_settings = self.frame.getController().getViewSettings()

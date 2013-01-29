@@ -130,7 +130,7 @@ class OptionsPageHandler(unohelper.Base,
                 self.get("btn_webbrowser").addActionListener(listener)
                 self.get("btn_filemanager").addActionListener(listener)
                 self.get("btn_opencommand").addActionListener(listener)
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def init_OptionsData(self, first_time=False):
@@ -149,7 +149,7 @@ class OptionsPageHandler(unohelper.Base,
                 self.dialog.setEnable(False)
             if first_time:
                 self.translate_labels()
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def get_current_bookmarks_model(self):

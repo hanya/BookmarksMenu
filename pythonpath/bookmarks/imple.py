@@ -264,7 +264,7 @@ class CutTask(StructureTask):
         controller.update_tag_tree()
         
         if self.removed_tags:
-            for name, tag in self.removed_tags.iteritems():
+            for name, tag in self.removed_tags.items():
                 manager.get_tag(name).set_description(tag.get_description())
     
     def _redo(self, controller):
@@ -294,7 +294,7 @@ class CutTask(StructureTask):
         if not self.removed_tags:
             _tags = manager.tags
             self.removed_tags = []
-            for name in _tags.iterkeys():
+            for name in _tags.keys():
                 if not name in tags:
                     self.removed_tags.append(tags[name])
 
@@ -424,7 +424,7 @@ class MoveTask(StructureTask):
         
         if controller.check_is_current(source_container):
             min_index = min((min(positions_source), min(positions_dest)))
-            positions = range(min_index, source_container.get_child_count())
+            positions = list(range(min_index, source_container.get_child_count()))
             controller.update_rows_in_current(positions)
             controller.change_display_item()
     
@@ -627,7 +627,7 @@ def find_empty_frame(ctx):
             if frame.getController().supportsService(
                                 "com.sun.star.frame.StartModule"):
                 return frame
-        except Exception, e:
+        except Exception as e:
             print(e)
     return None
 
@@ -770,7 +770,7 @@ class HistoryItemManager(TypedItem):
                         item[1], "", self.commands.generate_command(d)))
             self.items = items
             return items
-        except Exception, e:
+        except Exception as e:
             print(e)
         return ()
     
@@ -856,7 +856,7 @@ class BookmarksControllerImple(object):
         import bookmarks.window
         window = bookmarks.window.BookmarksWindow.get(command)
         if window:
-            raise StandardError()
+            raise Exception()
         
         self.ctx = ctx
         self.command = command
@@ -938,7 +938,7 @@ class BookmarksControllerImple(object):
             self._(self.manager.TAGS_DEFALUT_NAME))
         tags_root_node.set_data(self.manager)
         window.tree_get_root_node().append_child(tags_root_node)
-        tags = [(name, tag) for name, tag in self.manager.tags.iteritems()]
+        tags = [(name, tag) for name, tag in self.manager.tags.items()]
         tags.sort()
         for name, tag in tags:
             tag_node = window.tree_create_tag_node(name)
@@ -980,7 +980,7 @@ class BookmarksControllerImple(object):
                 window, 
                 window.tree_get_unsorted_root(), 
                 settings.get("unsorted_tree_state", ""))
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
         if settings.get("tags_tree_state", 0):
@@ -1025,7 +1025,7 @@ class BookmarksControllerImple(object):
                 self.controller.getViewData(), 
                 ":".join(tree_state)
             )
-        except Exception, e:
+        except Exception as e:
             print(e)
         self.window.closed()
         self.window = None
@@ -1060,7 +1060,7 @@ class BookmarksControllerImple(object):
             self.manager.set_modified()
             self.controller.update_undo_redo_state()
             self.controller.update_save_state()
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
     
@@ -1099,7 +1099,7 @@ class BookmarksControllerImple(object):
                 self.insert_items_to_current(0, container.get_children(), replace=True)
                 self.history_push(container)
                 window.regulator.inhibit_grid_selection_change(False)
-            except Exception, e:
+            except Exception as e:
                 traceback.print_exc()
                 print(e)
     
@@ -1170,7 +1170,7 @@ class BookmarksControllerImple(object):
             num_columns += 1
         if self.column_state["Description"]:
             num_columns += 1
-        columns = range(num_columns)
+        columns = list(range(num_columns))
         for position in positions:
             item = container.get_child_at(position)
             if item:
@@ -1668,7 +1668,7 @@ class BookmarksControllerImple(object):
                             for position in data_positions]
                 task = InsertTask(self._("Copy"), dest, dest_index, items)
             else:
-                dest_positions = range(dest_index, dest_index + len(data_positions))
+                dest_positions = list(range(dest_index, dest_index + len(data_positions)))
                 task = MoveTask(
                     self._("Move"), 
                     source_container, dest, 
@@ -1685,14 +1685,14 @@ class BookmarksControllerImple(object):
                     return # move into one of selected folder
                 dest_container = source_container.get_child_at(dest_index)
                 child_count = dest_container.get_child_count()
-                dest_positions = range(child_count, child_count + len(data_positions))
+                dest_positions = list(range(child_count, child_count + len(data_positions)))
             else:
                 if pos_type == window.POSITION_BELOW and \
                     len([True for pos in data_positions if pos > dest_index]) > 0:
                     dest_index += 1
                 
-                dest_positions = range(
-                    dest_index, dest_index + len(data_positions))
+                dest_positions = list(range(
+                    dest_index, dest_index + len(data_positions)))
                 
             if is_copy:
                 items = [self.manager.duplicate_item(source_container.get_child_at(position)) 
@@ -1762,7 +1762,7 @@ class BookmarksControllerImple(object):
                 self.column_state["Description"], 
                 self.column_state["Tags"])
             self.change_display_container()
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def update_data_view(self, items):
@@ -1888,7 +1888,7 @@ class BookmarksControllerImple(object):
                 self._("Bookmarks Menu"), 
                 labels=(self._("~Save"), self._("~Discard"), self._("Cancel"))
             )
-        except Exception, e:
+        except Exception as e:
             print(e)
             return
         # 0: cancel, 2: Yes, 3: no
@@ -1970,7 +1970,7 @@ class BookmarksControllerImple(object):
         items = [container.get_child_at(i) for i in grid_selections]
         try:
             self.open_items(items)
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
     
@@ -2114,7 +2114,7 @@ class BookmarksControllerImple(object):
                 self.manager.set_modified()
                 self.controller.update_undo_redo_state()
                 self.controller.update_save_state()
-            except Exception, e:
+            except Exception as e:
                 print(e)
                 traceback.print_exc()
     
@@ -2126,7 +2126,7 @@ class BookmarksControllerImple(object):
                 self.manager.set_modified()
                 self.controller.update_undo_redo_state()
                 self.controller.update_save_state()
-            except Exception, e:
+            except Exception as e:
                 print(e)
                 traceback.print_exc()
     
@@ -2181,7 +2181,7 @@ class BookmarksControllerImple(object):
                 return # do noting
             
             count = parent_dest.get_child_count()
-            positions_dest = range(count, count + len(positions))
+            positions_dest = list(range(count, count + len(positions)))
             task = MoveTask(self._("Move"), parent_source, parent_dest, positions, positions_dest)
             self.push_task(task)
     
@@ -2211,7 +2211,7 @@ class BookmarksControllerImple(object):
                 position = self.get_insert_position()
                 task = InsertTask(self._("Insert from file"), parent, position, items)
                 self.push_task(task)
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def do_ExportTo(self):
@@ -2261,7 +2261,7 @@ class BookmarksControllerImple(object):
                         items = [parent.get_child_at(i) for i in selections]
                     else:
                         items = parent
-            except Exception, e:
+            except Exception as e:
                 print(e)
                 return
         else:
@@ -2274,7 +2274,7 @@ class BookmarksControllerImple(object):
                 obj = self.manager.pack(tags, items, unsorted)
                 s = self.manager.__class__.dump(obj)
                 self.manager._write_to_file(file_url, s)
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def do_Migration(self):
@@ -2294,7 +2294,7 @@ class BookmarksControllerImple(object):
             try:
                 self.manager.store()
                 self.controller.update_save_state()
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def do_NewMenu(self):
@@ -2302,7 +2302,7 @@ class BookmarksControllerImple(object):
             import bookmarks.wizard.wizard
             bookmarks.wizard.wizard.BookmarksMenuWizard(
                 self.ctx, self.res).execute()
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def do_About(self):

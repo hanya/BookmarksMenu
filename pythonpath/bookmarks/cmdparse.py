@@ -33,7 +33,7 @@ def bk_unquote(s):
 def bk_urlencode(query):
     """ Construct query string from dict. """
     l = []
-    for k, v in query.iteritems():
+    for k, v in query.items():
         l.append(bk_quote(k) + "=" + bk_quote(v))
     return "&".join(l)
 

@@ -83,7 +83,17 @@ class BookmarksPopupBase(unohelper.Base,
     def activate(self, ev): pass
     def deactivate(self, ev): pass
     
+    def highlight(self,ev):
+        self.itemHighlighted(ev)
+    
     def select(self, ev):
+        self.itemSelected(ev)
+    
+    # since AOO 4.0
+    def itemActivated(self, ev): pass
+    def itemDeactivated(self, ev): pass
+    
+    def itemSelected(self, ev):
         command = ev.Source.getCommand(ev.MenuId)
         if command:
             self.execute_command(command)
@@ -99,7 +109,7 @@ class BookmarksPopupBase(unohelper.Base,
                     except:
                         pass
     
-    def highlight(self, ev):
+    def itemHighlighted(self, ev):
         id = ev.MenuId
         try:
             item = self.sub_popups[id]
@@ -168,7 +178,7 @@ class BookmarksPopupBase(unohelper.Base,
                 self.fill_popup(self.menu, container, open_all)
             if not clear:
                 self.menu.addMenuListener(self)
-        except Exception, e:
+        except Exception as e:
             print(e)
         self.update_last_checked()
     
@@ -194,7 +204,7 @@ class BookmarksPopupBase(unohelper.Base,
                 controller.setPopupMenu(popup)
                 self.controllers[item.get_id()] = controller
             controller.updatePopupMenu()
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def message(self, message, title, error=False):
@@ -214,7 +224,7 @@ class BookmarksPopupBase(unohelper.Base,
         """ Execute bookmark command. """
         try:
             self.commands.execute_command(command)
-        except Exception, e:
+        except Exception as e:
             self.message(str(e), "Error")
 
 
@@ -233,7 +243,7 @@ class BookmarksPopup(BookmarksPopupBase):
         self.initialize(args)
     
     def disposing(self, ev):
-        for v in self.controllers.itervalues():
+        for v in self.controllers.values():
             try:
                 if hasattr(v, "dispose"):
                     v.dispose()

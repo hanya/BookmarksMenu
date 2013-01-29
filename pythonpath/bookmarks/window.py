@@ -246,7 +246,7 @@ class MouseDraggingManager(unohelper.Base, XMouseListener, XMouseMotionListener)
                 else:
                     self.act.controller.move_from_grid(
                         data_positions, pos, dest_index=row_index, is_copy=is_copy)
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
         self.clear()
@@ -276,7 +276,7 @@ class MouseDraggingManager(unohelper.Base, XMouseListener, XMouseMotionListener)
                 self.origin = self.MODE_GRID
             self.propose_dragging = 1
             self.drag_started()
-        except Exception, e:
+        except Exception as e:
             print(e)
         self.act.regulator.click_on_grid()
     
@@ -397,7 +397,7 @@ class MouseDraggingManager(unohelper.Base, XMouseListener, XMouseMotionListener)
                 self.drag_on_tree(ev)
             else:
                 self.drag_on_grid(ev)
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
     
@@ -666,7 +666,7 @@ class Regulator(object):
                 # tree to grid
                 if not self._grid_selection_changed:
                     self.window.controller.change_display_item(self.window.MODE_GRID)
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
         self._grid_selection_changed = False
@@ -696,7 +696,7 @@ class Regulator(object):
             if not self._inhibit_grid_selection_change:
                 self.window.controller.change_display_item(self.window.MODE_GRID)
             self._inhibit_grid_selection_change = False
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
     
@@ -710,7 +710,7 @@ class Regulator(object):
             # update data on current grid selection
             try:
                 self.update_data(self.window.get_mode())
-            except Exception, e:
+            except Exception as e:
                 print(e)
             self._edit_focus_lost = False
         self._last_focus_lost_edit_control = None
@@ -1042,7 +1042,7 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
                             self.act.ID_DATA_EDIT_DESCRIPTION)
                         if description.is_visible():
                             description.set_focus()
-                    except Exception, e:
+                    except Exception as e:
                         print(e)
                 else:
                     self.act.grid.setFocus()
@@ -1112,6 +1112,10 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
         
         self._create_window(controller, settings)
         self.grid_check_interface()
+        
+        import bookmarks.tools
+        self.use_point = bookmarks.tools.check_method_parameter(
+            ctx, "com.sun.star.awt.XPopupMenu", "execute", 1, "com.sun.star.awt.Point")
     
     def _(self, name):
         return self.res.get(name, name)
@@ -1216,7 +1220,7 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
             self.grid = None
             self.regulator.dispose()
             self.regulator = None
-        except Exception, e:
+        except Exception as e:
             print(e)
             print("#closed error.")
     
@@ -1240,7 +1244,7 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
         """ Request to action by command. """
         try:
             self.controller.do_action_by_name(command)
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
     
@@ -1277,17 +1281,20 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
             self.controller.fill_menu(type, menu)
             self.context_menu = menu
         
-        rect = Rectangle(x, y, 0, 0)
+        if self.use_point:
+            pos = Point(x, y)
+        else:
+            pos = Rectangle(x, y, 0, 0)
         if type == self.MODE_GRID:
             parent = self.grid.getPeer()
         elif type == self.MODE_TREE:
             parent = self.tree.getPeer()
         self.controller.update_menu(menu, type)
-        n = menu.execute(parent, rect, 0)
+        n = menu.execute(parent, pos, 0)
         if 0 < n:
             try:
                 self.action_executed(menu.getCommand(n))
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def show_popup_controller_menu(self, command, imple_name, _controller=None):
@@ -1305,8 +1312,12 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
                 controller.set_controller(_controller)
             controller.setPopupMenu(menu)
             # ToDo where to show
-            menu.execute(self.grid.getPeer(), Rectangle(), 0)
-        except Exception, e:
+            if self.use_point:
+                pos = Point()
+            else:
+                pos = Rectangle()
+            menu.execute(self.grid.getPeer(), pos, 0)
+        except Exception as e:
             print(e)
     
     def get_column_width(self):

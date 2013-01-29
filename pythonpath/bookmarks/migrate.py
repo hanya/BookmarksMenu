@@ -187,7 +187,7 @@ class Migration(object):
             if len(parts) == 2:
                 path = parts[0]
                 if path in (OLD_ADDTHIS, OLD_EDIT):
-                    raise StandardError("This item is ignored: %s" % command)
+                    raise Exception("This item is ignored: %s" % command)
                 elif path.startswith(OLD_MACRO_MODULE):
                     _path = path[len(OLD_MACRO_MODULE)+1:]
                     try:

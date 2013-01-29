@@ -48,7 +48,7 @@ class BookmarksMenuManager(unohelper.Base, ServiceInfo, XJobExecutor):
                 self.ctx, 
                 get_current_resource(self.ctx, RES_DIR, RES_FILE)
             ).execute()
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def execute_editor(self, command):

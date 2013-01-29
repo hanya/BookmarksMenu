@@ -5,14 +5,19 @@ import os, os.path
 # Generates resource file from each po file.
 # And also other configuration stuff too.
 
+# LibreOffice-minimal-version can not be used in compatible package 
+# with AOO.
+
 desc_h = """<?xml version='1.0' encoding='UTF-8'?>
 <description xmlns="http://openoffice.org/extensions/description/2006"
 xmlns:xlink="http://www.w3.org/1999/xlink"
 xmlns:d="http://openoffice.org/extensions/description/2006">
+<!-- xmlns:l="http://libreoffice.org/extensions/description/2011"> -->
 <identifier value="mytools.bookmarks.BookmarksMenu" />
 <version value="{VERSION}" />
 <dependencies>
 <d:OpenOffice.org-minimal-version value="3.4" d:name="OpenOffice.org 3.4" />
+<!-- <l:LibreOffice-minimal-version value="4.0" l:name="LibreOffice 4.0" /> -->
 </dependencies>
 <registration>
 <simple-license accept-by="admin" default-license-id="this" suppress-on-update="true" suppress-if-required="true">
@@ -51,12 +56,12 @@ def genereate_description(d):
     version = read_version()
     
     names = []
-    for lang, v in d.iteritems():
+    for lang, v in d.items():
         name = v["id.OptionsTop.label_title.Label"]
         names.append("<name lang=\"{LANG}\">{NAME}</name>".format(LANG=lang, NAME=name.encode("utf-8")))
     
     descs = []
-    for lang, v in d.iteritems():
+    for lang, v in d.items():
         desc = v["id.extension.description"]
         with open("descriptions/desc_{LANG}.txt".format(LANG=lang), "w") as f:
             f.write(desc.encode("utf-8"))
@@ -121,7 +126,7 @@ class XCUData(object):
     
     def add_value_for_localse(self, name, k, d):
         self.open_prop(name)
-        locales = list(d.iterkeys())
+        locales = list(d.keys())
         locales.sort()
         for lang in locales:
             _d = d[lang]
@@ -307,7 +312,7 @@ def extract(d, locale, lines):
 def as_resource(d):
     lines = []
     
-    for k, v in d.iteritems():
+    for k, v in d.items():
         cs = []
         for c in v:
             a = ord(c)
@@ -324,7 +329,7 @@ def write_options_resource(d):
     name = "dialogs/OptionsTop_{LANG}.properties"
     key1 = "id.OptionsTop.label_description.Label"
     key2 = "id.OptionsTop.label_title.Label"
-    for lang, v in d.iteritems():
+    for lang, v in d.items():
         _d = {}
         _d[key1] = v[key1]
         _d[key2] = v[key2]
@@ -334,7 +339,7 @@ def write_options_resource(d):
 def write_update_feed():
     version = read_version()
     s = update_feed.format(VERSION=version)
-    with open("./BookmarksMenu.update.xml", "w") as f:
+    with open("./files/BookmarksMenu.update.xml", "w") as f:
         f.write(s.encode("utf-8"))
 
 
@@ -358,7 +363,7 @@ def main():
     
     resources_dir = os.path.join(".", res_dir)
     
-    for locale, d in locales.iteritems():
+    for locale, d in locales.items():
         write_resource(os.path.join(resources_dir, 
             "%s%s.properties" % (prefix, locale.replace("-", "_"))), d)
     

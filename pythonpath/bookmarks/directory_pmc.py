@@ -129,7 +129,16 @@ class DirectoryPopup(unohelper.Base,
     # XMenuListener
     def activate(self, ev): pass
     def deactivate(self, ev): pass
+    def highlight(self, ev):
+        self.itemHighlighted(ev)
     def select(self, ev):
+        self.itemSelected(ev)
+    
+    # since AOO 4.0
+    def itemActivated(self, ev): pass
+    def itemDeactivated(self, ev): pass
+    
+    def itemSelected(self, ev):
         command = ev.Source.getCommand(ev.MenuId)
         if command:
             self.open_document(command)
@@ -142,7 +151,7 @@ class DirectoryPopup(unohelper.Base,
                     # ToDo open in each thread
                     self.open_document(command)
     
-    def highlight(self, ev):
+    def itemHighlighted(self, ev):
         menu = ev.Source
         id = ev.MenuId
         command = menu.getCommand(id)
@@ -166,7 +175,7 @@ class DirectoryPopup(unohelper.Base,
             self.update_last_read()
             if not clear:
                 self.menu.addMenuListener(self)
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def fill_menu(self, popup, url):

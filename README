@@ -6,7 +6,7 @@ Requirements
  This is written in Python, which is required to execute PyUNO bridge 
 installation.
  This extension has following problems on LibreOffice: 
- - Drag and drop movement do not work on the grid control.
+ - Macro selector is not working.
 
 Packaging
  Compiling is not required but files have to be packed into 

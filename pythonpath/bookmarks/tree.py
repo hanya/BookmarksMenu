@@ -279,7 +279,7 @@ class CustomTreeDataModel(unohelper.Base, Component, XTreeDataModel):
         for listener in self.listeners:
             try:
                 getattr(listener, type)(ev)
-            except Exception, e:
+            except Exception as e:
                 print(e)
 
 

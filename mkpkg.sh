@@ -3,7 +3,7 @@
 NAME=BookmarksMenu
 VERSION=`cat "VERSION"`
 
-zip -9 -o $NAME-$VERSION.oxt \
+zip -9 -o files/$NAME-$VERSION.oxt \
   META-INF/* \
   description.xml \
   descriptions/* \

@@ -52,7 +52,7 @@ class LayoutBase(object):
         self.valign = "fill"
         self.hexpand = False
         self.vexpand = False
-        for k, v in attrs.iteritems():
+        for k, v in attrs.items():
             setattr(self, k, v)
     
     def __str__(self):

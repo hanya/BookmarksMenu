@@ -109,7 +109,7 @@ class Wizard(object, unohelper.Base, XWizardController):
         return True
 
 
-from com.sun.star.awt import XMenuListener
+from com.sun.star.awt import XMenuListener, Point
 from com.sun.star.awt.grid import XGridSelectionListener
 from com.sun.star.task import XInteractionHandler
 from com.sun.star.ucb import XCommandEnvironment, XProgressHandler
@@ -194,6 +194,10 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         self.installed = None
         self.selected_position = "/.uno:Help"
         self.name_exp = re.compile("[A-Za-z0-9_]+$")
+        
+        import bookmarks.tools
+        self.use_point = bookmarks.tools.check_method_parameter(
+            ctx, "com.sun.star.awt.XPopupMenu", "execute", 1, "com.sun.star.awt.Point")
     
     def execute(self):
         if self.wizard.execute():
@@ -221,7 +225,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         self.translate_labels(page)
         try:
             getattr(self, "_init_ui_%s" % id)(page)
-        except Exception, e:
+        except Exception as e:
             print(e)
             import traceback
             traceback.print_exc()
@@ -240,7 +244,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
                 self.enable_button(1, id != 6)
             if id == 5:
                 self.set_enable(5, self.ID_CHECK_INCLUDE, self.name in self.names)
-        except Exception, e:
+        except Exception as e:
             print(e)
             import traceback
             traceback.print_exc()
@@ -280,7 +284,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
     def name_changed(self):
         try:
             self.update_wizard_state()
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def get_name(self):
@@ -296,7 +300,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         def actionPerformed(self, ev):
             try:
                 self.act.button_pushed(ev.ActionCommand)
-            except Exception, e:
+            except Exception as e:
                 print(e)
                 traceback.print_exc()
     
@@ -312,7 +316,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
                 )
             return data
         self._init_labels()
-        return [(key, value) for key, value in self.labels_for_locale.iteritems()]
+        return [(key, value) for key, value in self.labels_for_locale.items()]
     
     def get_preffered_label(self):
         return self.labels_for_locale.get(self.ui_locale, self.labels["en-US"])
@@ -429,6 +433,13 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         def deactivate(self, ev): pass
         def highlight(self, ev): pass
         def select(self, ev):
+            self.itemSelected(ev)
+        
+        # since AOO 4.0
+        def itemActivated(self, ev): pass
+        def itemDeactivated(self, ev): pass
+        def itemHighlighted(self, ev):
+        def itemSelected(self, ev):
             self.act.position_selected(ev.Source.getCommand(ev.MenuId))
     
     def get_merge_point(self):
@@ -475,12 +486,15 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         self.menu.clear()
         try:
             self.fill_menu(self.menu)
-            n = self.menu.execute(self.pages[3].getPeer(), self.get(3, self.ID_BTN_POSITION).getPosSize(), 0)
+            pos = self.get(3, self.ID_BTN_POSITION).getPosSize()
+            if self.use_point:
+                pos = Point(pos.X, pos.Y)
+            n = self.menu.execute(self.pages[3].getPeer(), pos, 0)
             if 0 < n:
                 command = self.menu.getCommand(n)
                 self.selected_position = "%s\%s" % (self.get_selected_menu(), command)
                 self.set_position_label(self.menu.getItemText(n))
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def fill_menu(self, menu):
@@ -576,7 +590,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
             for i, item in enumerate(items):
                 list_menu_model.setItemData(i, item[0])
             list_menu.selectItemPos(list_menu.getItemCount()-1, True)
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     
@@ -599,7 +613,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         def itemStateChanged(self, ev):
             try:
                 self.act.context_changed()
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def context_changed(self):
@@ -645,7 +659,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         def actionPerformed(self, ev):
             try:
                 self.act.package_action(ev.ActionCommand)
-            except Exception, e:
+            except Exception as e:
                 print(e)
                 import traceback
                 traceback.print_exc()
@@ -672,7 +686,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
                 for continuation in request.getContinuations():
                     if continuation.queryInterface(uno.getTypeByName(type_name)):
                         continuation.select()
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def query(self, message, buttons=2):
@@ -759,10 +773,10 @@ class BookmarksMenuWizard(Wizard, GridWindow):
             if result:
                 try:
                     self.package.export(result)
-                except Exception, e:
+                except Exception as e:
                     pass
             else:
-                raise StandardError("Canceled")
+                raise Exception("Canceled")
     
     def update_wizard_state(self):
         lv = 0
@@ -803,7 +817,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
                 wizard.enablePage(i, True)
             for i in disabled:
                 wizard.enablePage(i, False)
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def _init_names(self):
@@ -937,7 +951,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         
         self._init_names()
         self.get(1, self.ID_COMBO_NAME).getModel().StringItemList = \
-            uno.Any("[]string", tuple([key for key in self.names.iterkeys()]))
+            uno.Any("[]string", tuple([key for key in self.names.keys()]))
         
     
     def _init_ui_2(self, page):
@@ -986,7 +1000,7 @@ class BookmarksMenuWizard(Wizard, GridWindow):
         
         rows = []
         headings = []
-        for key, value in self.labels_for_locale.iteritems():
+        for key, value in self.labels_for_locale.items():
             headings.append(key)
             rows.append((self.names_for_iso.get(key, key), value))
         
@@ -1030,7 +1044,7 @@ def wizard(*args):
     try:
         result = BookmarksMenuWizard(ctx, {}).execute()
         print(result)
-    except Exception, e:
+    except Exception as e:
         print(e)
         import traceback
         traceback.print_exc()

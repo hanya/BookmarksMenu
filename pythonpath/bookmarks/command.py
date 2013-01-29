@@ -397,7 +397,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
                 mod = getattr(__import__("bookmarks.env.%s" % env).env, env)
                 self.__class__.OPEN_COMMAND = mod.OPEN
                 self.__class__.FILE_MANAGER = mod.FILE_MANAGER
-            except Exception, e:
+            except Exception as e:
                 print(e)
         
         try:
@@ -430,7 +430,10 @@ class BookmarksCommandExecutor(DispatchExecutor):
     
     def other_execute(self, path, args):
         import os
-        import thread
+        try:
+            import thread
+        except:
+            import _thread as thread
         if args:
             command = "%s %s"
         else:
@@ -500,7 +503,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
         try:
             fn = getattr(self, "exec_%s" % type)
             fn(value1, value2)
-        except Exception, e:
+        except Exception as e:
             raise e
     
     def exec_edit(self, value1, value2):
@@ -557,7 +560,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
                 name=title, 
                 filter_name=filter_name
             ).execute()
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
         BookmarksControllerImple.unlock(self.command)

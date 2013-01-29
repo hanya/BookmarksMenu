@@ -18,7 +18,7 @@ import json
 import traceback
 import uno
 
-from bookmark import BookmarksManagerBase, \
+from bookmarks.bookmark import BookmarksManagerBase, \
     BaseItem, Item, Separator, Container, TagContainer
 
 
@@ -108,7 +108,7 @@ class BookmarksManager(BookmarksManagerBase):
                 text.append(data.value)
                 if n < 0xffff:
                     break
-        except Exception, e:
+        except Exception as e:
             print(e)
         io.closeInput()
         return "".join(text)
@@ -130,7 +130,7 @@ class BookmarksManager(BookmarksManagerBase):
                 n += 0xffff
                 if n >= total:
                     break
-        except Exception, e:
+        except Exception as e:
             print(e)
         io.closeOutput()
     
@@ -225,7 +225,7 @@ class BookmarksManager(BookmarksManagerBase):
                 self.file_url, 
                 join_url(backup_dir, file_name)
             )
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def load(s):
@@ -239,7 +239,7 @@ class BookmarksManager(BookmarksManagerBase):
                     encoding=decoder.ENCODING, 
                     cls=decoder, 
                     object_hook=decoder.obj_hook)
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
         return obj
@@ -258,7 +258,7 @@ class BookmarksManager(BookmarksManagerBase):
                 #indent=4, 
                 encoding=encoder.ENCODING, 
                 sort_keys=True)
-        except Exception, e:
+        except Exception as e:
             print(e)
         return s
     

@@ -18,7 +18,7 @@ imples = {
 
 
 def writeRegistryInfo(smgr, reg):
-    for imple_name in imples.iterkeys():
+    for imple_name in imples.keys():
         key = reg.createKey("/%s/UNO/SERVICES" % imple_name)
         for name in imples[imple_name][0]:
             key.createKey(name)
@@ -35,7 +35,7 @@ def getComponentFactory(imple_name, smgr, reg):
         else:
             mod = getattr(__module__, imple[1])
         return SingleComponentFactory(imple_name, imple[0], mod)
-    except Exception, e:
+    except Exception as e:
         print(e)
         return None
 
@@ -56,7 +56,7 @@ class SingleComponentFactory(unohelper.Base, XSingleComponentFactory, XServiceIn
     def createInstanceWithArgumentsAndContext(self, args, ctx):
         try:
             return self.ctor(ctx, *args)
-        except Exception, e:
+        except Exception as e:
             print(e)
             import traceback
             traceback.print_exc()

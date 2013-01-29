@@ -71,7 +71,7 @@ class ViewSettings(unohelper.Base, XPropertySet, XMultiPropertySet):
                     ("ShowDescription", -1, bool_type, 0)
                 )
             )
-        except Exception, e:
+        except Exception as e:
             print(e)
         return None
     
@@ -136,7 +136,7 @@ class Dispatcher(unohelper.Base, XDispatch):
         if url.Complete in self.processed_commands:
             try:
                 self.controller.do_dispatch(url, args)
-            except Exception, e:
+            except Exception as e:
                 print(e)
     
     def addStatusListener(self, control, url):
@@ -209,9 +209,9 @@ class UIController(unohelper.Base, ComponentBase,
         self.imple = imple
         if self.__class__.PROCESSED_COMMANDS is None:
             uno_commands = [self.UNO_PROTOCOL + key 
-                    for key in COMMANDS.UNO_COMMANDS.iterkeys()]
+                    for key in COMMANDS.UNO_COMMANDS.keys()]
             custom_commands = [self.CMD_PROTOCOL + key 
-                    for key in COMMANDS.CUSTOM_COMMANDS.iterkeys()]
+                    for key in COMMANDS.CUSTOM_COMMANDS.keys()]
             self.__class__.PROCESSED_COMMANDS = set(uno_commands + custom_commands)
         
         self.dispatcher = Dispatcher(self, self.PROCESSED_COMMANDS)
@@ -417,7 +417,7 @@ class UIController(unohelper.Base, ComponentBase,
             self.dispatcher.clear()
             self.frame = None
             self.model = None
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     # XController2
@@ -461,7 +461,7 @@ class UIController(unohelper.Base, ComponentBase,
         window = self.imple.window
         
         d = self.imple.window.get_column_width()
-        for k, v in self.imple.column_state.iteritems():
+        for k, v in self.imple.column_state.items():
             if not k in d:
                 d[k] = 0
         try:
@@ -557,7 +557,7 @@ class UIController(unohelper.Base, ComponentBase,
     def get_value2(self):
         try:
             self.imple.get_value2()
-        except Exception, e:
+        except Exception as e:
             print(e)
     
     def can_move(self):
@@ -731,7 +731,7 @@ class UIController(unohelper.Base, ComponentBase,
                 getattr(self.imple, "do_" + _command)()
             else:
                 self.imple.commands.execute_command(command)
-        except Exception, e:
+        except Exception as e:
             print(e)
             traceback.print_exc()
 

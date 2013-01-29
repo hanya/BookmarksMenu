@@ -72,7 +72,7 @@ class TagManager(TypedItem):
         return True
     
     def get_children(self):
-        tags = [(name, tag) for name, tag in self.tags.iteritems()]
+        tags = [(name, tag) for name, tag in self.tags.items()]
         tags.sort()
         return [item[1] for item in tags]
     
@@ -80,10 +80,10 @@ class TagManager(TypedItem):
         return self.get_children()[index]
     
     def get_tag_names(self):
-        return list(self.tags.iterkeys())
+        return list(self.tags.keys())
     
     def get_tags(self):
-        return self.tags.iteritems()
+        return list(self.tags.items())
     
     def get_tag(self, name, create=False):
         tag = self.tags.get(name, None)
@@ -148,7 +148,7 @@ class TagManager(TypedItem):
     def check_tag_containers(self):
         """ Find empty container and remove them, returns removed. """
         removed = []
-        for tag in self.tags.itervalues():
+        for tag in self.tags.values():
             if not tag.check_children():
                 removed.append(tag)
         for tag in removed:
