@@ -516,9 +516,9 @@ class MouseDraggingManager(unohelper.Base, XMouseListener, XMouseMotionListener)
         
         y = row_height * (row + 1)
         g.push()
-        g.setLineColor(self.color)
+        g.LineColor = self.color
         if pos == self.POSITION_ITEM:
-            g.setFillColor(-1)
+            g.FillColor = -1
             g.drawRect(1, y, 21, row_height)
         else:
             if pos == self.POSITION_BELOW:
@@ -540,9 +540,9 @@ class MouseDraggingManager(unohelper.Base, XMouseListener, XMouseMotionListener)
             tree.setGraphics(g)
         
         g.push()
-        g.setLineColor(self.color)
+        g.LineColor = self.color
         if pos == self.POSITION_ITEM:
-            g.setFillColor(-1)
+            g.FillColor = -1
             g.drawRect(x -2, y -1, width + 4, height +2)
         else:
             if pos == self.POSITION_BELOW:
