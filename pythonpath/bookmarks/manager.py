@@ -21,6 +21,10 @@ import uno
 from bookmarks.bookmark import BookmarksManagerBase, \
     BaseItem, Item, Separator, Container, TagContainer
 
+import sys
+is_python3 = sys.version_info.major >= 3
+del sys
+
 
 class BookmarksManager(BookmarksManagerBase):
     """ Keeps JSON based bookmarks. """
@@ -101,17 +105,31 @@ class BookmarksManager(BookmarksManagerBase):
         sfa = bookmarks.tools.create_service(
                 self.ctx, "com.sun.star.ucb.SimpleFileAccess")
         io = sfa.openFileRead(file_url)
-        try:
-            text = []
-            while True:
-                n, data = io.readBytes(None, 0xffff)
-                text.append(data.value)
-                if n < 0xffff:
-                    break
-        except Exception as e:
-            print(e)
+        ret = None
+        if is_python3:
+            try:
+                text = bytes()
+                while True:
+                    n, data = io.readBytes(None, 0xffff)
+                    text += data.value
+                    if n < 0xffff:
+                        break
+            except Exception as e:
+                print(e)
+            ret = text.decode("utf-8")
+        else:
+            try:
+                text = []
+                while True:
+                    n, data = io.readBytes(None, 0xffff)
+                    text.append(data.value)
+                    if n < 0xffff:
+                        break
+            except Exception as e:
+                print(e)
+            ret = "".join(text).decode("utf-8")
         io.closeInput()
-        return "".join(text)
+        return ret
     
     def _write_to_file(self, file_url, text):
         """ Write text to the file. """
@@ -236,7 +254,6 @@ class BookmarksManager(BookmarksManagerBase):
                 decoder = BookmarksJSONDecoder
                 obj = json.loads(
                     s, 
-                    encoding=decoder.ENCODING, 
                     cls=decoder, 
                     object_hook=decoder.obj_hook)
         except Exception as e:
@@ -253,14 +270,13 @@ class BookmarksManager(BookmarksManagerBase):
             encoder = BookmarksJSONEncoder
             s = json.dumps(
                 obj, 
-                ensure_ascii=True, 
+                ensure_ascii=False, 
                 cls=encoder, 
                 #indent=4, 
-                encoding=encoder.ENCODING, 
                 sort_keys=True)
         except Exception as e:
             print(e)
-        return s
+        return s.encode("utf-8")
     
     dump = staticmethod(dump)
     
@@ -325,20 +341,14 @@ class BookmarksManager(BookmarksManagerBase):
     
     create_base = staticmethod(create_base)
     
-    def create_simple_base(res, as_str=False):
+    def create_simple_base(res):
         """ Create initial container. """
         klass = BookmarksManager
         
-        obj = klass.pack(
+        return klass.pack(
             {}, 
             klass.create_base(res), 
             klass.create_unsorted(res))
-        
-        if as_str:
-            encoder = BookmarksJSONEncoder
-            return json.dumps(obj, cls=encoder, indent=4, 
-                encoding=encoder.ENCODING, sort_keys=True)
-        return obj
     
     create_simple_base = staticmethod(create_simple_base)
     
@@ -354,7 +364,7 @@ class BookmarksManager(BookmarksManagerBase):
 
 
 class BookmarksJSONBase(object):
-    ENCODING = "UTF-8"
+    pass
 
 
 class BookmarksJSONDecoder(BookmarksJSONBase, json.JSONDecoder):
