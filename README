@@ -3,10 +3,9 @@ Bookmarks Menu is an extension which provides farovite menu.
 
 Requirements
  Current version supports Apache OpenOffice 3.4 and later version. 
+And also LibreOffice 4.0 or later is supported.
  This is written in Python, which is required to execute PyUNO bridge 
 installation.
- This extension has following problems on LibreOffice: 
- - Macro selector is not working.
 
 Packaging
  Compiling is not required but files have to be packed into 
