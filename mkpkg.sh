@@ -14,5 +14,5 @@ zip -9 -o files/$NAME-$VERSION.oxt \
   resources/* \
   bookmarks/**/*.xml \
   help/**/* help/**/**/* \
-  LICENSE CHANGES NOTICE Translators
-
+  LICENSE CHANGES NOTICE Translators \
+  mytools_bookmarks/*

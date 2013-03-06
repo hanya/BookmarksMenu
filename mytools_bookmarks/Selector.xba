@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Selector" script:language="StarBasic">REM  *****  BASIC  *****
+
+Private oSelectorDialog As Variant
+Private oTreeDataModel As Variant
+
+Const EXTENSION_ID = &quot;mytools.bookmarks.BookmarksMenu&quot;
+
+Function MacroSelector( Optional oResource As Variant, _
+                        Optional oDialog As Variant ) As String
+  &apos; Let user to choose a macro and returns its URI. 
+  &apos; Empty string is returned for canceled by the user.
+  If IsMissing(oResource) OR IsEmpty(oResource) Then
+    oRes = nothing &apos; empty argument can not be reused
+  Else
+    oRes = oResource
+  End If
+  If IsMissing(oDialog) OR IsEmpty(oDialog) Then
+    oDlg = nothing
+  Else:
+    oDlg = oDialog
+  End If
+  DialogInit(oRes, oDlg)
+  MacroSelector = &quot;&quot;
+  If oSelectorDialog.execute() Then
+    MacroSelector = GetSelectedScriptURI()
+  End If
+  If IsNull(oDlg) Then oSelectorDialog.dispose()
+End Function
+
+
+Const NAME_TREE_LIBRARIES = &quot;tree_libraries&quot;
+Const NAME_LIST_NAMES = &quot;list_names&quot;
+Const NAME_LABEL_DESCRIPTION = &quot;label_description&quot;
+
+
+Function GetSelectedScriptURI() As String
+  &apos; Get selected URI from selected macro item.
+  list_names = oSelectorDialog.getControl(NAME_LIST_NAMES)
+  position = list_names.getSelectedItemPos()
+  uri = &quot;&quot;
+  if position &gt;= 0 Then
+    node = list_names.getModel().getItemData(position)
+    uri = node.getPropertyValue(&quot;URI&quot;)
+  End If
+  GetSelectedScriptURI = uri
+End Function
+
+
+Sub DialogInit( oRes As Variant, oDialog As Variant )
+  &apos; Initialize dialog
+  
+  If IsNull(oDialog) Then
+    uri = &quot;vnd.sun.star.extension://&quot; &amp; EXTENSION_ID &amp; &quot;/dialogs/Selector.xdl&quot;
+    oSelectorDialog = CreateUnoService(&quot;com.sun.star.awt.DialogProvider&quot;).createDialog(uri)
+  Else
+    oSelectorDialog = oDialog
+  End If
+  
+  If NOT IsNull(oRes) AND IsNull(oDialog) Then
+    oSelectorDialog.setTitle(oRes.get(oSelectorDialog.getTitle()))
+    oControls = oSelectorDialog.getControls()
+    For i = 0 To UBound(oControls) step 1
+      bLabeled = False
+      oControlModel = oControls(i).getModel()
+      If oControlModel.supportsService(&quot;com.sun.star.awt.UnoControlFixedTextModel&quot;) OR _
+         oControlModel.supportsService(&quot;com.sun.star.awt.UnoControlButtonModel&quot;) OR _
+         oControlModel.supportsService(&quot;com.sun.star.awt.UnoControlFixedLineModel&quot;) Then
+         bLabeled = True
+      End If
+      If bLabeled Then
+        sLabel = oControlModel.Label
+        &apos;msgbox sLabel
+        If oRes.containsKey(sLabel) Then oControlModel.Label = oRes.get(sLabel)
+      End If
+    Next
+  End If
+  &apos;mri oSelectorDialog
+  
+  oNodeFactory = GetDefaultContext().getValueByName(_
+    &quot;/singletons/com.sun.star.script.browse.theBrowseNodeFactory&quot;)
+  oRootNode = oNodeFactory.createView(_
+    com.sun.star.script.browse.BrowseNodeFactoryViewTypes.MACROSELECTOR)
+  
+  tree_data_model = CreateUnoService(&quot;com.sun.star.awt.tree.MutableTreeDataModel&quot;)
+  
+  tree_libraries = oSelectorDialog.getControl(NAME_TREE_LIBRARIES)
+  tree_libraries_model = tree_libraries.getModel()
+  oTreeDataModel = tree_data_model
+  
+  tree_root_node = tree_data_model.createNode(&quot;ROOT&quot;, False)
+  tree_data_model.setRoot(tree_root_node)
+  tree_libraries_model.SelectionType = _
+    com.sun.star.view.SelectionType.SINGLE
+  tree_libraries_model.DataModel = tree_data_model
+  
+  CreateChildren(tree_root_node, oRootNode, True)
+  tree_libraries_model.RootDisplayed = True
+  tree_libraries_model.RootDisplayed = False
+  
+  tree_libraries.addSelectionChangeListener(_
+    CreateUnoListener(&quot;MacroSelectorTreeSelection_&quot;, _
+      &quot;com.sun.star.view.XSelectionChangeListener&quot;)
+  tree_libraries.addTreeExpansionListener(_
+    CreateUnoListener(&quot;MacroSelectorTreeExpansion_&quot;, _
+      &quot;com.sun.star.awt.tree.XTreeExpansionListener&quot;)
+  
+  oSelectorDialog.getControl(NAME_LIST_NAMES)._
+    addItemListener(_
+      CreateUnoListener(&quot;MacroSelectorListItem_&quot;, _
+        &quot;com.sun.star.awt.XItemListener&quot;))
+  tree_libraries.makeNodeVisible(tree_root_node.getChildAt(0))
+End Sub
+
+
+Const IMAGE_PROTOCOL = &quot;private:graphicrepository/&quot;
+Const IMAGE_SCRIPT = &quot;res/im30821.png&quot;
+Const IMAGE_CONTAINER = &quot;res/im30820.png&quot;
+Const IMAGE_ROOT = &quot;res/harddisk_16.png&quot;
+Const IMAGE_DOCUMENT = &quot;res/sc05500.png&quot;
+
+Sub CreateChildren(tree_parent, parent_node, Optional top As Boolean)
+  &apos; Fill children
+  type_container = com.sun.star.script.browse.BrowseNodeTypes.CONTAINER
+  If IsMissing(top) Then top = False
+  
+  children = parent_node.getChildNodes()
+  For i = 0 To UBound(children) step 1
+    child = children(i)
+    child_type = child.getType()
+    If (child_type AND type_container) = type_container Then
+      item_name = child.getName()
+      tree_child_node = oTreeDataModel.createNode(child.getName(), child.hasChildNodes())
+      tree_parent.appendChild(tree_child_node)
+      tree_child_node.DataValue = child
+      &apos; set icon
+      If top Then
+        If item_name = &quot;user&quot; OR item_name = &quot;share&quot; Then
+          tree_child_node.setNodeGraphicURL(IMAGE_PROTOCOL &amp; IMAGE_ROOT)
+        Else
+          tree_child_node.setNodeGraphicURL(IMAGE_PROTOCOL &amp; IMAGE_DOCUMENT)
+        End If
+      Else
+        tree_child_node.setNodeGraphicURL(IMAGE_PROTOCOL &amp; IMAGE_CONTAINER)
+      End If
+    End If
+  Next
+  
+End Sub
+
+
+Sub FillMacroNames(parent_node)
+  &apos; Fill macro names. Problem about locking
+  type_script = com.sun.star.script.browse.BrowseNodeTypes.SCRIPT
+  list_names_model = oSelectorDialog.getControl(NAME_LIST_NAMES).getModel()
+  list_names_model.removeAllItems()
+  
+  children = parent_node.getChildNodes()
+  position = 0
+  For i = 0 To UBound(children) step 1
+    child = children(i)
+    If child.getType() = type_script Then
+      list_names_model.insertItem(_
+        position, child.getName(), IMAGE_PROTOCOL &amp; IMAGE_SCRIPT)
+      list_names_model.setItemData(position, child)
+      position = position + 1
+    End If
+  Next
+End Sub
+
+
+Sub FillDescription(text)
+  &apos; Set description.
+  oSelectorDialog.getControl(NAME_LABEL_DESCRIPTION)._
+    getModel().Label = text
+End Sub
+
+
+Sub MacroSelectorTreeSelection_disposing(ev)
+End Sub
+Sub MacroSelectorTreeSelection_selectionChanged(ev)
+  FillDescription(&quot;&quot;)
+  tree_node = ev.Source.getSelection()
+  If NOT IsEmpty(tree_node) Then
+    FillMacroNames(tree_node.DataValue)
+  End If
+End Sub
+
+
+Sub MacroSelectorTreeExpansion_disposing()
+End Sub
+Sub MacroSelectorTreeExpansion_requestChildNodes(ev)
+  tree_node = ev.Source.getSelection()
+  If tree_node.getChildCount() &lt;= 0 Then
+    CreateChildren(tree_node, tree_node.DataValue)
+  End If
+End Sub
+Sub MacroSelectorTreeExpansion_treeExpanding(ev)
+End Sub
+Sub MacroSelectorTreeExpansion_treeCollapsing(ev)
+End Sub
+Sub MacroSelectorTreeExpansion_treeExpanded(ev)
+End Sub
+Sub MacroSelectorTreeExpansion_treeCollapsed(ev)
+End Sub
+
+
+Sub MacroSelectorListItem_disposing(ev)
+End Sub
+Sub MacroSelectorListItem_itemStateChanged(ev)
+  position = ev.Selected
+  If position &gt;= 0 Then
+    node = ev.Source.getModel().getItemData(position)
+    description = &quot;&quot;
+    On Error GoTo Handler
+	description = node.getPropertyValue(&quot;Description&quot;)
+    Handler:
+    FillDescription(description)
+  End If
+End Sub
+
+
+
+</script:module>

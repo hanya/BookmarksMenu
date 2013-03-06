@@ -1239,6 +1239,11 @@ class MacroSelectorDialog(LayoutedDialog):
     IMAGE_ROOT = "private:graphicrepository/res/harddisk_16.png"
     IMAGE_DOCUMENT = "private:graphicrepository/res/sc05500.png"
     
+    BASIC_MODULE_NAME = "mytools_bookmarks"
+    SCRIPT_URI = "vnd.sun.star.script:mytools_bookmarks.Selector.MacroSelector?language=Basic&location=application"
+    
+    VALID_INVOCATION = None
+    
     class NodeWrapper(object):
         def __init__(self, act, node):
             self.act = act
@@ -1344,10 +1349,7 @@ class MacroSelectorDialog(LayoutedDialog):
         self.layouter.layout()
     
     def _init_tree(self):
-        nf = self.ctx.getValueByName(
-            "/singletons/com.sun.star.script.browse.theBrowseNodeFactory")
-        root_node = nf.createView(uno.getConstantByName(
-            "com.sun.star.script.browse.BrowseNodeFactoryViewTypes.MACROSELECTOR"))
+        root_node = self._create_selector_node()
         
         self.tree_data_model = self.create_service(
                     "com.sun.star.awt.tree.MutableTreeDataModel")
@@ -1372,6 +1374,17 @@ class MacroSelectorDialog(LayoutedDialog):
         
         tree_libraries.makeNodeVisible(tree_root_node.getChildAt(0))
     
+    def _create_selector_node(self):
+        root_node = None
+        if hasattr(self, "_selector_root_node"):
+            root_node = self._selector_root_node
+        else:
+            nf = self.ctx.getValueByName(
+                "/singletons/com.sun.star.script.browse.theBrowseNodeFactory")
+            root_node = nf.createView(uno.getConstantByName(
+                "com.sun.star.script.browse.BrowseNodeFactoryViewTypes.MACROSELECTOR"))
+        return root_node
+    
     def _init_idl_methods(self):
         """ Workaround for invocation problem, i120458. """
         cr = self.create_service("com.sun.star.reflection.CoreReflection")
@@ -1395,6 +1408,43 @@ class MacroSelectorDialog(LayoutedDialog):
     
     def _node_get_property_value(self, node, name):
         return self._idl_getPropertyValue(node, (name,))[0]
+    
+    def execute(self):
+        if self.__class__.VALID_INVOCATION is None:
+            self.__class__.VALID_INVOCATION = self._check_invocation_valid()
+        
+        if self.__class__.VALID_INVOCATION:
+            return LayoutedDialog.execute()
+        else:
+            return self._execute()
+    
+    def _execute(self):
+        from bookmarks.tools import create_script
+        type_string = uno.getTypeByName("string")
+        m = None
+        if self.res:
+            m = self.create_service("com.sun.star.container.EnumerableMap")
+            m.initialize((type_string, type_string))
+            for k, v in self.res.items():
+                m.put(k, v)
+        script = create_script(self.ctx, self.SCRIPT_URI)
+        result, dummy, dummy = script.invoke((m,), (), ())
+        return result
+    
+    def _check_invocation_valid(self):
+        """ Check the invocation bridge works well. """
+        root_node = self._create_selector_node()
+        try:
+            nodes = root_node.getChildNodes()
+            for context_node in nodes:
+                for sub_node in context_node.getChildNodes():
+                    if sub_node.getName() == self.__class__.BASIC_MODULE_NAME:
+                        for module_node in sub_node.getChildNodes():
+                            for routine_node in module_node.getChildNodes():
+                                break
+        except:
+            return False
+        return True
     
     def _init_layout(self):
         return DialogLayout(
