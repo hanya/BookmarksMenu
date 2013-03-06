@@ -22,7 +22,7 @@ from bookmarks.bookmark import BookmarksManagerBase, \
     BaseItem, Item, Separator, Container, TagContainer
 
 import sys
-is_python3 = sys.version_info.major >= 3
+is_python3 = sys.version_info[0] >= 3
 del sys
 
 
