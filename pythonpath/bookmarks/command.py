@@ -390,6 +390,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
         self.parent = parent
         self.frame = frame
         self.command = command
+        self.executor = None
         
         if self.__class__.ENV is None:
             env = self.detect_env()
@@ -399,16 +400,6 @@ class BookmarksCommandExecutor(DispatchExecutor):
                 self.__class__.FILE_MANAGER = mod.FILE_MANAGER
             except Exception as e:
                 print(e)
-        
-        try:
-            from subprocess import Popen
-            self.execute = self.popen_execute
-        except:
-            import os
-            if os.sep == "\\":
-                self.execute = self.win_execute
-            else:
-                self.execute = self.other_execute
     
     def popen_execute(self, path, args):
         import subprocess
@@ -565,8 +556,24 @@ class BookmarksCommandExecutor(DispatchExecutor):
             traceback.print_exc()
         BookmarksControllerImple.unlock(self.command)
     
+    def _get_executor(self):
+        try:
+            from subprocess import Popen
+            self.executor = self.popen_execute
+        except:
+            import os
+            if os.sep == "\\":
+                self.executor = self.win_execute
+            else:
+                self.executor = self.other_execute
+    
+    def _execute(self, value1, value2):
+        if self.executor is None:
+            self._get_executor()
+        self.executor(value1, value2)
+    
     def exec_program(self, value1, value2):
-        self.execute(value1, value2)
+        self._execute(value1, value2)
     
     def exec_file(self, value1, value2):
         config = self.get_config_settings()
@@ -575,7 +582,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
             open_command = config.getPropertyValue(NAME_OPEN_COMMAND)
         if not open_command:
             open_command = self.OPEN_COMMAND
-        self.execute(open_command, value1)
+        self._execute(open_command, value1)
     
     def exec_folder(self, value1, value2):
         config = self.get_config_settings()
@@ -584,7 +591,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
             file_manager = config.getPropertyValue(NAME_FILE_MANAGER)
         if not file_manager:
             file_manager = self.FILE_MANAGER
-        self.execute(file_manager, value1)
+        self._execute(file_manager, value1)
     
     def exec_web(self, value1, value2):
         config = self.get_config_settings()
@@ -593,7 +600,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
             web_browser = config.getPropertyValue(NAME_WEB_BROWSER)
         if not web_browser:
             web_browser = self.OPEN_COMMAND
-        self.execute(web_browser, value1)
+        self._execute(web_browser, value1)
         # ToDo webbrowser module
     
     def get_config_settings(self):

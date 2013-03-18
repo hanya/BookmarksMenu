@@ -41,13 +41,16 @@ class BookmarksPopupBase(unohelper.Base,
     
     OPEN_ALL_ID = -0xff
     
+    POPUP_NAMES = None
+    
     def __init__(self, ctx, args):
         self.ctx = ctx
         self._res = None
         self.commands = None
         self.manager = None
         self.sub_popups = {}
-        self.popup_menus = get_popup_names(self.ctx)
+        if self.__class__.POPUP_NAMES is None:
+            self.__class__.POPUP_NAMES = get_popup_names(self.ctx)
         self.controllers = {}
         self.command = None
         self.frame = None
@@ -103,7 +106,7 @@ class BookmarksPopupBase(unohelper.Base,
             for pos in range(popup.getItemCount()):
                 command = popup.getCommand(popup.getItemId(pos))
                 # ignore popup
-                if command and not command in self.popup_menus:
+                if command and not command in self.__class__.POPUP_NAMES:
                     try:
                         self.execute_command(command)
                     except:
@@ -119,7 +122,7 @@ class BookmarksPopupBase(unohelper.Base,
                     if not popup.getItemCount():
                         self.fill_popup(popup, self.sub_popups[id])
                         popup.addMenuListener(self)
-                elif item.get_command_only() in self.popup_menus and \
+                elif item.get_command_only() in self.__class__.POPUP_NAMES and \
                     (item.get_command().startswith("mytools.frame") or 
                     not item.has_arguments()):
                     self.treat_popup(item, popup)
@@ -140,7 +143,7 @@ class BookmarksPopupBase(unohelper.Base,
                 if desc:
                     popup.setTipHelpText(id, desc)
                 
-                if command in self.popup_menus and \
+                if command in self.__class__.POPUP_NAMES and \
                    (command.startswith("mytools.frame") or \
                     not child.has_arguments()):
                     sub_popup = self.create_sub_popup()
@@ -188,7 +191,7 @@ class BookmarksPopupBase(unohelper.Base,
     def treat_popup(self, item, popup):
         """ Create registered popup menu. """
         command = item.get_command()
-        name = self.popup_menus[item.get_command_only()]
+        name = self.__class__.POPUP_NAMES[item.get_command_only()]
         try:
             controller = self.controllers.get(item.get_id(), None)
             if not controller:

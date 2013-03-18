@@ -12,7 +12,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-import copy
 
 class BookmarksDefs(object):
     """ Definition of bookmarks attributes. """
@@ -282,6 +281,7 @@ class BookmarksManagerBase(TagManager):
         self._id = 0
         self.base = None
         self.containers = {} # id: container
+        self._deepcopy = None
     
     def next_id(self):
         """ Returns next identical number. """
@@ -306,7 +306,10 @@ class BookmarksManagerBase(TagManager):
     
     def duplicate_item(self, item):
         """ Create copy of item. """
-        copied = copy.deepcopy(item)
+        if not self._deepcopy:
+            import copy
+            self._deepcopy = copy.deepcopy
+        copied = self._deepcopy(item)
         copied.set_parent(None)
         copied.set_id(self.next_id())
         if copied.is_container():
