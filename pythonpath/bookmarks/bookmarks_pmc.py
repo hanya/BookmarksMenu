@@ -20,20 +20,10 @@ import unohelper
 from com.sun.star.awt import XMenuListener
 from com.sun.star.beans import PropertyValue
 
-from bookmarks import \
-    CONFIG_NODE_CONTROLLERS, NAME_NAME
 from bookmarks.tools import get_config, \
     get_module_name, get_popup_names
 import bookmarks.base
 from bookmarks import TAG_POPUP_IMPLE_NAME
-
-
-def load_controller_name(ctx, command):
-    """ Get controller specific settings. """
-    config = get_config(ctx, CONFIG_NODE_CONTROLLERS)
-    if config.hasByName(command):
-        return config.getByName(command).getPropertyValue(NAME_NAME)
-    return ""
 
 
 class BookmarksPopupBase(unohelper.Base, 
@@ -260,7 +250,7 @@ class BookmarksPopup(BookmarksPopupBase):
         self.manager = bookmarks.manager.BookmarksManager.get(
             self.ctx, 
             self.command, 
-            load_controller_name(self.ctx, self.command)
+            bookmarks.command.load_controller_name(self.ctx, self.command)
         )
         self.update_last_checked()
         self.has_location = self.check_has_location()

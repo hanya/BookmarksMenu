@@ -120,7 +120,10 @@ class DirectoryPopup(unohelper.Base,
     def setPopupMenu(self, popup):
         self.menu = popup
         if self.valid:
-            self.prepare_menu()
+            try:
+                self.prepare_menu()
+            except Exception as e:
+                print(e)
     
     def updatePopupMenu(self):
         if self.valid:
@@ -186,7 +189,8 @@ class DirectoryPopup(unohelper.Base,
             base_url += "/"
         names = self.sfa.getFolderContents(base_url, True)
         if not self.hidden:
-            names = set([name for name in names if not sfa.isHidden(name)])
+            names = set([name for name in names 
+                            if sfa.exists(name) and not sfa.isHidden(name)])
         else:
             names = set(names)
         folders = set([name for name in names if sfa.isFolder(name)])

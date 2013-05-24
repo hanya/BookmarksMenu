@@ -19,19 +19,28 @@ def create(ctx, *args):
     return BookmarksMenuManager(ctx, args)
 
 from com.sun.star.task import XJobExecutor
+from com.sun.star.lang import XInitialization
 
 from bookmarks import RES_DIR, RES_FILE
 from bookmarks.tools import get_current_resource
 from bookmarks.base import ServiceInfo
 
 
-class BookmarksMenuManager(unohelper.Base, ServiceInfo, XJobExecutor):
+class BookmarksMenuManager(unohelper.Base, ServiceInfo, XJobExecutor, XInitialization):
     
     from bookmarks import MANAGER_IMPLE_NAME as IMPLE_NAME, \
         MANAGER_SERVICE_NAMES as SERVICE_NAMES
     
-    def __init__(self, ctx, args):
+    def __init__(self, ctx, args=None):
         self.ctx = ctx
+        if args:
+            self.initialize(args)
+    
+    # XInitialization
+    def initialize(self, args):
+        for arg in args:
+            if arg.Name == "Frame":
+                self.frame = arg.Value
     
     # XJobExecutor
     def trigger(self, arg):
@@ -39,6 +48,8 @@ class BookmarksMenuManager(unohelper.Base, ServiceInfo, XJobExecutor):
             self.execute_wizard()
         elif arg.startswith("Edit&"):
             self.execute_editor("mytools.bookmarks.BookmarksMenu:%s" % arg[5:])
+        elif arg.startswith("AddThis&"):
+            self.execute_addthis("mytools.bookmarks.BookmarksMenu:%s" % arg[8:])
     
     def execute_wizard(self):
         """ Start wizrad. """
@@ -55,4 +66,11 @@ class BookmarksMenuManager(unohelper.Base, ServiceInfo, XJobExecutor):
         """ Start editor. """
         from bookmarks.command import EditWindowThread
         EditWindowThread(self.ctx, command).run()
-
+    
+    def execute_addthis(self, command):
+        print(command)
+        try:
+            from bookmarks.command import ExecuteAddThis
+            ExecuteAddThis(self.ctx, self.frame, command).run()
+        except Exception as e:
+            print(e)

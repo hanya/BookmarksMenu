@@ -26,6 +26,7 @@ from bookmarks.values import ListenerBase, \
 from bookmarks.control import TreeWindow, ExtendedTreeWindow
 from bookmarks import EXT_DIR
 DIALOG_DIR = EXT_DIR + "dialogs/"
+from bookmarks import anotherpmc
 
 
 class LayoutedDialog(DialogBase):
@@ -540,6 +541,7 @@ class BookmarkThisDialog(BookmarkTreeDialog):
                 task.redo(self.DummyController(self, self.manager))
                 self.manager.modified = True
                 self.manager.store()
+                anotherpmc.set_modified(self.ctx, self.command)
     
     def button_pushed(self):
         result = NewFolderDialog(self.ctx, None).execute()

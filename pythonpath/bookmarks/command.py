@@ -19,6 +19,17 @@ from bookmarks.cmdparse import \
     bk_urlencode, bk_parse_qsl, bk_parse_qs, bk_command_parse
 
 
+from bookmarks import \
+            CONFIG_NODE_CONTROLLERS, NAME_NAME
+
+def load_controller_name(ctx, command):
+    """ Get controller specific settings. """
+    config = get_config(ctx, CONFIG_NODE_CONTROLLERS)
+    if config.hasByName(command):
+        return config.getByName(command).getPropertyValue(NAME_NAME)
+    return ""
+
+
 class BookmarksCommands(object):
     
     from bookmarks import PROTOCOL_BOOKMARKS, DIRECTORY_POPUP_URI, \
@@ -379,6 +390,100 @@ class EditWindowThread(threading.Thread):
         imple.move_to_front()
 
 
+class ExecuteAddThis(DispatchExecutor):
+    
+    class DocumentNotStoredException(Exception):
+        """ This document is not stored. """
+        pass
+    
+    def __init__(self, ctx, frame, command):
+        DispatchExecutor.__init__(self, ctx)
+        self.frame = frame
+        self.command = command
+    
+    def execute_command(self, command):
+        self.dispatch(self.frame, command)
+    
+    def _get_title(self):
+        """ Check the document has valid URL and stored, 
+        returns title and filter name. """
+        model = None
+        try:
+            model = self.frame.getController().getModel()
+        except:
+            pass
+        if model is None or not hasattr(model, "getURL"):
+            # or not hasattr(model, "hasLocation"):
+            raise IllegalDocumentException("Unable to bookmark this document.")
+        
+        file_url = model.getURL()
+        if not file_url:
+            self.execute_command(".uno:SaveAs")
+            file_url = model.getURL()
+            if not file_url:
+                raise DocumentNotStoredException("Not stored.")
+        
+        title = ""
+        try:
+            if hasattr(model, "getDocumentProperties"):
+                props = model.getDocumentProperties()
+                if hasattr(props, "Title"):
+                    title = props.Title
+            if not title:
+                title = model.getTitle()
+                if title[-4] == ".":
+                    title = title[0:-4]
+        except:
+            pass
+        
+        filter_name = ""
+        try:
+            if hasattr(model, "getArgs"):
+                args = model.getArgs()
+                for arg in args:
+                    if arg.Name == "FilterName":
+                        filter_name = arg.Value
+                        break
+        except:
+            pass
+        
+        return file_url, filter_name, title
+    
+    def run(self):
+        try:
+            file_url, filter_name, title = self._get_title()
+        except Exception as e:
+            print(e)
+            return
+        
+        # res, manager
+        import bookmarks.manager
+        from bookmarks.resource import CurrentStringResource
+        res = CurrentStringResource.get(self.ctx)
+        
+        manager = bookmarks.manager.BookmarksManager.get(
+            self.ctx,  self.command, 
+            load_controller_name(self.ctx, self.command)
+        )
+        
+        from bookmarks.imple import BookmarksControllerImple
+        BookmarksControllerImple.lock(self.command)
+        try:
+            import bookmarks.dialogs
+            bookmarks.dialogs.BookmarkThisDialog(
+                self.ctx, res, 
+                manager=manager, 
+                command=self.command, 
+                file_url=file_url, 
+                name=title, 
+                filter_name=filter_name
+            ).execute()
+        except Exception as e:
+            print(e)
+            traceback.print_exc()
+        BookmarksControllerImple.unlock(self.command)
+
+
 class BookmarksCommandExecutor(DispatchExecutor):
     
     ENV = None
@@ -502,59 +607,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
         EditWindowThread(self.ctx, self.command).start()
     
     def exec_addthis(self, value1, value2):
-        model = None
-        title = ""
-        filter_name = ""
-        try:
-            model = self.frame.getController().getModel()
-        except:
-            pass
-        if model is None or not hasattr(model, "getURL"):
-            # or not hasattr(model, "hasLocation"):
-            raise IllegalDocumentException("Unable to bookmark this document.")
-        file_url = model.getURL()
-        if not file_url:
-            self.execute_command(".uno:SaveAs")
-            file_url = model.getURL()
-            if not file_url:
-                return
-        try:
-            if hasattr(model, "getDocumentProperties"):
-                props = model.getDocumentProperties()
-                if hasattr(props, "Title"):
-                    title = props.Title
-            if not title:
-                title = model.getTitle()
-                if title[-4] == ".":
-                    title = title[0:-4]
-        except:
-            pass
-        try:
-            if hasattr(model, "getArgs"):
-                args = model.getArgs()
-                for arg in args:
-                    if arg.Name == "FilterName":
-                        filter_name = arg.Value
-                        break
-        except:
-            pass
-        from bookmarks.imple import BookmarksControllerImple
-        BookmarksControllerImple.lock(self.command)
-        try:
-            import bookmarks.dialogs
-            bookmarks.dialogs.BookmarkThisDialog(
-                self.ctx, 
-                self.parent.res, 
-                manager=self.parent.manager, 
-                command=self.parent.command, 
-                file_url=file_url, 
-                name=title, 
-                filter_name=filter_name
-            ).execute()
-        except Exception as e:
-            print(e)
-            traceback.print_exc()
-        BookmarksControllerImple.unlock(self.command)
+        ExecuteAddThis(self.ctx, self.frame, self.command).run()
     
     def _get_executor(self):
         try:

@@ -27,6 +27,7 @@ from bookmarks.command import BookmarksCommandExecutor
 from bookmarks.tools import get_config, get_config_value
 from bookmarks.resource import Graphics
 from bookmarks.values import Key, KeyModifier
+from bookmarks import anotherpmc
 
 import bookmarks.dispatch as COMMANDS
 from bookmarks.tree import HistoryRootNode, \
@@ -2294,6 +2295,7 @@ class BookmarksControllerImple(object):
             try:
                 self.manager.store()
                 self.controller.update_save_state()
+                anotherpmc.set_modified(self.ctx, self.command)
             except Exception as e:
                 print(e)
     
