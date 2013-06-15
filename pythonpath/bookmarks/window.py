@@ -1112,10 +1112,6 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
         
         self._create_window(controller, settings)
         self.grid_check_interface()
-        
-        import bookmarks.tools
-        self.use_point = bookmarks.tools.check_method_parameter(
-            ctx, "com.sun.star.awt.XPopupMenu", "execute", 1, "com.sun.star.awt.Point")
     
     def _(self, name):
         return self.res.get(name, name)
@@ -1281,16 +1277,12 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
             self.controller.fill_menu(type, menu)
             self.context_menu = menu
         
-        if self.use_point:
-            pos = Point(x, y)
-        else:
-            pos = Rectangle(x, y, 0, 0)
         if type == self.MODE_GRID:
             parent = self.grid.getPeer()
         elif type == self.MODE_TREE:
             parent = self.tree.getPeer()
         self.controller.update_menu(menu, type)
-        n = menu.execute(parent, pos, 0)
+        n = menu.execute(parent, Rectangle(x, y, 0, 0), 0)
         if 0 < n:
             try:
                 self.action_executed(menu.getCommand(n))
@@ -1312,11 +1304,7 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
                 controller.set_controller(_controller)
             controller.setPopupMenu(menu)
             # ToDo where to show
-            if self.use_point:
-                pos = Point()
-            else:
-                pos = Rectangle()
-            menu.execute(self.grid.getPeer(), pos, 0)
+            menu.execute(self.grid.getPeer(), Rectangle(), 0)
         except Exception as e:
             print(e)
     
