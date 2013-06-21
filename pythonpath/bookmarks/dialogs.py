@@ -1416,7 +1416,7 @@ class MacroSelectorDialog(LayoutedDialog):
             self.__class__.VALID_INVOCATION = self._check_invocation_valid()
         
         if self.__class__.VALID_INVOCATION:
-            return LayoutedDialog.execute()
+            return LayoutedDialog.execute(self)
         else:
             return self._execute()
     
