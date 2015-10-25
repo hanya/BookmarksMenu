@@ -78,6 +78,8 @@ class PopupMenuControllerBase(XPopupMenuController, XInitialization,
     def queryDispatch(self, url, name, flags): pass
     def queryDispatches(self, requests): pass
     
+    def disposing(self, ev): pass
+    
     # XStatusListener
     def statusChanged(self, ev): pass
     

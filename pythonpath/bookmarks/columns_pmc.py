@@ -64,6 +64,8 @@ class ShownColumnsPopupMenu(unohelper.Base,
         if self.valid:
             self.update_state()
     
+    def disposing(self, ev): pass
+    
     # XMenuListener
     def activate(self, ev): pass
     def deactivate(self, ev): pass

@@ -72,6 +72,8 @@ class BookmarksPopupBase(unohelper.Base,
         self.menu = popup
         self.prepare_menu()
     
+    def disposing(self, ev): pass
+    
     # XMenuListener
     def activate(self, ev): pass
     def deactivate(self, ev): pass

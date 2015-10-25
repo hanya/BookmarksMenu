@@ -129,6 +129,8 @@ class DirectoryPopup(unohelper.Base,
         if self.valid:
             self.prepare_menu(True)
     
+    def disposing(self, ev): pass
+    
     # XMenuListener
     def activate(self, ev): pass
     def deactivate(self, ev): pass
