@@ -23,7 +23,7 @@ msgstr "Lesezeichen-Menü"
 
 #: id.label.bookmarks
 msgid "~Bookmarks"
-msgstr "~Lesezeichenver"
+msgstr "~Lesezeichen"
 
 #: id.name.bookmarks
 msgid "Bookmarks"
