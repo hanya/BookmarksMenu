@@ -23,7 +23,7 @@
 <node oor:name="MenuItems">
 <node oor:name="child" oor:op="replace">
 <prop oor:name="Title">
-<value xml:lang="de-DE">~Lesezeichenver</value>
+<value xml:lang="de-DE">~Lesezeichen</value>
 <value xml:lang="en-US">~Bookmarks</value>
 <value xml:lang="fr">~Marque-pages</value>
 <value xml:lang="ja">ブックマーク(~B)</value>
