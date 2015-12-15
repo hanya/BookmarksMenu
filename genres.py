@@ -344,6 +344,13 @@ def write_update_feed():
 
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="Generates localized resources.")
+    parser.add_argument("-l", "--langs", required=False, 
+                    help="Specifies locale to be processed, multiple locales can be specified with comma separated.")
+    args = parser.parse_args()
+    langs = args.langs.split(",") if args.langs else ()
+    
     prefix = "strings_"
     res_dir = "resources"
     
@@ -353,6 +360,8 @@ def main():
     for po in os.listdir(po_dir):
         if po.endswith(".po"):
             locale = po[:-3]
+            if langs and not locale in langs:
+                continue
             try:
                 lines = open(os.path.join(po_dir, po)).readlines()
             except:
