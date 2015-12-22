@@ -15,7 +15,7 @@
 <node oor:name="Nodes">
 <node oor:name="mytools.bookmarks.BookmarksMenu.1" oor:op="fuse">
 <prop oor:name="Label">
-<value xml:lang="de-DE">Lesezeichen-Menü</value>
+<value xml:lang="de">Lesezeichen-Menü</value>
 <value xml:lang="en-US">Bookmarks Menu</value>
 <value xml:lang="fr">Menu des marques-pages</value>
 <value xml:lang="ja">ブックマークメニュー</value>
@@ -32,7 +32,7 @@
 <value>mytools.bookmarks.BookmarksMenu.Data</value>
 </prop>
 <prop oor:name="Label">
-<value xml:lang="de-DE">Daten</value>
+<value xml:lang="de">Daten</value>
 <value xml:lang="en-US">Data</value>
 <value xml:lang="fr">Données</value>
 <value xml:lang="ja">データ</value>
@@ -55,7 +55,7 @@
 <value>mytools.bookmarks.BookmarksMenu.Settings</value>
 </prop>
 <prop oor:name="Label">
-<value xml:lang="de-DE">Einstellungen</value>
+<value xml:lang="de">Einstellungen</value>
 <value xml:lang="en-US">Settings</value>
 <value xml:lang="fr">Paramètres</value>
 <value xml:lang="ja">設定</value>

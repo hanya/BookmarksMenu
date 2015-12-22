@@ -8,7 +8,7 @@
 <node oor:name="States">
 <node oor:name="private:resource/toolbar/historybar" oor:op="replace">
 <prop oor:name="UIName">
-<value xml:lang="de-DE">History</value>
+<value xml:lang="de">History</value>
 <value xml:lang="en-US">History</value>
 <value xml:lang="fr">Historique</value>
 <value xml:lang="ja">履歴</value>
@@ -49,7 +49,7 @@
 </node>
 <node oor:name="private:resource/toolbar/insertbar" oor:op="replace">
 <prop oor:name="UIName">
-<value xml:lang="de-DE">Einfügen</value>
+<value xml:lang="de">Einfügen</value>
 <value xml:lang="en-US">Insert</value>
 <value xml:lang="fr">Insérer</value>
 <value xml:lang="ja">挿入</value>
@@ -90,7 +90,7 @@
 </node>
 <node oor:name="private:resource/toolbar/standardbar" oor:op="replace">
 <prop oor:name="UIName">
-<value xml:lang="de-DE">Standard</value>
+<value xml:lang="de">Standard</value>
 <value xml:lang="en-US">Standard</value>
 <value xml:lang="fr">Standard</value>
 <value xml:lang="ja">標準</value>
