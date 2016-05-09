@@ -1457,6 +1457,7 @@ class BookmarksWindow(ExtendedTreeWindow, GridWindow):
         
         self.tree = tree
         tree_data_model = BookmarksMenuTreeDataModel()
+        self.set_data_model(tree_data_model)
         tree.getModel().DataModel = tree_data_model
         tree_model = tree.getModel()
         tree_root_node = self.tree_create_root_node("ROOT", True)

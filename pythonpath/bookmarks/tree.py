@@ -16,9 +16,10 @@ import unohelper
 
 from com.sun.star.awt.tree import \
     XTreeDataModel, XTreeNode, TreeDataModelEvent
+from com.sun.star.beans import XMaterialHolder
 
 
-class CustomTreeNode(unohelper.Base, XTreeNode):
+class CustomTreeNode(unohelper.Base, XTreeNode, XMaterialHolder):
     """ Customized tree node which allows to access by Python directly. """
     
     def __init__(self, data_model, name, ondemand):
@@ -28,6 +29,8 @@ class CustomTreeNode(unohelper.Base, XTreeNode):
         self.parent = None
         self.children = []
         self.data = None
+        self.id = 0
+        data_model.register_node(self)
     
     def __repr__(self):
         return "<%s.%s: %s>" % (self.__class__.__module__, 
@@ -37,6 +40,11 @@ class CustomTreeNode(unohelper.Base, XTreeNode):
         """ Clear data. """
         self.data_model = data_model
         self.data = None
+    
+    # XMaterialHolder
+    def getMaterial(self):
+        """ Returns internal node ID. """
+        return self.id
     
     # XTreeNode
     def getChildAt(self, index):
@@ -230,6 +238,22 @@ class CustomTreeDataModel(unohelper.Base, Component, XTreeDataModel):
         Component.__init__(self)
         self.listeners = []
         self.root = None
+        self.node_counter = 0
+        self.nodes = {} # all child nodes
+    
+    def register_node(self, node):
+        node.id = self.create_node_id()
+        self.nodes[node.id] = node
+    
+    def create_node_id(self):
+        self.node_counter += 1
+        return self.node_counter
+    
+    def get_node(self, tree_node):
+        try:
+            return self.nodes[tree_node.getMaterial()]
+        except:
+            return None
     
     # XTreeDataModel
     def getRoot(self):

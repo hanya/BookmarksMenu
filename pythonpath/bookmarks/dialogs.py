@@ -422,7 +422,7 @@ class BookmarkTreeDialog(LayoutedDialog, ExtendedTreeWindow):
             self.set_enable(self.NAME_BTN_FOLDER, state)
     
     def tree_get_bookmarks_root(self):
-        return self.tree.getModel().DataModel.getRoot().get_child_at(1)
+        return self.data_model.get_root().get_child_at(1)
     
     def init_tree(self):
         from bookmarks.tree import BookmarksMenuTreeDataModel, UnsortedBookmarksRootNode
@@ -430,7 +430,8 @@ class BookmarkTreeDialog(LayoutedDialog, ExtendedTreeWindow):
         self.UnsortedBookmarksRootNode = UnsortedBookmarksRootNode
         
         self.tree = self.get(self.NAME_TREE_FOLDER)
-        self.tree.getModel().DataModel = BookmarksMenuTreeDataModel()
+        self.data_model = BookmarksMenuTreeDataModel()
+        self.tree.getModel().DataModel = self.data_model
         
         tree_root_node = self.tree_create_root_node("ROOT", True)
         self.tree_set_root(tree_root_node)

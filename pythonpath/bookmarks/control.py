@@ -16,6 +16,11 @@ class TreeWindow(object):
     """ Provides tree control manipulation. """
     def __init__(self, tree):
         self.tree = tree
+        self.data_model = None
+    
+    def set_data_model(self, data_model):
+        """ Set data model to keep. """
+        self.data_model = data_model
     
     def tree_set_focus(self):
         """ Set focus to the tree. """
@@ -23,7 +28,8 @@ class TreeWindow(object):
     
     def tree_get_data_model(self):
         """ Get data model. """
-        return self.tree.getModel().getPropertyValue("DataModel")
+        #return self.tree.getModel().getPropertyValue("DataModel")
+        return self.data_model
     
     def tree_is_root_selected(self):
         """ Check is selected node is root. """
@@ -34,9 +40,11 @@ class TreeWindow(object):
         selections = self.tree.getSelection()
         if isinstance(selections, tuple):
             if len(selections) > 0:
-                return selections[0]
+                #return selections[0]
+                return self.tree_get_data_model().get_node(selections[0])
             return None
-        return selections
+        #return selections
+        return self.tree_get_data_model().get_node(selections)
     
     def tree_set_selection(self, node):
         """ Select node. """
