@@ -544,7 +544,7 @@ class BookmarkThisDialog(BookmarkTreeDialog):
                 anotherpmc.set_modified(self.ctx, self.command)
     
     def button_pushed(self):
-        result = NewFolderDialog(self.ctx, None).execute()
+        result = NewFolderDialog(self.ctx, res=self.res).execute()
         if result:
             tree_node = self.tree_get_selection()
             
