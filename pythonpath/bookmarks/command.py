@@ -486,9 +486,9 @@ class ExecuteAddThis(DispatchExecutor):
 
 class BookmarksCommandExecutor(DispatchExecutor):
     
-    ENV = None
     OPEN_COMMAND = None
     FILE_MANAGER = None
+    WEB_BROWSER = None
     
     def __init__(self, parent, ctx, frame, command):
         DispatchExecutor.__init__(self, ctx)
@@ -497,14 +497,21 @@ class BookmarksCommandExecutor(DispatchExecutor):
         self.command = command
         self.executor = None
         
-        if self.__class__.ENV is None:
+        self.load_config()
+        
+        c = self.__class__
+        if c.OPEN_COMMAND is None or c.FILE_MANAGER is None or c.WEB_BROWSER is None:
             env = self.detect_env()
             try:
                 mod = getattr(__import__("bookmarks.env.%s" % env).env, env)
-                self.__class__.OPEN_COMMAND = mod.OPEN
-                self.__class__.FILE_MANAGER = mod.FILE_MANAGER
-            except Exception as e:
-                print(e)
+                if c.OPEN_COMMAND is None:
+                    self.__class__.OPEN_COMMAND = mod.OPEN
+                if c.FILE_MANAGER is None:
+                    self.__class__.FILE_MANAGER = mod.FILE_MANAGER
+                if c.WEB_BROWSER is None:
+                    self.__class__.WEB_BROWSER = self.__class__.OPEN_COMMAND
+            except:
+                pass
     
     def popen_execute(self, path, args):
         import subprocess
@@ -553,10 +560,13 @@ class BookmarksCommandExecutor(DispatchExecutor):
                 try:
                     type = os.environ["GDMSESSION"]
                 except:
-                    pass
-        if type == "default":
+                    try:
+                        type = os.environ["XDG_SESSION_DESKTOP"]
+                    except:
+                        pass
+        if type == "default" or type.lower() == "kde":
             try:
-                if os.environ["KDE_SESSION_VERSION"] == "4":
+                if os.environ["KDE_SESSION_VERSION"] >= "4":
                     type = "kde4"
                 else:
                     type = "kde3"
@@ -629,33 +639,28 @@ class BookmarksCommandExecutor(DispatchExecutor):
         self._execute(value1, value2)
     
     def exec_file(self, value1, value2):
-        config = self.get_config_settings()
-        open_command = None
-        if config.getPropertyValue(NAME_USE_CUSTOM_OPEN_COMMAND):
-            open_command = config.getPropertyValue(NAME_OPEN_COMMAND)
-        if not open_command:
-            open_command = self.OPEN_COMMAND
-        self._execute(open_command, value1)
+        if not self.OPEN_COMMAND is None:
+            self._execute(self.OPEN_COMMAND, value1)
     
     def exec_folder(self, value1, value2):
-        config = self.get_config_settings()
-        file_manager = None
-        if config.getPropertyValue(NAME_USE_CUSTOM_FILE_MANAGER):
-            file_manager = config.getPropertyValue(NAME_FILE_MANAGER)
-        if not file_manager:
-            file_manager = self.FILE_MANAGER
-        self._execute(file_manager, value1)
+        if not self.FILE_MANAGER is None:
+            self._execute(self.FILE_MANAGER, value1)
     
     def exec_web(self, value1, value2):
-        config = self.get_config_settings()
-        web_browser = None
-        if config.getPropertyValue(NAME_USE_CUSTOM_WEB_BROWSER):
-            web_browser = config.getPropertyValue(NAME_WEB_BROWSER)
-        if not web_browser:
-            web_browser = self.OPEN_COMMAND
-        self._execute(web_browser, value1)
+        if not self.WEB_BROWSER is None:
+            self._execute(self.WEB_BROWSER, value1)
         # ToDo webbrowser module
     
     def get_config_settings(self):
         return get_config(self.ctx, CONFIG_NODE_SETTINGS)
-
+    
+    def load_config(self):
+        config = self.get_config_settings()
+        if config.getPropertyValue(NAME_USE_CUSTOM_OPEN_COMMAND):
+            self.__class__.OPEN_COMMAND = config.getPropertyValue(NAME_OPEN_COMMAND)
+        
+        if config.getPropertyValue(NAME_USE_CUSTOM_FILE_MANAGER):
+            self.__class__.FILE_MANAGER = config.getPropertyValue(NAME_FILE_MANAGER)
+        
+        if config.getPropertyValue(NAME_USE_CUSTOM_WEB_BROWSER):
+            self.__class__.WEB_BROWSER = config.getPropertyValue(NAME_WEB_BROWSER)
