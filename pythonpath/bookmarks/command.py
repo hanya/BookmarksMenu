@@ -496,12 +496,13 @@ class BookmarksCommandExecutor(DispatchExecutor):
         self.frame = frame
         self.command = command
         self.executor = None
+        env = self.detect_env()
+        self.is_win32 = env == "win32"
         
         self.load_config()
         
         c = self.__class__
         if c.OPEN_COMMAND is None or c.FILE_MANAGER is None or c.WEB_BROWSER is None:
-            env = self.detect_env()
             try:
                 mod = getattr(__import__("bookmarks.env.%s" % env).env, env)
                 if c.OPEN_COMMAND is None:
@@ -639,10 +640,14 @@ class BookmarksCommandExecutor(DispatchExecutor):
         self._execute(value1, value2)
     
     def exec_file(self, value1, value2):
+        if self.is_win32:
+            value1 = self.escape_win32_path(value1)
         if not self.OPEN_COMMAND is None:
             self._execute(self.OPEN_COMMAND, value1)
     
     def exec_folder(self, value1, value2):
+        if self.is_win32:
+            value1 = self.escape_win32_path(value1)
         if not self.FILE_MANAGER is None:
             self._execute(self.FILE_MANAGER, value1)
     
@@ -650,6 +655,13 @@ class BookmarksCommandExecutor(DispatchExecutor):
         if not self.WEB_BROWSER is None:
             self._execute(self.WEB_BROWSER, value1)
         # ToDo webbrowser module
+    
+    def escape_win32_path(self, value):
+        value = value.replace("&", "^&")
+        value = value.replace("~", "^~")
+        value = value.replace("(", "^(")
+        value = value.replace(")", "^)")
+        return value
     
     def get_config_settings(self):
         return get_config(self.ctx, CONFIG_NODE_SETTINGS)
