@@ -658,7 +658,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
     
     def escape_win32_path(self, value):
         value = value.replace("&", "^&")
-        value = value.replace("~", "^~")
+        value = value.replace("|", "^|")
         value = value.replace("(", "^(")
         value = value.replace(")", "^)")
         return value
