@@ -30,30 +30,60 @@ def bk_unquote(s):
     return s
 
 
-def bk_urlencode(query):
+def bk_quote_open(s):
+    s = s.replace("=", "%3D")
+    s = s.replace("&", "%2526")
+    s = s.replace("%26", "%2526")
+    return s
+
+
+def bk_unquote_open(s):
+    s = s.replace("%3D", "=")
+    s = s.replace("%3d", "=")
+    s = s.replace("%2526", "&")
+    return s
+
+
+def bk_urlencode(query, type):
     """ Construct query string from dict. """
     l = []
-    for k, v in query.items():
-        l.append(bk_quote(k) + "=" + bk_quote(v))
+    if type == ".uno:Open":
+        for k, v in query.items():
+            if k == "URL:string":
+                l.append(bk_quote(k) + "=" + bk_quote_open(v))
+            else:
+                l.append(bk_quote(k) + "=" + bk_quote(v))
+    else:
+        for k, v in query.items():
+            l.append(bk_quote(k) + "=" + bk_quote(v))
     return "&".join(l)
 
 
-def bk_parse_qs(qs):
+def bk_parse_qs(qs, type):
     """ Parse query string created by bk_urlencode and returns 
     dict. This function ignores multiple values.
     """
-    return dict(bk_parse_qsl(qs))
+    return dict(bk_parse_qsl(qs, type))
 
 
-def bk_parse_qsl(qs):
+def bk_parse_qsl(qs, type):
     """ Parse query strings created by bk_urlencode and returns 
     tuple of key, value pair. The value is not a list but unicode. """
     pairs = qs.split("&")
     r = []
-    for name_value in pairs:
-        nv = name_value.split("=", 1)
-        if len(nv) == 2:
-          r.append((bk_unquote(nv[0]), bk_unquote(nv[1])))
+    if type == ".uno:Open":
+        for name_value in pairs:
+            nv = name_value.split("=", 1)
+            if len(nv) == 2:
+                if nv[0] == "URL:string":
+                    r.append((bk_unquote(nv[0]), bk_unquote_open(nv[1])))
+                else:
+                    r.append((bk_unquote(nv[0]), bk_unquote(nv[1])))
+    else:
+        for name_value in pairs:
+            nv = name_value.split("=", 1)
+            if len(nv) == 2:
+              r.append((bk_unquote(nv[0]), bk_unquote(nv[1])))
     return r
 
 

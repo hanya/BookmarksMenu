@@ -3,11 +3,11 @@
 xmlns:xlink="http://www.w3.org/1999/xlink"
 xmlns:d="http://openoffice.org/extensions/description/2006">
 <identifier value="mytools.bookmarks.BookmarksMenu" />
-<version value="1.0.14" />
+<version value="1.0.15" />
 <dependencies>
 <d:OpenOffice.org-minimal-version value="3.4" d:name="OpenOffice.org 3.4" />
 </dependencies>
 <update-download>
-<src xlink:href="https://github.com/hanya/BookmarksMenu/releases/download/v1.0.14/BookmarksMenu-1.0.14.oxt"/>
+<src xlink:href="https://github.com/hanya/BookmarksMenu/releases/download/v1.0.15/BookmarksMenu-1.0.15.oxt"/>
 </update-download>
 </description>

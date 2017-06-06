@@ -69,18 +69,18 @@ class BookmarksCommands(object):
     TYPE_DIRECTORY_POPUP = "directory_popup"
     TYPE_TAG = "tag"
     
-    def bk_parse_qs(text):
-        return bk_parse_qs(text)
+    def bk_parse_qs(text, type=None):
+        return bk_parse_qs(text, type)
     
     bk_parse_qs = staticmethod(bk_parse_qs)
     
-    def bk_parse_qsl(text):
-        return bk_parse_qsl(text)
+    def bk_parse_qsl(text, type=None):
+        return bk_parse_qsl(text, type)
     
     bk_parse_qsl = staticmethod(bk_parse_qsl)
     
-    def bk_urlencode(qs):
-        return bk_urlencode(qs)
+    def bk_urlencode(qs, type=None):
+        return bk_urlencode(qs, type)
     
     bk_urlencode = staticmethod(bk_urlencode)
     
@@ -108,7 +108,7 @@ class BookmarksCommands(object):
         value1 = ""
         value2 = ""
         main, protocol, path, query = self.bk_command_parse(command)
-        qs = self.bk_parse_qs(query)
+        qs = self.bk_parse_qs(query, main)
         protocol = protocol + ":"
         
         if protocol == self.PROTOCOL_COMMAND:
@@ -182,7 +182,7 @@ class BookmarksCommands(object):
         icon = None
         
         main, protocol, path, query = self.bk_command_parse(command)
-        qs = self.bk_parse_qs(query)
+        qs = self.bk_parse_qs(query, main)
         protocol = protocol + ":"
         
         if protocol == self.PROTOCOL_COMMAND:
@@ -271,6 +271,7 @@ class BookmarksCommands(object):
         """ Generate commmnd from new value. """
         qs = {}
         type = d["type"]
+        main = None
         if type == "document":
             path = d["path"]
             try:
@@ -342,7 +343,7 @@ class BookmarksCommands(object):
             command = "ERRROR"
         
         if qs:
-            command = main + "?" + self.bk_urlencode(qs)
+            command = main + "?" + self.bk_urlencode(qs, main)
         
         return command
 
@@ -658,7 +659,7 @@ class BookmarksCommandExecutor(DispatchExecutor):
     
     def escape_win32_path(self, value):
         value = value.replace("&", "^&")
-        value = value.replace("|", "^|")
+        value = value.replace("~", "^~")
         value = value.replace("(", "^(")
         value = value.replace(")", "^)")
         return value
